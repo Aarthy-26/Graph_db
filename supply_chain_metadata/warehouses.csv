@@ -1,0 +1,11 @@
+warehouse_id,name,location_city,capacity_units
+W10,WH_0,Chennai,10000
+W11,WH_1,Hyderabad,15000
+W12,WH_2,Bengaluru,12000
+W13,WH_3,Mumbai,20000
+W14,WH_4,Delhi,25000
+W15,WH_5,Pune,11000
+W16,WH_6,Kolkata,9000
+W17,WH_7,Ahmedabad,8000
+W18,WH_8,Jaipur,7000
+W19,WH_9,Surat,9500

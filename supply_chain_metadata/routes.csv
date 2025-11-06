@@ -1,0 +1,11 @@
+route_id,origin_warehouse,destination_city,distance_km,estimated_time_hours
+RT1400,W19,Delhi,547,51.2
+RT1401,W18,Mumbai,1379,19.3
+RT1402,W16,Chennai,1495,67.0
+RT1403,W17,Bengaluru,327,56.9
+RT1404,W12,Kolkata,1926,8.3
+RT1405,W18,Pune,2280,23.9
+RT1406,W14,Jaipur,2032,55.3
+RT1407,W14,Ahmedabad,2213,7.9
+RT1408,W12,Surat,318,46.9
+RT1409,W14,Hyderabad,982,66.1

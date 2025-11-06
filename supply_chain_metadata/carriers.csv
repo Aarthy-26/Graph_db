@@ -1,0 +1,11 @@
+carrier_id,name,service_level,phone
+CR900,Carrier_0,Express,+91-880002000
+CR901,Carrier_1,Standard,+91-880002001
+CR902,Carrier_2,Standard,+91-880002002
+CR903,Carrier_3,Express,+91-880002003
+CR904,Carrier_4,Economy,+91-880002004
+CR905,Carrier_5,Standard,+91-880002005
+CR906,Carrier_6,Express,+91-880002006
+CR907,Carrier_7,Economy,+91-880002007
+CR908,Carrier_8,Standard,+91-880002008
+CR909,Carrier_9,Express,+91-880002009

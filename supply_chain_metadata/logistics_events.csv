@@ -1,0 +1,11 @@
+event_id,shipment_id,event_time,event_type,location
+E1500,SH806,2025-01-02 10:00:00,Picked Up,Chennai
+E1501,SH801,2025-01-03 10:00:00,In Transit,Mumbai
+E1502,SH804,2025-01-04 10:00:00,Delayed,Delhi
+E1503,SH807,2025-01-05 10:00:00,Arrived,Bengaluru
+E1504,SH808,2025-01-06 10:00:00,Loaded,Kolkata
+E1505,SH801,2025-01-07 10:00:00,In Transit,Pune
+E1506,SH801,2025-01-08 10:00:00,Customs,Hyderabad
+E1507,SH808,2025-01-09 10:00:00,Delivered,Ahmedabad
+E1508,SH809,2025-01-10 10:00:00,Out for Delivery,Jaipur
+E1509,SH809,2025-01-11 10:00:00,Exception,Surat

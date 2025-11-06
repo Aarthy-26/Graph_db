@@ -1,0 +1,11 @@
+supplier_id,name,country,contact_email,phone,lead_time_days
+S100,Supplier_0,India,supp0@example.com,+91-900001000,7
+S101,Supplier_1,China,supp1@example.com,+91-900001001,14
+S102,Supplier_2,Germany,supp2@example.com,+91-900001002,10
+S103,Supplier_3,USA,supp3@example.com,+91-900001003,5
+S104,Supplier_4,Vietnam,supp4@example.com,+91-900001004,21
+S105,Supplier_5,India,supp5@example.com,+91-900001005,9
+S106,Supplier_6,Mexico,supp6@example.com,+91-900001006,12
+S107,Supplier_7,UK,supp7@example.com,+91-900001007,8
+S108,Supplier_8,Japan,supp8@example.com,+91-900001008,6
+S109,Supplier_9,Brazil,supp9@example.com,+91-900001009,15

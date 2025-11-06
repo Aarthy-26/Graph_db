@@ -1,0 +1,11 @@
+product_id,sku,name,category,unit_weight_kg,supplier_id
+P200,SKU-3000,Product_0,Electronics,0.5,S104
+P201,SKU-3001,Product_1,Apparel,0.2,S105
+P202,SKU-3002,Product_2,Electronics,1.2,S107
+P203,SKU-3003,Product_3,Home,2.5,S108
+P204,SKU-3004,Product_4,Home,3.0,S105
+P205,SKU-3005,Product_5,Automotive,4.5,S109
+P206,SKU-3006,Product_6,Apparel,0.15,S106
+P207,SKU-3007,Product_7,Electronics,0.8,S101
+P208,SKU-3008,Product_8,Toys,0.4,S107
+P209,SKU-3009,Product_9,Automotive,5.0,S102

@@ -1,0 +1,11 @@
+customer_id,name,segment,city,contact_email
+C500,Customer_0,Retail,Delhi,cust0@example.com
+C501,Customer_1,Retail,Mumbai,cust1@example.com
+C502,Customer_2,Wholesale,Chennai,cust2@example.com
+C503,Customer_3,Retail,Bengaluru,cust3@example.com
+C504,Customer_4,Wholesale,Kolkata,cust4@example.com
+C505,Customer_5,Retail,Hyderabad,cust5@example.com
+C506,Customer_6,Corporate,Pune,cust6@example.com
+C507,Customer_7,Corporate,Ahmedabad,cust7@example.com
+C508,Customer_8,Wholesale,Surat,cust8@example.com
+C509,Customer_9,Retail,Jaipur,cust9@example.com
