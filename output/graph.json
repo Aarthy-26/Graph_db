@@ -1,0 +1,360 @@
+{
+  "nodes": [
+    {
+      "label": "Carriers",
+      "properties": {
+        "carrier_id": "string",
+        "name": "string",
+        "service_level": "string",
+        "phone": "string"
+      },
+      "primary_key": ["carrier_id"]
+    },
+    {
+      "label": "Customers",
+      "properties": {
+        "customer_id": "string",
+        "name": "string",
+        "segment": "string",
+        "city": "string",
+        "contact_email": "string"
+      },
+      "primary_key": ["customer_id"]
+    },
+    {
+      "label": "Inventory",
+      "properties": {
+        "inventory_id": "string",
+        "warehouse_id": "string",
+        "product_id": "string",
+        "quantity_on_hand": "integer",
+        "reorder_point": "integer",
+        "last_updated": "string"
+      },
+      "primary_key": ["inventory_id"]
+    },
+    {
+      "label": "Invoices",
+      "properties": {
+        "invoice_id": "string",
+        "order_id": "string",
+        "invoice_date": "string",
+        "amount_due": "float",
+        "status": "string"
+      },
+      "primary_key": ["invoice_id"]
+    },
+    {
+      "label": "Logistics_events",
+      "properties": {
+        "event_id": "string",
+        "shipment_id": "string",
+        "event_time": "string",
+        "event_type": "string",
+        "location": "string"
+      },
+      "primary_key": ["event_id"]
+    },
+    {
+      "label": "Orders",
+      "properties": {
+        "order_id": "string",
+        "customer_id": "string",
+        "order_date": "string",
+        "status": "string",
+        "total_amount": "float"
+      },
+      "primary_key": ["order_id"]
+    },
+    {
+      "label": "Order_items",
+      "properties": {
+        "order_item_id": "string",
+        "order_id": "string",
+        "product_id": "string",
+        "quantity": "integer",
+        "unit_price": "float"
+      },
+      "primary_key": ["order_item_id"]
+    },
+    {
+      "label": "Payments",
+      "properties": {
+        "payment_id": "string",
+        "invoice_id": "string",
+        "payment_date": "string",
+        "amount_paid": "float",
+        "method": "string"
+      },
+      "primary_key": ["payment_id"]
+    },
+    {
+      "label": "Products",
+      "properties": {
+        "product_id": "string",
+        "sku": "string",
+        "name": "string",
+        "category": "string",
+        "unit_weight_kg": "float",
+        "supplier_id": "string"
+      },
+      "primary_key": ["product_id"]
+    },
+    {
+      "label": "Purchase_orders",
+      "properties": {
+        "po_id": "string",
+        "supplier_id": "string",
+        "order_date": "string",
+        "expected_delivery": "string",
+        "status": "string",
+        "total_value": "float"
+      },
+      "primary_key": ["po_id"]
+    },
+    {
+      "label": "Receipts",
+      "properties": {
+        "receipt_id": "string",
+        "po_id": "string",
+        "product_id": "string",
+        "quantity_received": "integer",
+        "received_date": "string",
+        "warehouse_id": "string"
+      },
+      "primary_key": ["receipt_id"]
+    },
+    {
+      "label": "Routes",
+      "properties": {
+        "route_id": "string",
+        "origin_warehouse": "string",
+        "destination_city": "string",
+        "distance_km": "integer",
+        "estimated_time_hours": "float"
+      },
+      "primary_key": ["route_id"]
+    },
+    {
+      "label": "Shipments",
+      "properties": {
+        "shipment_id": "string",
+        "order_id": "string",
+        "carrier_id": "string",
+        "warehouse_id": "string",
+        "shipped_date": "string",
+        "estimated_arrival": "string"
+      },
+      "primary_key": ["shipment_id"]
+    },
+    {
+      "label": "Suppliers",
+      "properties": {
+        "supplier_id": "string",
+        "name": "string",
+        "country": "string",
+        "contact_email": "string",
+        "phone": "string",
+        "lead_time_days": "integer"
+      },
+      "primary_key": ["supplier_id"]
+    },
+    {
+      "label": "Warehouses",
+      "properties": {
+        "warehouse_id": "string",
+        "name": "string",
+        "location_city": "string",
+        "capacity_units": "integer"
+      },
+      "primary_key": ["warehouse_id"]
+    }
+  ],
+  "relationships": [
+    {
+      "type": "PLACES_ORDER",
+      "from": "Customers",
+      "to": "Orders",
+      "properties": {},
+      "cardinality": "one-to-many"
+    },
+    {
+      "type": "CONTAINS_ITEM",
+      "from": "Orders",
+      "to": "Order_items",
+      "properties": {},
+      "cardinality": "one-to-many"
+    },
+    {
+      "type": "ITEM_OF_PRODUCT",
+      "from": "Order_items",
+      "to": "Products",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "GENERATES_INVOICE",
+      "from": "Orders",
+      "to": "Invoices",
+      "properties": {},
+      "cardinality": "one-to-one"
+    },
+    {
+      "type": "PAYS_INVOICE",
+      "from": "Payments",
+      "to": "Invoices",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "SHIPS_ORDER",
+      "from": "Shipments",
+      "to": "Orders",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "HANDLED_BY_CARRIER",
+      "from": "Shipments",
+      "to": "Carriers",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "SHIPPED_FROM_WAREHOUSE",
+      "from": "Shipments",
+      "to": "Warehouses",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "TRACKS_SHIPMENT",
+      "from": "Logistics_events",
+      "to": "Shipments",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "SUPPLIED_BY",
+      "from": "Products",
+      "to": "Suppliers",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "ORDERS_FROM_SUPPLIER",
+      "from": "Purchase_orders",
+      "to": "Suppliers",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "RECEIVES_PURCHASE_ORDER",
+      "from": "Receipts",
+      "to": "Purchase_orders",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "RECEIVES_PRODUCT",
+      "from": "Receipts",
+      "to": "Products",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "RECEIVED_AT_WAREHOUSE",
+      "from": "Receipts",
+      "to": "Warehouses",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "STORES_INVENTORY",
+      "from": "Inventory",
+      "to": "Warehouses",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "INVENTORY_OF_PRODUCT",
+      "from": "Inventory",
+      "to": "Products",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "ORIGINATES_FROM_WAREHOUSE",
+      "from": "Routes",
+      "to": "Warehouses",
+      "properties": {},
+      "cardinality": "many-to-one"
+    }
+  ],
+  "constraints": [
+    {
+      "type": "uniqueness",
+      "on": "Carriers.carrier_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Customers.customer_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Inventory.inventory_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Invoices.invoice_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Logistics_events.event_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Orders.order_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Order_items.order_item_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Payments.payment_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Products.product_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Products.sku"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Purchase_orders.po_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Receipts.receipt_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Routes.route_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Shipments.shipment_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Suppliers.supplier_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Warehouses.warehouse_id"
+    }
+  ]
+}
