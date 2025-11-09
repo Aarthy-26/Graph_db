@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "CUST100",
+      "label": "Customer",
+      "properties": {
+        "customer_id": "CUST100"
+      }
+    },
+    {
+      "id": "CUST101",
+      "label": "Customer",
+      "properties": {
+        "customer_id": "CUST101"
+      }
+    },
+    {
+      "id": "P1001",
+      "label": "Product",
+      "properties": {
+        "product_id": "P1001",
+        "name": "Drill"
+      }
+    },
+    {
+      "id": "P1004",
+      "label": "Product",
+      "properties": {
+        "product_id": "P1004",
+        "name": "Boxes"
+      }
+    },
+    {
+      "id": "feedback_1",
+      "label": "Feedback",
+      "properties": {
+        "date": "2025-04-05",
+        "rating": 4,
+        "comment": "Drill works well but battery life shorter than expected."
+      }
+    },
+    {
+      "id": "feedback_2",
+      "label": "Feedback",
+      "properties": {
+        "date": "2025-04-12",
+        "rating": 5,
+        "comment": "Boxes arrived sturdy and on time."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "CUST100",
+      "target": "feedback_1",
+      "type": "PROVIDES",
+      "properties": {
+        "relationship": "customer_feedback"
+      }
+    },
+    {
+      "source": "feedback_1",
+      "target": "P1001",
+      "type": "ABOUT",
+      "properties": {
+        "relationship": "product_review"
+      }
+    },
+    {
+      "source": "CUST101",
+      "target": "feedback_2",
+      "type": "PROVIDES",
+      "properties": {
+        "relationship": "customer_feedback"
+      }
+    },
+    {
+      "source": "feedback_2",
+      "target": "P1004",
+      "type": "ABOUT",
+      "properties": {
+        "relationship": "product_review"
+      }
+    }
+  ]
+}
