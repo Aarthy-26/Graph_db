@@ -1,98 +1,77 @@
 {
   "nodes": [
     {
-      "id": "CUST100",
-      "label": "customer",
+      "id": "cust100",
+      "label": "Customer",
       "properties": {
-        "type": "customer_id"
+        "customer_id": "CUST100"
       }
     },
     {
-      "id": "CUST101", 
-      "label": "customer",
+      "id": "cust101",
+      "label": "Customer",
       "properties": {
-        "type": "customer_id"
+        "customer_id": "CUST101"
       }
     },
     {
-      "id": "P1001",
-      "label": "product",
+      "id": "product_p1001",
+      "label": "Product",
       "properties": {
-        "type": "drill",
-        "rating": "4"
+        "product_id": "P1001",
+        "name": "18V Cordless Drill"
       }
     },
     {
-      "id": "P1004",
-      "label": "product", 
+      "id": "product_p1004",
+      "label": "Product",
       "properties": {
-        "type": "boxes",
-        "rating": "5"
+        "product_id": "P1004",
+        "name": "Packaging Box - Large"
       }
     },
     {
-      "id": "battery_life",
-      "label": "feature",
+      "id": "feedback_1",
+      "label": "Feedback",
       "properties": {
-        "issue": "shorter_than_expected"
+        "date": "2025-04-05",
+        "rating": 4,
+        "comment": "Drill works well but battery life shorter than expected."
       }
     },
     {
-      "id": "delivery_quality",
-      "label": "service",
+      "id": "feedback_2",
+      "label": "Feedback",
       "properties": {
-        "status": "sturdy_and_on_time"
-      }
-    },
-    {
-      "id": "customer_feedback_log",
-      "label": "document",
-      "properties": {
-        "type": "feedback_log"
+        "date": "2025-04-12",
+        "rating": 5,
+        "comment": "Boxes arrived sturdy and on time."
       }
     }
   ],
   "edges": [
     {
-      "source": "CUST100",
-      "target": "P1001", 
-      "type": "provides_feedback",
-      "properties": {
-        "date": "2025-04-05",
-        "rating": "4"
-      }
-    },
-    {
-      "source": "CUST101",
-      "target": "P1004",
-      "type": "provides_feedback", 
-      "properties": {
-        "date": "2025-04-12",
-        "rating": "5"
-      }
-    },
-    {
-      "source": "P1001",
-      "target": "battery_life",
-      "type": "has_issue",
+      "source": "cust100",
+      "target": "feedback_1",
+      "type": "provided",
       "properties": {}
     },
     {
-      "source": "P1004", 
-      "target": "delivery_quality",
-      "type": "has_quality",
+      "source": "feedback_1",
+      "target": "product_p1001",
+      "type": "about",
       "properties": {}
     },
     {
-      "source": "customer_feedback_log",
-      "target": "CUST100",
-      "type": "contains",
+      "source": "cust101",
+      "target": "feedback_2",
+      "type": "provided",
       "properties": {}
     },
     {
-      "source": "customer_feedback_log",
-      "target": "CUST101", 
-      "type": "contains",
+      "source": "feedback_2",
+      "target": "product_p1004",
+      "type": "about",
       "properties": {}
     }
   ]
