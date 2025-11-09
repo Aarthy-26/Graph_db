@@ -1,143 +1,164 @@
 {
   "nodes": [
     {
-      "id": "inventory_sync",
-      "label": "process",
+      "id": "system_inventory_sync",
+      "label": "System",
       "properties": {
-        "type": "routine_inventory_sync",
-        "status": "completed"
+        "name": "inventory_sync_system",
+        "type": "automated_process"
       }
     },
     {
-      "id": "routine_process",
-      "label": "process_type",
+      "id": "sync_event_1",
+      "label": "Sync_Event",
       "properties": {
-        "category": "routine"
+        "timestamp": "2025-11-01T19:26:06.065306Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     },
     {
-      "id": "INFO",
-      "label": "log_level",
+      "id": "sync_event_2",
+      "label": "Sync_Event",
       "properties": {
-        "type": "information"
+        "timestamp": "2025-11-09T02:26:06.065324Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     },
     {
-      "id": "system_log",
-      "label": "system",
+      "id": "sync_event_3",
+      "label": "Sync_Event",
       "properties": {
-        "type": "logging_system"
+        "timestamp": "2025-11-05T06:26:06.065328Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     },
     {
-      "id": "2025-11-01",
-      "label": "date",
+      "id": "sync_event_4",
+      "label": "Sync_Event",
       "properties": {
-        "date": "2025-11-01"
+        "timestamp": "2025-11-01T14:26:06.065331Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     },
     {
-      "id": "2025-11-02",
-      "label": "date",
+      "id": "sync_event_5",
+      "label": "Sync_Event",
       "properties": {
-        "date": "2025-11-02"
+        "timestamp": "2025-11-03T15:26:06.065335Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     },
     {
-      "id": "2025-11-03",
-      "label": "date",
+      "id": "sync_event_6",
+      "label": "Sync_Event",
       "properties": {
-        "date": "2025-11-03"
+        "timestamp": "2025-11-03T12:26:06.065338Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     },
     {
-      "id": "2025-11-04",
-      "label": "date",
+      "id": "sync_event_7",
+      "label": "Sync_Event",
       "properties": {
-        "date": "2025-11-04"
+        "timestamp": "2025-11-01T21:26:06.065342Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     },
     {
-      "id": "2025-11-05",
-      "label": "date",
+      "id": "sync_event_8",
+      "label": "Sync_Event",
       "properties": {
-        "date": "2025-11-05"
+        "timestamp": "2025-11-03T22:26:06.065347Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     },
     {
-      "id": "2025-11-09",
-      "label": "date",
+      "id": "sync_event_9",
+      "label": "Sync_Event",
       "properties": {
-        "date": "2025-11-09"
+        "timestamp": "2025-11-02T20:26:06.065354Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "sync_event_10",
+      "label": "Sync_Event",
+      "properties": {
+        "timestamp": "2025-11-04T07:26:06.065358Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
       }
     }
   ],
   "edges": [
     {
-      "source": "system_log",
-      "target": "inventory_sync",
-      "type": "records",
+      "source": "system_inventory_sync",
+      "target": "sync_event_1",
+      "type": "generated",
       "properties": {}
     },
     {
-      "source": "inventory_sync",
-      "target": "routine_process",
-      "type": "has_type",
+      "source": "system_inventory_sync",
+      "target": "sync_event_2",
+      "type": "generated",
       "properties": {}
     },
     {
-      "source": "inventory_sync",
-      "target": "INFO",
-      "type": "has_log_level",
+      "source": "system_inventory_sync",
+      "target": "sync_event_3",
+      "type": "generated",
       "properties": {}
     },
     {
-      "source": "inventory_sync",
-      "target": "2025-11-01",
-      "type": "occurs_on",
-      "properties": {
-        "occurrences": "3"
-      }
+      "source": "system_inventory_sync",
+      "target": "sync_event_4",
+      "type": "generated",
+      "properties": {}
     },
     {
-      "source": "inventory_sync",
-      "target": "2025-11-02",
-      "type": "occurs_on",
-      "properties": {
-        "occurrences": "1"
-      }
+      "source": "system_inventory_sync",
+      "target": "sync_event_5",
+      "type": "generated",
+      "properties": {}
     },
     {
-      "source": "inventory_sync",
-      "target": "2025-11-03",
-      "type": "occurs_on",
-      "properties": {
-        "occurrences": "3"
-      }
+      "source": "system_inventory_sync",
+      "target": "sync_event_6",
+      "type": "generated",
+      "properties": {}
     },
     {
-      "source": "inventory_sync",
-      "target": "2025-11-04",
-      "type": "occurs_on",
-      "properties": {
-        "occurrences": "1"
-      }
+      "source": "system_inventory_sync",
+      "target": "sync_event_7",
+      "type": "generated",
+      "properties": {}
     },
     {
-      "source": "inventory_sync",
-      "target": "2025-11-05",
-      "type": "occurs_on",
-      "properties": {
-        "occurrences": "1"
-      }
+      "source": "system_inventory_sync",
+      "target": "sync_event_8",
+      "type": "generated",
+      "properties": {}
     },
     {
-      "source": "inventory_sync",
-      "target": "2025-11-09",
-      "type": "occurs_on",
-      "properties": {
-        "occurrences": "1"
-      }
+      "source": "system_inventory_sync",
+      "target": "sync_event_9",
+      "type": "generated",
+      "properties": {}
+    },
+    {
+      "source": "system_inventory_sync",
+      "target": "sync_event_10",
+      "type": "generated",
+      "properties": {}
     }
   ]
 }
