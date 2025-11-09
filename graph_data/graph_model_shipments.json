@@ -2,50 +2,73 @@
   "nodes": [
     {
       "id": "SHP1001",
-      "label": "Shipment",
+      "label": "shipment",
       "properties": {
-        "shipment_id": "SHP1001",
-        "eta": "2025-04-05",
-        "status": "Delivered",
-        "notes": "Arrived with minor packaging damage - inspected"
+        "eta": "2025-04-05"
       }
     },
     {
       "id": "SHP1002",
-      "label": "Shipment",
+      "label": "shipment",
       "properties": {
-        "shipment_id": "SHP1002",
-        "eta": "2025-04-15",
-        "status": "In Transit",
-        "notes": "Delay due to customs clearance."
+        "eta": "2025-04-15"
       }
     },
     {
       "id": "PO-2025-001",
-      "label": "PurchaseOrder",
+      "label": "purchase_order",
       "properties": {
-        "po_id": "PO-2025-001"
+        "type": "purchase_order"
       }
     },
     {
       "id": "PO-2025-002",
-      "label": "PurchaseOrder",
+      "label": "purchase_order",
       "properties": {
-        "po_id": "PO-2025-002"
+        "type": "purchase_order"
       }
     },
     {
       "id": "BlueLine_Logistics",
-      "label": "Carrier",
+      "label": "carrier",
       "properties": {
         "name": "BlueLine Logistics"
       }
     },
     {
       "id": "FastTrack",
-      "label": "Carrier",
+      "label": "carrier",
       "properties": {
         "name": "FastTrack"
+      }
+    },
+    {
+      "id": "Delivered",
+      "label": "status",
+      "properties": {
+        "type": "shipment_status"
+      }
+    },
+    {
+      "id": "In_Transit",
+      "label": "status",
+      "properties": {
+        "type": "shipment_status"
+      }
+    },
+    {
+      "id": "packaging_damage",
+      "label": "issue",
+      "properties": {
+        "severity": "minor",
+        "action": "inspected"
+      }
+    },
+    {
+      "id": "customs_clearance_delay",
+      "label": "issue",
+      "properties": {
+        "type": "customs_delay"
       }
     }
   ],
@@ -53,34 +76,50 @@
     {
       "source": "SHP1001",
       "target": "PO-2025-001",
-      "type": "FULFILLS",
-      "properties": {
-        "relationship": "shipment_to_po"
-      }
-    },
-    {
-      "source": "SHP1001",
-      "target": "BlueLine_Logistics",
-      "type": "CARRIED_BY",
-      "properties": {
-        "relationship": "shipment_carrier"
-      }
+      "type": "references",
+      "properties": {}
     },
     {
       "source": "SHP1002",
       "target": "PO-2025-002",
-      "type": "FULFILLS",
-      "properties": {
-        "relationship": "shipment_to_po"
-      }
+      "type": "references",
+      "properties": {}
+    },
+    {
+      "source": "SHP1001",
+      "target": "BlueLine_Logistics",
+      "type": "carried_by",
+      "properties": {}
     },
     {
       "source": "SHP1002",
       "target": "FastTrack",
-      "type": "CARRIED_BY",
-      "properties": {
-        "relationship": "shipment_carrier"
-      }
+      "type": "carried_by",
+      "properties": {}
+    },
+    {
+      "source": "SHP1001",
+      "target": "Delivered",
+      "type": "has_status",
+      "properties": {}
+    },
+    {
+      "source": "SHP1002",
+      "target": "In_Transit",
+      "type": "has_status",
+      "properties": {}
+    },
+    {
+      "source": "SHP1001",
+      "target": "packaging_damage",
+      "type": "has_issue",
+      "properties": {}
+    },
+    {
+      "source": "SHP1002",
+      "target": "customs_clearance_delay",
+      "type": "has_issue",
+      "properties": {}
     }
   ]
 }
