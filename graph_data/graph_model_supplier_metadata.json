@@ -2,55 +2,101 @@
   "nodes": [
     {
       "id": "S001",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
         "supplier_id": "S001",
-        "lead_time_days": 7,
-        "preferred_terms": "Net30"
+        "lead_time_days": "7"
       }
     },
     {
       "id": "S002",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
         "supplier_id": "S002",
-        "lead_time_days": 21,
-        "preferred_terms": "Prepaid"
+        "lead_time_days": "21"
       }
     },
     {
-      "id": "audit_S001_2024_11_20",
-      "label": "Audit",
+      "id": "Net30",
+      "label": "payment_terms",
       "properties": {
-        "date": "2024-11-20",
-        "type": "supplier_audit"
+        "type": "payment_terms"
       }
     },
     {
-      "id": "audit_S002_2023_09_15",
-      "label": "Audit",
+      "id": "Prepaid",
+      "label": "payment_terms",
       "properties": {
-        "date": "2023-09-15",
-        "type": "supplier_audit"
+        "type": "payment_terms"
+      }
+    },
+    {
+      "id": "audit_2024_11_20",
+      "label": "audit_event",
+      "properties": {
+        "date": "2024-11-20"
+      }
+    },
+    {
+      "id": "audit_2023_09_15",
+      "label": "audit_event",
+      "properties": {
+        "date": "2023-09-15"
+      }
+    },
+    {
+      "id": "7_days",
+      "label": "lead_time",
+      "properties": {
+        "duration": "7",
+        "unit": "days"
+      }
+    },
+    {
+      "id": "21_days",
+      "label": "lead_time",
+      "properties": {
+        "duration": "21",
+        "unit": "days"
       }
     }
   ],
   "edges": [
     {
       "source": "S001",
-      "target": "audit_S001_2024_11_20",
-      "type": "AUDITED_ON",
-      "properties": {
-        "relationship": "last_audit"
-      }
+      "target": "7_days",
+      "type": "has_lead_time",
+      "properties": {}
     },
     {
       "source": "S002",
-      "target": "audit_S002_2023_09_15",
-      "type": "AUDITED_ON",
-      "properties": {
-        "relationship": "last_audit"
-      }
+      "target": "21_days",
+      "type": "has_lead_time",
+      "properties": {}
+    },
+    {
+      "source": "S001",
+      "target": "Net30",
+      "type": "prefers_terms",
+      "properties": {}
+    },
+    {
+      "source": "S002",
+      "target": "Prepaid",
+      "type": "prefers_terms",
+      "properties": {}
+    },
+    {
+      "source": "S001",
+      "target": "audit_2024_11_20",
+      "type": "last_audited",
+      "properties": {}
+    },
+    {
+      "source": "S002",
+      "target": "audit_2023_09_15",
+      "type": "last_audited",
+      "properties": {}
     }
   ]
 }
