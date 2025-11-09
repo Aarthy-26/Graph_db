@@ -1,113 +1,101 @@
 {
   "nodes": [
     {
-      "id": "SHP1001",
-      "label": "shipment",
+      "id": "shipment_shp1001",
+      "label": "Shipment",
       "properties": {
         "shipment_id": "SHP1001"
       }
     },
     {
-      "id": "SHP1002",
-      "label": "shipment",
+      "id": "shipment_shp1002",
+      "label": "Shipment",
       "properties": {
         "shipment_id": "SHP1002"
       }
     },
     {
-      "id": "Chennai_Port",
-      "label": "location",
+      "id": "location_chennai_port",
+      "label": "Location",
       "properties": {
-        "type": "port"
+        "name": "Chennai Port"
       }
     },
     {
-      "id": "WH-A",
-      "label": "warehouse",
+      "id": "location_wh_a",
+      "label": "Location",
       "properties": {
-        "type": "storage_location"
+        "name": "WH-A"
       }
     },
     {
-      "id": "In_Transit",
-      "label": "location",
+      "id": "location_in_transit",
+      "label": "Location",
       "properties": {
-        "type": "transit_location"
+        "name": "In Transit"
       }
     },
     {
-      "id": "Arrived",
-      "label": "status",
+      "id": "tracking_event_1",
+      "label": "Tracking_Event",
       "properties": {
-        "type": "shipment_status"
+        "timestamp": "2025-04-02T08:00:00",
+        "status": "Arrived"
       }
     },
     {
-      "id": "Delivered",
-      "label": "status",
+      "id": "tracking_event_2",
+      "label": "Tracking_Event",
       "properties": {
-        "type": "shipment_status"
+        "timestamp": "2025-04-03T14:00:00",
+        "status": "Delivered"
       }
     },
     {
-      "id": "Customs_Hold",
-      "label": "status",
+      "id": "tracking_event_3",
+      "label": "Tracking_Event",
       "properties": {
-        "type": "shipment_status"
+        "timestamp": "2025-04-12T09:00:00",
+        "status": "Customs Hold"
       }
     }
   ],
   "edges": [
     {
-      "source": "SHP1001",
-      "target": "Chennai_Port",
-      "type": "arrives_at",
-      "properties": {
-        "timestamp": "2025-04-02T08:00:00"
-      }
+      "source": "shipment_shp1001",
+      "target": "tracking_event_1",
+      "type": "has_event",
+      "properties": {}
     },
     {
-      "source": "SHP1001",
-      "target": "WH-A",
-      "type": "delivered_to",
-      "properties": {
-        "timestamp": "2025-04-03T14:00:00"
-      }
+      "source": "tracking_event_1",
+      "target": "location_chennai_port",
+      "type": "at_location",
+      "properties": {}
     },
     {
-      "source": "SHP1002",
-      "target": "In_Transit",
-      "type": "held_at",
-      "properties": {
-        "timestamp": "2025-04-12T09:00:00"
-      }
+      "source": "shipment_shp1001",
+      "target": "tracking_event_2",
+      "type": "has_event",
+      "properties": {}
     },
     {
-      "source": "SHP1001",
-      "target": "Arrived",
-      "type": "has_status",
-      "properties": {
-        "timestamp": "2025-04-02T08:00:00",
-        "location": "Chennai Port"
-      }
+      "source": "tracking_event_2",
+      "target": "location_wh_a",
+      "type": "at_location",
+      "properties": {}
     },
     {
-      "source": "SHP1001",
-      "target": "Delivered",
-      "type": "has_status",
-      "properties": {
-        "timestamp": "2025-04-03T14:00:00",
-        "location": "WH-A"
-      }
+      "source": "shipment_shp1002",
+      "target": "tracking_event_3",
+      "type": "has_event",
+      "properties": {}
     },
     {
-      "source": "SHP1002",
-      "target": "Customs_Hold",
-      "type": "has_status",
-      "properties": {
-        "timestamp": "2025-04-12T09:00:00",
-        "location": "In Transit"
-      }
+      "source": "tracking_event_3",
+      "target": "location_in_transit",
+      "type": "at_location",
+      "properties": {}
     }
   ]
 }
