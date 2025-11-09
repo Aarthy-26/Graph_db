@@ -2,303 +2,359 @@
   "nodes": [
     {
       "label": "Carriers",
-      "source_csv": "carriers.csv",
-      "id_column": "carrier_id",
-      "properties": ["carrier_id", "name", "service_level", "phone"]
+      "properties": {
+        "carrier_id": "string",
+        "name": "string",
+        "service_level": "string",
+        "phone": "string"
+      },
+      "primary_key": ["carrier_id"]
     },
     {
       "label": "Customers",
-      "source_csv": "customers.csv",
-      "id_column": "customer_id",
-      "properties": ["customer_id", "name", "segment", "city", "contact_email"]
+      "properties": {
+        "customer_id": "string",
+        "name": "string",
+        "segment": "string",
+        "city": "string",
+        "contact_email": "string"
+      },
+      "primary_key": ["customer_id"]
     },
     {
       "label": "Inventory",
-      "source_csv": "inventory.csv",
-      "id_column": "inventory_id",
-      "properties": ["inventory_id", "warehouse_id", "product_id", "quantity_on_hand", "reorder_point", "last_updated"]
+      "properties": {
+        "inventory_id": "string",
+        "warehouse_id": "string",
+        "product_id": "string",
+        "quantity_on_hand": "integer",
+        "reorder_point": "integer",
+        "last_updated": "string"
+      },
+      "primary_key": ["inventory_id"]
     },
     {
       "label": "Invoices",
-      "source_csv": "invoices.csv",
-      "id_column": "invoice_id",
-      "properties": ["invoice_id", "order_id", "invoice_date", "amount_due", "status"]
+      "properties": {
+        "invoice_id": "string",
+        "order_id": "string",
+        "invoice_date": "string",
+        "amount_due": "float",
+        "status": "string"
+      },
+      "primary_key": ["invoice_id"]
     },
     {
       "label": "Logistics_events",
-      "source_csv": "logistics_events.csv",
-      "id_column": "event_id",
-      "properties": ["event_id", "shipment_id", "event_time", "event_type", "location"]
+      "properties": {
+        "event_id": "string",
+        "shipment_id": "string",
+        "event_time": "string",
+        "event_type": "string",
+        "location": "string"
+      },
+      "primary_key": ["event_id"]
     },
     {
       "label": "Orders",
-      "source_csv": "orders.csv",
-      "id_column": "order_id",
-      "properties": ["order_id", "customer_id", "order_date", "status", "total_amount"]
+      "properties": {
+        "order_id": "string",
+        "customer_id": "string",
+        "order_date": "string",
+        "status": "string",
+        "total_amount": "float"
+      },
+      "primary_key": ["order_id"]
     },
     {
       "label": "Order_items",
-      "source_csv": "order_items.csv",
-      "id_column": "order_item_id",
-      "properties": ["order_item_id", "order_id", "product_id", "quantity", "unit_price"]
+      "properties": {
+        "order_item_id": "string",
+        "order_id": "string",
+        "product_id": "string",
+        "quantity": "integer",
+        "unit_price": "float"
+      },
+      "primary_key": ["order_item_id"]
     },
     {
       "label": "Payments",
-      "source_csv": "payments.csv",
-      "id_column": "payment_id",
-      "properties": ["payment_id", "invoice_id", "payment_date", "amount_paid", "method"]
+      "properties": {
+        "payment_id": "string",
+        "invoice_id": "string",
+        "payment_date": "string",
+        "amount_paid": "float",
+        "method": "string"
+      },
+      "primary_key": ["payment_id"]
     },
     {
       "label": "Products",
-      "source_csv": "products.csv",
-      "id_column": "product_id",
-      "properties": ["product_id", "sku", "name", "category", "unit_weight_kg", "supplier_id"]
+      "properties": {
+        "product_id": "string",
+        "sku": "string",
+        "name": "string",
+        "category": "string",
+        "unit_weight_kg": "float",
+        "supplier_id": "string"
+      },
+      "primary_key": ["product_id"]
     },
     {
       "label": "Purchase_orders",
-      "source_csv": "purchase_orders.csv",
-      "id_column": "po_id",
-      "properties": ["po_id", "supplier_id", "order_date", "expected_delivery", "status", "total_value"]
+      "properties": {
+        "po_id": "string",
+        "supplier_id": "string",
+        "order_date": "string",
+        "expected_delivery": "string",
+        "status": "string",
+        "total_value": "float"
+      },
+      "primary_key": ["po_id"]
     },
     {
       "label": "Receipts",
-      "source_csv": "receipts.csv",
-      "id_column": "receipt_id",
-      "properties": ["receipt_id", "po_id", "product_id", "quantity_received", "received_date", "warehouse_id"]
+      "properties": {
+        "receipt_id": "string",
+        "po_id": "string",
+        "product_id": "string",
+        "quantity_received": "integer",
+        "received_date": "string",
+        "warehouse_id": "string"
+      },
+      "primary_key": ["receipt_id"]
     },
     {
       "label": "Routes",
-      "source_csv": "routes.csv",
-      "id_column": "route_id",
-      "properties": ["route_id", "origin_warehouse", "destination_city", "distance_km", "estimated_time_hours"]
+      "properties": {
+        "route_id": "string",
+        "origin_warehouse": "string",
+        "destination_city": "string",
+        "distance_km": "integer",
+        "estimated_time_hours": "float"
+      },
+      "primary_key": ["route_id"]
     },
     {
       "label": "Shipments",
-      "source_csv": "shipments.csv",
-      "id_column": "shipment_id",
-      "properties": ["shipment_id", "order_id", "carrier_id", "warehouse_id", "shipped_date", "estimated_arrival"]
+      "properties": {
+        "shipment_id": "string",
+        "order_id": "string",
+        "carrier_id": "string",
+        "warehouse_id": "string",
+        "shipped_date": "string",
+        "estimated_arrival": "string"
+      },
+      "primary_key": ["shipment_id"]
     },
     {
       "label": "Suppliers",
-      "source_csv": "suppliers.csv",
-      "id_column": "supplier_id",
-      "properties": ["supplier_id", "name", "country", "contact_email", "phone", "lead_time_days"]
+      "properties": {
+        "supplier_id": "string",
+        "name": "string",
+        "country": "string",
+        "contact_email": "string",
+        "phone": "string",
+        "lead_time_days": "integer"
+      },
+      "primary_key": ["supplier_id"]
     },
     {
       "label": "Warehouses",
-      "source_csv": "warehouses.csv",
-      "id_column": "warehouse_id",
-      "properties": ["warehouse_id", "name", "location_city", "capacity_units"]
+      "properties": {
+        "warehouse_id": "string",
+        "name": "string",
+        "location_city": "string",
+        "capacity_units": "integer"
+      },
+      "primary_key": ["warehouse_id"]
     }
   ],
   "relationships": [
     {
-      "type": "STORED_IN_WAREHOUSE",
-      "from": {
-        "label": "Inventory",
-        "id_column": "warehouse_id"
-      },
-      "to": {
-        "label": "Warehouses",
-        "id_column": "warehouse_id"
-      },
-      "from_csv": "inventory.csv",
-      "from_column": "warehouse_id"
+      "type": "PLACES_ORDER",
+      "from": "Customers",
+      "to": "Orders",
+      "properties": {},
+      "cardinality": "one-to-many"
+    },
+    {
+      "type": "CONTAINS_ITEM",
+      "from": "Orders",
+      "to": "Order_items",
+      "properties": {},
+      "cardinality": "one-to-many"
+    },
+    {
+      "type": "ITEM_OF_PRODUCT",
+      "from": "Order_items",
+      "to": "Products",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "GENERATES_INVOICE",
+      "from": "Orders",
+      "to": "Invoices",
+      "properties": {},
+      "cardinality": "one-to-one"
+    },
+    {
+      "type": "PAYS_INVOICE",
+      "from": "Payments",
+      "to": "Invoices",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "SHIPS_ORDER",
+      "from": "Shipments",
+      "to": "Orders",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "HANDLED_BY_CARRIER",
+      "from": "Shipments",
+      "to": "Carriers",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "SHIPS_FROM_WAREHOUSE",
+      "from": "Shipments",
+      "to": "Warehouses",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "TRACKS_SHIPMENT",
+      "from": "Logistics_events",
+      "to": "Shipments",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "SUPPLIED_BY",
+      "from": "Products",
+      "to": "Suppliers",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "ORDERS_FROM_SUPPLIER",
+      "from": "Purchase_orders",
+      "to": "Suppliers",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "RECEIVES_PURCHASE_ORDER",
+      "from": "Receipts",
+      "to": "Purchase_orders",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "RECEIVES_PRODUCT",
+      "from": "Receipts",
+      "to": "Products",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "RECEIVED_AT_WAREHOUSE",
+      "from": "Receipts",
+      "to": "Warehouses",
+      "properties": {},
+      "cardinality": "many-to-one"
+    },
+    {
+      "type": "STORES_INVENTORY",
+      "from": "Inventory",
+      "to": "Warehouses",
+      "properties": {},
+      "cardinality": "many-to-one"
     },
     {
       "type": "INVENTORY_OF_PRODUCT",
-      "from": {
-        "label": "Inventory",
-        "id_column": "product_id"
-      },
-      "to": {
-        "label": "Products",
-        "id_column": "product_id"
-      },
-      "from_csv": "inventory.csv",
-      "from_column": "product_id"
+      "from": "Inventory",
+      "to": "Products",
+      "properties": {},
+      "cardinality": "many-to-one"
     },
     {
-      "type": "INVOICE_FOR_ORDER",
-      "from": {
-        "label": "Invoices",
-        "id_column": "order_id"
-      },
-      "to": {
-        "label": "Orders",
-        "id_column": "order_id"
-      },
-      "from_csv": "invoices.csv",
-      "from_column": "order_id"
+      "type": "ORIGINATES_FROM_WAREHOUSE",
+      "from": "Routes",
+      "to": "Warehouses",
+      "properties": {},
+      "cardinality": "many-to-one"
+    }
+  ],
+  "constraints": [
+    {
+      "type": "uniqueness",
+      "on": "Carriers.carrier_id"
     },
     {
-      "type": "EVENT_FOR_SHIPMENT",
-      "from": {
-        "label": "Logistics_events",
-        "id_column": "shipment_id"
-      },
-      "to": {
-        "label": "Shipments",
-        "id_column": "shipment_id"
-      },
-      "from_csv": "logistics_events.csv",
-      "from_column": "shipment_id"
+      "type": "uniqueness",
+      "on": "Customers.customer_id"
     },
     {
-      "type": "ORDER_BY_CUSTOMER",
-      "from": {
-        "label": "Orders",
-        "id_column": "customer_id"
-      },
-      "to": {
-        "label": "Customers",
-        "id_column": "customer_id"
-      },
-      "from_csv": "orders.csv",
-      "from_column": "customer_id"
+      "type": "uniqueness",
+      "on": "Inventory.inventory_id"
     },
     {
-      "type": "ITEM_IN_ORDER",
-      "from": {
-        "label": "Order_items",
-        "id_column": "order_id"
-      },
-      "to": {
-        "label": "Orders",
-        "id_column": "order_id"
-      },
-      "from_csv": "order_items.csv",
-      "from_column": "order_id"
+      "type": "uniqueness",
+      "on": "Invoices.invoice_id"
     },
     {
-      "type": "ITEM_IS_PRODUCT",
-      "from": {
-        "label": "Order_items",
-        "id_column": "product_id"
-      },
-      "to": {
-        "label": "Products",
-        "id_column": "product_id"
-      },
-      "from_csv": "order_items.csv",
-      "from_column": "product_id"
+      "type": "uniqueness",
+      "on": "Logistics_events.event_id"
     },
     {
-      "type": "PAYMENT_FOR_INVOICE",
-      "from": {
-        "label": "Payments",
-        "id_column": "invoice_id"
-      },
-      "to": {
-        "label": "Invoices",
-        "id_column": "invoice_id"
-      },
-      "from_csv": "payments.csv",
-      "from_column": "invoice_id"
+      "type": "uniqueness",
+      "on": "Orders.order_id"
     },
     {
-      "type": "PRODUCT_FROM_SUPPLIER",
-      "from": {
-        "label": "Products",
-        "id_column": "supplier_id"
-      },
-      "to": {
-        "label": "Suppliers",
-        "id_column": "supplier_id"
-      },
-      "from_csv": "products.csv",
-      "from_column": "supplier_id"
+      "type": "uniqueness",
+      "on": "Order_items.order_item_id"
     },
     {
-      "type": "PO_TO_SUPPLIER",
-      "from": {
-        "label": "Purchase_orders",
-        "id_column": "supplier_id"
-      },
-      "to": {
-        "label": "Suppliers",
-        "id_column": "supplier_id"
-      },
-      "from_csv": "purchase_orders.csv",
-      "from_column": "supplier_id"
+      "type": "uniqueness",
+      "on": "Payments.payment_id"
     },
     {
-      "type": "RECEIPT_FOR_PO",
-      "from": {
-        "label": "Receipts",
-        "id_column": "po_id"
-      },
-      "to": {
-        "label": "Purchase_orders",
-        "id_column": "po_id"
-      },
-      "from_csv": "receipts.csv",
-      "from_column": "po_id"
+      "type": "uniqueness",
+      "on": "Products.product_id"
     },
     {
-      "type": "RECEIPT_OF_PRODUCT",
-      "from": {
-        "label": "Receipts",
-        "id_column": "product_id"
-      },
-      "to": {
-        "label": "Products",
-        "id_column": "product_id"
-      },
-      "from_csv": "receipts.csv",
-      "from_column": "product_id"
+      "type": "uniqueness",
+      "on": "Products.sku"
     },
     {
-      "type": "RECEIPT_TO_WAREHOUSE",
-      "from": {
-        "label": "Receipts",
-        "id_column": "warehouse_id"
-      },
-      "to": {
-        "label": "Warehouses",
-        "id_column": "warehouse_id"
-      },
-      "from_csv": "receipts.csv",
-      "from_column": "warehouse_id"
+      "type": "uniqueness",
+      "on": "Purchase_orders.po_id"
     },
     {
-      "type": "SHIPMENT_FOR_ORDER",
-      "from": {
-        "label": "Shipments",
-        "id_column": "order_id"
-      },
-      "to": {
-        "label": "Orders",
-        "id_column": "order_id"
-      },
-      "from_csv": "shipments.csv",
-      "from_column": "order_id"
+      "type": "uniqueness",
+      "on": "Receipts.receipt_id"
     },
     {
-      "type": "SHIPMENT_BY_CARRIER",
-      "from": {
-        "label": "Shipments",
-        "id_column": "carrier_id"
-      },
-      "to": {
-        "label": "Carriers",
-        "id_column": "carrier_id"
-      },
-      "from_csv": "shipments.csv",
-      "from_column": "carrier_id"
+      "type": "uniqueness",
+      "on": "Routes.route_id"
     },
     {
-      "type": "SHIPMENT_FROM_WAREHOUSE",
-      "from": {
-        "label": "Shipments",
-        "id_column": "warehouse_id"
-      },
-      "to": {
-        "label": "Warehouses",
-        "id_column": "warehouse_id"
-      },
-      "from_csv": "shipments.csv",
-      "from_column": "warehouse_id"
+      "type": "uniqueness",
+      "on": "Shipments.shipment_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Suppliers.supplier_id"
+    },
+    {
+      "type": "uniqueness",
+      "on": "Warehouses.warehouse_id"
     }
   ]
 }
