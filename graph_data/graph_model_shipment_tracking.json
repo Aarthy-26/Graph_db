@@ -1,0 +1,113 @@
+{
+  "nodes": [
+    {
+      "id": "SHP1001",
+      "label": "Shipment",
+      "properties": {
+        "shipment_id": "SHP1001"
+      }
+    },
+    {
+      "id": "SHP1002",
+      "label": "Shipment",
+      "properties": {
+        "shipment_id": "SHP1002"
+      }
+    },
+    {
+      "id": "Chennai_Port",
+      "label": "Location",
+      "properties": {
+        "name": "Chennai Port"
+      }
+    },
+    {
+      "id": "WH-A",
+      "label": "Location",
+      "properties": {
+        "name": "WH-A"
+      }
+    },
+    {
+      "id": "In_Transit",
+      "label": "Location",
+      "properties": {
+        "name": "In Transit"
+      }
+    },
+    {
+      "id": "tracking_event_1",
+      "label": "TrackingEvent",
+      "properties": {
+        "timestamp": "2025-04-02T08:00:00",
+        "status": "Arrived"
+      }
+    },
+    {
+      "id": "tracking_event_2",
+      "label": "TrackingEvent",
+      "properties": {
+        "timestamp": "2025-04-03T14:00:00",
+        "status": "Delivered"
+      }
+    },
+    {
+      "id": "tracking_event_3",
+      "label": "TrackingEvent",
+      "properties": {
+        "timestamp": "2025-04-12T09:00:00",
+        "status": "Customs Hold"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "SHP1001",
+      "target": "tracking_event_1",
+      "type": "HAS_EVENT",
+      "properties": {
+        "relationship": "shipment_tracking"
+      }
+    },
+    {
+      "source": "tracking_event_1",
+      "target": "Chennai_Port",
+      "type": "AT_LOCATION",
+      "properties": {
+        "relationship": "event_location"
+      }
+    },
+    {
+      "source": "SHP1001",
+      "target": "tracking_event_2",
+      "type": "HAS_EVENT",
+      "properties": {
+        "relationship": "shipment_tracking"
+      }
+    },
+    {
+      "source": "tracking_event_2",
+      "target": "WH-A",
+      "type": "AT_LOCATION",
+      "properties": {
+        "relationship": "event_location"
+      }
+    },
+    {
+      "source": "SHP1002",
+      "target": "tracking_event_3",
+      "type": "HAS_EVENT",
+      "properties": {
+        "relationship": "shipment_tracking"
+      }
+    },
+    {
+      "source": "tracking_event_3",
+      "target": "In_Transit",
+      "type": "AT_LOCATION",
+      "properties": {
+        "relationship": "event_location"
+      }
+    }
+  ]
+}
