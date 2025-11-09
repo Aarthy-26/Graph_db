@@ -2,52 +2,54 @@
   "nodes": [
     {
       "id": "meeting_2025_04_07",
-      "label": "meeting",
+      "label": "Meeting",
       "properties": {
         "date": "2025-04-07",
-        "type": "business_meeting"
+        "topics": ["vendor consolidation", "lead-time improvements"]
       }
     },
     {
       "id": "vendor_consolidation",
-      "label": "strategy",
+      "label": "Initiative",
       "properties": {
-        "type": "business_strategy"
+        "type": "vendor_consolidation"
       }
     },
     {
       "id": "lead_time_improvements",
-      "label": "strategy",
+      "label": "Initiative",
       "properties": {
-        "type": "operational_improvement"
+        "type": "lead_time_improvements"
       }
     },
     {
-      "id": "S002",
-      "label": "supplier",
+      "id": "audit_s002",
+      "label": "Action",
       "properties": {
-        "supplier_id": "S002"
+        "type": "audit",
+        "target": "S002"
       }
     },
     {
-      "id": "S001",
-      "label": "supplier",
+      "id": "renegotiate_s001",
+      "label": "Action",
+      "properties": {
+        "type": "renegotiate_terms",
+        "target": "S001"
+      }
+    },
+    {
+      "id": "supplier_s001",
+      "label": "Supplier",
       "properties": {
         "supplier_id": "S001"
       }
     },
     {
-      "id": "audit",
-      "label": "action",
+      "id": "supplier_s002",
+      "label": "Supplier",
       "properties": {
-        "type": "audit_action"
-      }
-    },
-    {
-      "id": "renegotiate_terms",
-      "label": "action",
-      "properties": {
-        "type": "contract_renegotiation"
+        "supplier_id": "S002"
       }
     }
   ],
@@ -55,36 +57,36 @@
     {
       "source": "meeting_2025_04_07",
       "target": "vendor_consolidation",
-      "type": "discusses",
+      "type": "discussed",
       "properties": {}
     },
     {
       "source": "meeting_2025_04_07",
       "target": "lead_time_improvements",
-      "type": "discusses",
+      "type": "discussed",
       "properties": {}
     },
     {
       "source": "meeting_2025_04_07",
-      "target": "audit",
-      "type": "assigns_action",
+      "target": "audit_s002",
+      "type": "assigned_action",
       "properties": {}
     },
     {
       "source": "meeting_2025_04_07",
-      "target": "renegotiate_terms",
-      "type": "assigns_action",
+      "target": "renegotiate_s001",
+      "type": "assigned_action",
       "properties": {}
     },
     {
-      "source": "audit",
-      "target": "S002",
+      "source": "audit_s002",
+      "target": "supplier_s002",
       "type": "targets",
       "properties": {}
     },
     {
-      "source": "renegotiate_terms",
-      "target": "S001",
+      "source": "renegotiate_s001",
+      "target": "supplier_s001",
       "type": "targets",
       "properties": {}
     }
