@@ -2,78 +2,93 @@
   "nodes": [
     {
       "id": "PO-2025-001",
-      "label": "PurchaseOrder",
+      "label": "purchase_order",
       "properties": {
-        "po_id": "PO-2025-001",
-        "date": "2025-04-01",
-        "status": "delivered"
+        "date": "2025-04-01"
       }
     },
     {
       "id": "PO-2025-002",
-      "label": "PurchaseOrder",
+      "label": "purchase_order",
       "properties": {
-        "po_id": "PO-2025-002",
-        "date": "2025-04-10",
-        "status": "in_transit"
+        "date": "2025-04-10"
       }
     },
     {
       "id": "PO-2025-003",
-      "label": "PurchaseOrder",
+      "label": "purchase_order",
       "properties": {
-        "po_id": "PO-2025-003",
-        "date": "2025-03-28",
-        "status": "pending"
+        "date": "2025-03-28"
       }
     },
     {
       "id": "S001",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
         "supplier_id": "S001"
       }
     },
     {
       "id": "S002",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
         "supplier_id": "S002"
       }
     },
     {
       "id": "S005",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
         "supplier_id": "S005"
       }
     },
     {
       "id": "P1001",
-      "label": "Product",
+      "label": "product",
       "properties": {
         "item_id": "P1001"
       }
     },
     {
       "id": "P1002",
-      "label": "Product",
+      "label": "product",
       "properties": {
         "item_id": "P1002"
       }
     },
     {
       "id": "P1003",
-      "label": "Product",
+      "label": "product",
       "properties": {
         "item_id": "P1003"
       }
     },
     {
       "id": "P1004",
-      "label": "Product",
+      "label": "product",
       "properties": {
         "item_id": "P1004"
+      }
+    },
+    {
+      "id": "delivered",
+      "label": "status",
+      "properties": {
+        "type": "order_status"
+      }
+    },
+    {
+      "id": "in_transit",
+      "label": "status",
+      "properties": {
+        "type": "order_status"
+      }
+    },
+    {
+      "id": "pending",
+      "label": "status",
+      "properties": {
+        "type": "order_status"
       }
     }
   ],
@@ -81,62 +96,70 @@
     {
       "source": "PO-2025-001",
       "target": "S001",
-      "type": "ORDERED_FROM",
-      "properties": {
-        "relationship": "supplier_order"
-      }
+      "type": "issued_to",
+      "properties": {}
+    },
+    {
+      "source": "PO-2025-002",
+      "target": "S002",
+      "type": "issued_to",
+      "properties": {}
+    },
+    {
+      "source": "PO-2025-003",
+      "target": "S005",
+      "type": "issued_to",
+      "properties": {}
     },
     {
       "source": "PO-2025-001",
       "target": "P1001",
-      "type": "CONTAINS",
+      "type": "contains",
       "properties": {
-        "quantity": 50,
-        "relationship": "order_item"
+        "qty": "50"
       }
     },
     {
       "source": "PO-2025-001",
       "target": "P1003",
-      "type": "CONTAINS",
+      "type": "contains",
       "properties": {
-        "quantity": 2000,
-        "relationship": "order_item"
-      }
-    },
-    {
-      "source": "PO-2025-002",
-      "target": "S002",
-      "type": "ORDERED_FROM",
-      "properties": {
-        "relationship": "supplier_order"
+        "qty": "2000"
       }
     },
     {
       "source": "PO-2025-002",
       "target": "P1002",
-      "type": "CONTAINS",
+      "type": "contains",
       "properties": {
-        "quantity": 300,
-        "relationship": "order_item"
-      }
-    },
-    {
-      "source": "PO-2025-003",
-      "target": "S005",
-      "type": "ORDERED_FROM",
-      "properties": {
-        "relationship": "supplier_order"
+        "qty": "300"
       }
     },
     {
       "source": "PO-2025-003",
       "target": "P1004",
-      "type": "CONTAINS",
+      "type": "contains",
       "properties": {
-        "quantity": 500,
-        "relationship": "order_item"
+        "qty": "500"
       }
+    },
+    {
+      "source": "PO-2025-001",
+      "target": "delivered",
+      "type": "has_status",
+      "properties": {}
+    },
+    {
+      "source": "PO-2025-002",
+      "target": "in_transit",
+      "type": "has_status",
+      "properties": {}
+    },
+    {
+      "source": "PO-2025-003",
+      "target": "pending",
+      "type": "has_status",
+      "properties": {}
     }
   ]
 }
