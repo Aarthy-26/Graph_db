@@ -1,0 +1,125 @@
+{
+  "nodes": [
+    {
+      "id": "WH-A",
+      "label": "Warehouse",
+      "properties": {
+        "warehouse_id": "WH-A"
+      }
+    },
+    {
+      "id": "WH-B",
+      "label": "Warehouse",
+      "properties": {
+        "warehouse_id": "WH-B",
+        "alias": "Warehouse B"
+      }
+    },
+    {
+      "id": "P1003",
+      "label": "Product",
+      "properties": {
+        "product_id": "P1003",
+        "discrepancy": "-150 units"
+      }
+    },
+    {
+      "id": "Lithium_Battery_Pack",
+      "label": "Product",
+      "properties": {
+        "name": "Lithium Battery Pack"
+      }
+    },
+    {
+      "id": "PO-2025-002",
+      "label": "PurchaseOrder",
+      "properties": {
+        "po_id": "PO-2025-002"
+      }
+    },
+    {
+      "id": "Chennai_Port",
+      "label": "Location",
+      "properties": {
+        "name": "Chennai port"
+      }
+    },
+    {
+      "id": "cycle_count_2025_04_02",
+      "label": "Event",
+      "properties": {
+        "type": "cycle_count",
+        "date": "2025-04-02",
+        "status": "discrepancy_found"
+      }
+    },
+    {
+      "id": "container_delay_2025_04_11",
+      "label": "Event",
+      "properties": {
+        "type": "container_delay",
+        "date": "2025-04-11",
+        "reason": "documentation mismatch"
+      }
+    },
+    {
+      "id": "temp_spike_2025_04_20",
+      "label": "Event",
+      "properties": {
+        "type": "temperature_spike",
+        "date": "2025-04-20",
+        "action": "precautionary relocation"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "cycle_count_2025_04_02",
+      "target": "WH-A",
+      "type": "OCCURS_AT",
+      "properties": {
+        "relationship": "event_location"
+      }
+    },
+    {
+      "source": "cycle_count_2025_04_02",
+      "target": "P1003",
+      "type": "IDENTIFIES_DISCREPANCY",
+      "properties": {
+        "relationship": "inventory_issue"
+      }
+    },
+    {
+      "source": "container_delay_2025_04_11",
+      "target": "Chennai_Port",
+      "type": "OCCURS_AT",
+      "properties": {
+        "relationship": "event_location"
+      }
+    },
+    {
+      "source": "container_delay_2025_04_11",
+      "target": "PO-2025-002",
+      "type": "AFFECTS",
+      "properties": {
+        "relationship": "delayed_shipment"
+      }
+    },
+    {
+      "source": "temp_spike_2025_04_20",
+      "target": "WH-B",
+      "type": "OCCURS_AT",
+      "properties": {
+        "relationship": "event_location"
+      }
+    },
+    {
+      "source": "temp_spike_2025_04_20",
+      "target": "Lithium_Battery_Pack",
+      "type": "AFFECTS",
+      "properties": {
+        "relationship": "product_relocation"
+      }
+    }
+  ]
+}
