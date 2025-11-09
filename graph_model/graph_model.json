@@ -211,7 +211,7 @@
       "from": "Shipments",
       "to": "Orders",
       "properties": {},
-      "cardinality": "many-to-one"
+      "cardinality": "one-to-one"
     },
     {
       "type": "HANDLED_BY_CARRIER",
@@ -221,7 +221,7 @@
       "cardinality": "many-to-one"
     },
     {
-      "type": "SHIPS_FROM_WAREHOUSE",
+      "type": "SHIPPED_FROM_WAREHOUSE",
       "from": "Shipments",
       "to": "Warehouses",
       "properties": {},
