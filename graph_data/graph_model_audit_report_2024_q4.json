@@ -1,66 +1,63 @@
 {
   "nodes": [
     {
-      "id": "S001",
-      "label": "supplier",
+      "id": "audit_2024_q4",
+      "label": "Audit",
       "properties": {
-        "type": "entity_id"
-      }
-    },
-    {
-      "id": "audit_report_2024_q4",
-      "label": "document",
-      "properties": {
+        "period": "2024_Q4",
         "type": "audit_report",
-        "period": "2024_q4"
+        "summary": "minor non-conformances in labeling"
       }
     },
     {
-      "id": "labeling",
-      "label": "process",
+      "id": "S001",
+      "label": "Supplier",
       "properties": {
-        "type": "activity"
+        "supplier_code": "S001"
       }
     },
     {
-      "id": "non_conformances",
-      "label": "issue",
+      "id": "non_conformance_labeling",
+      "label": "Issue",
       "properties": {
+        "type": "non-conformance",
+        "category": "labeling",
         "severity": "minor"
       }
     },
     {
       "id": "corrective_actions",
-      "label": "action",
+      "label": "Action",
       "properties": {
+        "type": "corrective_actions",
         "status": "recorded"
       }
     }
   ],
   "edges": [
     {
-      "source": "S001",
-      "target": "non_conformances",
-      "type": "has_issue",
-      "properties": {}
-    },
-    {
-      "source": "non_conformances",
-      "target": "labeling",
-      "type": "relates_to",
-      "properties": {}
-    },
-    {
-      "source": "audit_report_2024_q4",
+      "source": "audit_2024_q4",
       "target": "S001",
-      "type": "documents",
-      "properties": {}
+      "type": "AUDITS",
+      "properties": {
+        "relationship": "audit_subject"
+      }
     },
     {
-      "source": "S001",
+      "source": "audit_2024_q4",
+      "target": "non_conformance_labeling",
+      "type": "IDENTIFIES",
+      "properties": {
+        "relationship": "finding"
+      }
+    },
+    {
+      "source": "non_conformance_labeling",
       "target": "corrective_actions",
-      "type": "requires",
-      "properties": {}
+      "type": "REQUIRES",
+      "properties": {
+        "relationship": "remediation"
+      }
     }
   ]
 }
