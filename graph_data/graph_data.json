@@ -1,26 +1,35 @@
 {
   "nodes": [
     {
-      "id": "SUPPLIER_S001",
+      "id": "audit_s001",
+      "label": "Audit",
+      "properties": {
+        "audit_id": "S001",
+        "type": "quarterly_audit",
+        "year": "2024",
+        "quarter": "Q4"
+      }
+    },
+    {
+      "id": "supplier_s001",
       "label": "Supplier",
       "properties": {
-        "name": "ABC Supplies Pvt Ltd",
         "supplier_id": "S001",
-        "country": "India",
+        "name": "ABC Supplies Pvt Ltd",
         "contact": "raju@abc.com",
         "rating": 4.2,
         "lead_time_days": 7,
         "preferred_terms": "Net30",
-        "last_audit": "2024-11-20"
+        "last_audit": "2024-11-20",
+        "audit_status": "minor_non_conformances"
       }
     },
     {
-      "id": "SUPPLIER_S002",
+      "id": "supplier_s002",
       "label": "Supplier",
       "properties": {
-        "name": "Global Tech Traders",
         "supplier_id": "S002",
-        "country": "China",
+        "name": "Global Tech Traders",
         "contact": "sales@globaltech.cn",
         "rating": 3.9,
         "lead_time_days": 21,
@@ -29,116 +38,103 @@
       }
     },
     {
-      "id": "SUPPLIER_S003",
+      "id": "supplier_s003",
       "label": "Supplier",
       "properties": {
-        "name": "Delta Components",
         "supplier_id": "S003",
-        "country": "Germany",
+        "name": "Delta Components",
         "contact": "info@delta.de",
         "rating": 4.7
       }
     },
     {
-      "id": "SUPPLIER_S004",
+      "id": "supplier_s004",
       "label": "Supplier",
       "properties": {
-        "name": "Rapid Parts Co",
         "supplier_id": "S004",
-        "country": "USA",
+        "name": "Rapid Parts Co",
         "contact": "support@rapidparts.com",
         "rating": 4.0
       }
     },
     {
-      "id": "SUPPLIER_S005",
+      "id": "supplier_s005",
       "label": "Supplier",
       "properties": {
-        "name": "Oceanic Imports",
         "supplier_id": "S005",
-        "country": "Malaysia",
+        "name": "Oceanic Imports",
         "contact": "contact@oceanic.my",
         "rating": 3.8
       }
     },
     {
-      "id": "PRODUCT_P1001",
+      "id": "product_p1001",
       "label": "Product",
       "properties": {
+        "product_id": "P1001",
         "name": "18V Cordless Drill",
-        "item_id": "P1001",
         "category": "Tools",
-        "warehouse": "WH-A",
         "qty": 120,
         "reorder_level": 30
       }
     },
     {
-      "id": "PRODUCT_P1002",
+      "id": "product_p1002",
       "label": "Product",
       "properties": {
+        "product_id": "P1002",
         "name": "Lithium Battery Pack",
-        "item_id": "P1002",
         "category": "Electronics",
-        "warehouse": "WH-B",
         "qty": 450,
         "reorder_level": 100
       }
     },
     {
-      "id": "PRODUCT_P1003",
+      "id": "product_p1003",
       "label": "Product",
       "properties": {
+        "product_id": "P1003",
         "name": "Steel Bolts - M8",
-        "item_id": "P1003",
         "category": "Hardware",
-        "warehouse": "WH-A",
         "qty": 5000,
         "reorder_level": 2000
       }
     },
     {
-      "id": "PRODUCT_P1004",
+      "id": "product_p1004",
       "label": "Product",
       "properties": {
+        "product_id": "P1004",
         "name": "Packaging Box - Large",
-        "item_id": "P1004",
         "category": "Packaging",
-        "warehouse": "WH-C",
         "qty": 800,
         "reorder_level": 150
       }
     },
     {
-      "id": "WAREHOUSE_WH-A",
+      "id": "warehouse_wh_a",
       "label": "Warehouse",
       "properties": {
-        "warehouse_id": "WH-A",
-        "name": "Warehouse A",
-        "status": "operational"
+        "warehouse_id": "WH-A"
       }
     },
     {
-      "id": "WAREHOUSE_WH-B",
+      "id": "warehouse_wh_b",
       "label": "Warehouse",
       "properties": {
-        "warehouse_id": "WH-B",
-        "name": "Warehouse B",
-        "status": "operational"
+        "warehouse_id": "WH-B"
       }
     },
     {
-      "id": "WAREHOUSE_WH-C",
+      "id": "warehouse_wh_c",
       "label": "Warehouse",
       "properties": {
-        "warehouse_id": "WH-C",
-        "name": "Warehouse C",
-        "status": "operational"
+        "warehouse_id": "WH-C"
       }
     },
     {
-      "id": "PO_PO-2025-001",
-      "label": "PurchaseOrder",
+      "id": "po_2025_001",
+      "label": "Purchase_Order",
       "properties": {
         "po_id": "PO-2025-001",
         "date": "2025-04-01",
@@ -146,8 +142,8 @@
       }
     },
     {
-      "id": "PO_PO-2025-002",
-      "label": "PurchaseOrder",
+      "id": "po_2025_002",
+      "label": "Purchase_Order",
       "properties": {
         "po_id": "PO-2025-002",
         "date": "2025-04-10",
@@ -155,8 +151,8 @@
       }
     },
     {
-      "id": "PO_PO-2025-003",
-      "label": "PurchaseOrder",
+      "id": "po_2025_003",
+      "label": "Purchase_Order",
       "properties": {
         "po_id": "PO-2025-003",
         "date": "2025-03-28",
@@ -164,7 +160,7 @@
       }
     },
     {
-      "id": "INVOICE_INV-1001",
+      "id": "invoice_inv_1001",
       "label": "Invoice",
       "properties": {
         "invoice_id": "INV-1001",
@@ -174,7 +170,7 @@
       }
     },
     {
-      "id": "INVOICE_INV-1002",
+      "id": "invoice_inv_1002",
       "label": "Invoice",
       "properties": {
         "invoice_id": "INV-1002",
@@ -184,71 +180,41 @@
       }
     },
     {
-      "id": "CUSTOMER_CUST100",
-      "label": "Customer",
-      "properties": {
-        "customer_id": "CUST100",
-        "name": "Customer 100"
-      }
-    },
-    {
-      "id": "CUSTOMER_CUST101",
-      "label": "Customer",
-      "properties": {
-        "customer_id": "CUST101",
-        "name": "Customer 101"
-      }
-    },
-    {
-      "id": "SHIPMENT_SHP1001",
+      "id": "shipment_shp1001",
       "label": "Shipment",
       "properties": {
         "shipment_id": "SHP1001",
-        "carrier": "BlueLine Logistics",
         "eta": "2025-04-05",
         "status": "Delivered",
         "notes": "Arrived with minor packaging damage - inspected"
       }
     },
     {
-      "id": "SHIPMENT_SHP1002",
+      "id": "shipment_shp1002",
       "label": "Shipment",
       "properties": {
         "shipment_id": "SHP1002",
-        "carrier": "FastTrack",
         "eta": "2025-04-15",
         "status": "In Transit",
         "notes": "Delay due to customs clearance."
       }
     },
     {
-      "id": "LOCATION_CHENNAI_PORT",
-      "label": "Location",
+      "id": "customer_cust100",
+      "label": "Customer",
       "properties": {
-        "name": "Chennai Port",
-        "type": "port"
+        "customer_id": "CUST100"
       }
     },
     {
-      "id": "AUDIT_S001",
-      "label": "Audit",
+      "id": "customer_cust101",
+      "label": "Customer",
       "properties": {
-        "audit_id": "S001",
-        "type": "minor non-conformances",
-        "area": "labeling",
-        "status": "corrective actions recorded"
+        "customer_id": "CUST101"
       }
     },
     {
-      "id": "AUDIT_S002",
-      "label": "Audit",
-      "properties": {
-        "audit_id": "S002",
-        "status": "planned"
-      }
-    },
-    {
-      "id": "FEEDBACK_FB001",
+      "id": "feedback_1",
       "label": "Feedback",
       "properties": {
         "date": "2025-04-05",
@@ -257,266 +223,261 @@
       }
     },
     {
-      "id": "FEEDBACK_FB002",
+      "id": "feedback_2",
       "label": "Feedback",
       "properties": {
         "date": "2025-04-12",
         "rating": 5,
         "comment": "Boxes arrived sturdy and on time."
       }
+    },
+    {
+      "id": "carrier_blueline",
+      "label": "Carrier",
+      "properties": {
+        "name": "BlueLine Logistics"
+      }
+    },
+    {
+      "id": "carrier_fasttrack",
+      "label": "Carrier",
+      "properties": {
+        "name": "FastTrack"
+      }
+    },
+    {
+      "id": "country_india",
+      "label": "Country",
+      "properties": {
+        "name": "India"
+      }
+    },
+    {
+      "id": "country_china",
+      "label": "Country",
+      "properties": {
+        "name": "China"
+      }
+    },
+    {
+      "id": "country_germany",
+      "label": "Country",
+      "properties": {
+        "name": "Germany"
+      }
+    },
+    {
+      "id": "country_usa",
+      "label": "Country",
+      "properties": {
+        "name": "USA"
+      }
+    },
+    {
+      "id": "country_malaysia",
+      "label": "Country",
+      "properties": {
+        "name": "Malaysia"
+      }
+    },
+    {
+      "id": "location_chennai_port",
+      "label": "Location",
+      "properties": {
+        "name": "Chennai Port"
+      }
+    },
+    {
+      "id": "system_inventory_sync",
+      "label": "System",
+      "properties": {
+        "name": "inventory_sync_system",
+        "type": "automated_process"
+      }
     }
   ],
   "edges": [
     {
-      "id": "EDGE_001",
-      "source": "SUPPLIER_S001",
-      "target": "PO_PO-2025-001",
-      "label": "SUPPLIES",
+      "source": "audit_s001",
+      "target": "supplier_s001",
+      "type": "conducted_on",
+      "properties": {}
+    },
+    {
+      "source": "supplier_s001",
+      "target": "country_india",
+      "type": "located_in",
+      "properties": {}
+    },
+    {
+      "source": "supplier_s002",
+      "target": "country_china",
+      "type": "located_in",
+      "properties": {}
+    },
+    {
+      "source": "supplier_s003",
+      "target": "country_germany",
+      "type": "located_in",
+      "properties": {}
+    },
+    {
+      "source": "supplier_s004",
+      "target": "country_usa",
+      "type": "located_in",
+      "properties": {}
+    },
+    {
+      "source": "supplier_s005",
+      "target": "country_malaysia",
+      "type": "located_in",
+      "properties": {}
+    },
+    {
+      "source": "product_p1001",
+      "target": "warehouse_wh_a",
+      "type": "stored_in",
+      "properties": {}
+    },
+    {
+      "source": "product_p1002",
+      "target": "warehouse_wh_b",
+      "type": "stored_in",
+      "properties": {}
+    },
+    {
+      "source": "product_p1003",
+      "target": "warehouse_wh_a",
+      "type": "stored_in",
+      "properties": {}
+    },
+    {
+      "source": "product_p1004",
+      "target": "warehouse_wh_c",
+      "type": "stored_in",
+      "properties": {}
+    },
+    {
+      "source": "po_2025_001",
+      "target": "supplier_s001",
+      "type": "ordered_from",
+      "properties": {}
+    },
+    {
+      "source": "po_2025_001",
+      "target": "product_p1001",
+      "type": "contains",
       "properties": {
-        "relationship_type": "supplier_to_purchase_order"
+        "quantity": 50
       }
     },
     {
-      "id": "EDGE_002",
-      "source": "SUPPLIER_S002",
-      "target": "PO_PO-2025-002",
-      "label": "SUPPLIES",
+      "source": "po_2025_001",
+      "target": "product_p1003",
+      "type": "contains",
       "properties": {
-        "relationship_type": "supplier_to_purchase_order"
+        "quantity": 2000
       }
     },
     {
-      "id": "EDGE_003",
-      "source": "SUPPLIER_S005",
-      "target": "PO_PO-2025-003",
-      "label": "SUPPLIES",
+      "source": "po_2025_002",
+      "target": "supplier_s002",
+      "type": "ordered_from",
+      "properties": {}
+    },
+    {
+      "source": "po_2025_002",
+      "target": "product_p1002",
+      "type": "contains",
       "properties": {
-        "relationship_type": "supplier_to_purchase_order"
+        "quantity": 300
       }
     },
     {
-      "id": "EDGE_004",
-      "source": "PO_PO-2025-001",
-      "target": "PRODUCT_P1001",
-      "label": "CONTAINS",
+      "source": "po_2025_003",
+      "target": "supplier_s005",
+      "type": "ordered_from",
+      "properties": {}
+    },
+    {
+      "source": "po_2025_003",
+      "target": "product_p1004",
+      "type": "contains",
       "properties": {
-        "quantity": 50,
-        "relationship_type": "purchase_order_to_product"
+        "quantity": 500
       }
     },
     {
-      "id": "EDGE_005",
-      "source": "PO_PO-2025-001",
-      "target": "PRODUCT_P1003",
-      "label": "CONTAINS",
-      "properties": {
-        "quantity": 2000,
-        "relationship_type": "purchase_order_to_product"
-      }
+      "source": "invoice_inv_1001",
+      "target": "po_2025_001",
+      "type": "references",
+      "properties": {}
     },
     {
-      "id": "EDGE_006",
-      "source": "PO_PO-2025-002",
-      "target": "PRODUCT_P1002",
-      "label": "CONTAINS",
-      "properties": {
-        "quantity": 300,
-        "relationship_type": "purchase_order_to_product"
-      }
+      "source": "invoice_inv_1001",
+      "target": "supplier_s001",
+      "type": "from",
+      "properties": {}
     },
     {
-      "id": "EDGE_007",
-      "source": "PO_PO-2025-003",
-      "target": "PRODUCT_P1004",
-      "label": "CONTAINS",
-      "properties": {
-        "quantity": 500,
-        "relationship_type": "purchase_order_to_product"
-      }
+      "source": "invoice_inv_1002",
+      "target": "po_2025_003",
+      "type": "references",
+      "properties": {}
     },
     {
-      "id": "EDGE_008",
-      "source": "PRODUCT_P1001",
-      "target": "WAREHOUSE_WH-A",
-      "label": "STORED_IN",
-      "properties": {
-        "relationship_type": "product_to_warehouse"
-      }
+      "source": "invoice_inv_1002",
+      "target": "supplier_s005",
+      "type": "from",
+      "properties": {}
     },
     {
-      "id": "EDGE_009",
-      "source": "PRODUCT_P1002",
-      "target": "WAREHOUSE_WH-B",
-      "label": "STORED_IN",
-      "properties": {
-        "relationship_type": "product_to_warehouse"
-      }
+      "source": "shipment_shp1001",
+      "target": "po_2025_001",
+      "type": "fulfills",
+      "properties": {}
     },
     {
-      "id": "EDGE_010",
-      "source": "PRODUCT_P1003",
-      "target": "WAREHOUSE_WH-A",
-      "label": "STORED_IN",
-      "properties": {
-        "relationship_type": "product_to_warehouse"
-      }
+      "source": "shipment_shp1001",
+      "target": "carrier_blueline",
+      "type": "carried_by",
+      "properties": {}
     },
     {
-      "id": "EDGE_011",
-      "source": "PRODUCT_P1004",
-      "target": "WAREHOUSE_WH-C",
-      "label": "STORED_IN",
-      "properties": {
-        "relationship_type": "product_to_warehouse"
-      }
+      "source": "shipment_shp1002",
+      "target": "po_2025_002",
+      "type": "fulfills",
+      "properties": {}
     },
     {
-      "id": "EDGE_012",
-      "source": "PO_PO-2025-001",
-      "target": "INVOICE_INV-1001",
-      "label": "GENERATES",
-      "properties": {
-        "relationship_type": "purchase_order_to_invoice"
-      }
+      "source": "shipment_shp1002",
+      "target": "carrier_fasttrack",
+      "type": "carried_by",
+      "properties": {}
     },
     {
-      "id": "EDGE_013",
-      "source": "PO_PO-2025-003",
-      "target": "INVOICE_INV-1002",
-      "label": "GENERATES",
-      "properties": {
-        "relationship_type": "purchase_order_to_invoice"
-      }
+      "source": "customer_cust100",
+      "target": "feedback_1",
+      "type": "provided",
+      "properties": {}
     },
     {
-      "id": "EDGE_014",
-      "source": "SUPPLIER_S001",
-      "target": "INVOICE_INV-1001",
-      "label": "BILLS",
-      "properties": {
-        "relationship_type": "supplier_to_invoice"
-      }
+      "source": "feedback_1",
+      "target": "product_p1001",
+      "type": "about",
+      "properties": {}
     },
     {
-      "id": "EDGE_015",
-      "source": "SUPPLIER_S005",
-      "target": "INVOICE_INV-1002",
-      "label": "BILLS",
-      "properties": {
-        "relationship_type": "supplier_to_invoice"
-      }
+      "source": "customer_cust101",
+      "target": "feedback_2",
+      "type": "provided",
+      "properties": {}
     },
     {
-      "id": "EDGE_016",
-      "source": "CUSTOMER_CUST100",
-      "target": "PRODUCT_P1001",
-      "label": "REVIEWS",
-      "properties": {
-        "relationship_type": "customer_to_product"
-      }
-    },
-    {
-      "id": "EDGE_017",
-      "source": "CUSTOMER_CUST101",
-      "target": "PRODUCT_P1004",
-      "label": "REVIEWS",
-      "properties": {
-        "relationship_type": "customer_to_product"
-      }
-    },
-    {
-      "id": "EDGE_018",
-      "source": "CUSTOMER_CUST100",
-      "target": "FEEDBACK_FB001",
-      "label": "PROVIDES",
-      "properties": {
-        "relationship_type": "customer_to_feedback"
-      }
-    },
-    {
-      "id": "EDGE_019",
-      "source": "CUSTOMER_CUST101",
-      "target": "FEEDBACK_FB002",
-      "label": "PROVIDES",
-      "properties": {
-        "relationship_type": "customer_to_feedback"
-      }
-    },
-    {
-      "id": "EDGE_020",
-      "source": "FEEDBACK_FB001",
-      "target": "PRODUCT_P1001",
-      "label": "ABOUT",
-      "properties": {
-        "relationship_type": "feedback_to_product"
-      }
-    },
-    {
-      "id": "EDGE_021",
-      "source": "FEEDBACK_FB002",
-      "target": "PRODUCT_P1004",
-      "label": "ABOUT",
-      "properties": {
-        "relationship_type": "feedback_to_product"
-      }
-    },
-    {
-      "id": "EDGE_022",
-      "source": "PO_PO-2025-001",
-      "target": "SHIPMENT_SHP1001",
-      "label": "SHIPPED_VIA",
-      "properties": {
-        "relationship_type": "purchase_order_to_shipment"
-      }
-    },
-    {
-      "id": "EDGE_023",
-      "source": "PO_PO-2025-002",
-      "target": "SHIPMENT_SHP1002",
-      "label": "SHIPPED_VIA",
-      "properties": {
-        "relationship_type": "purchase_order_to_shipment"
-      }
-    },
-    {
-      "id": "EDGE_024",
-      "source": "SHIPMENT_SHP1001",
-      "target": "LOCATION_CHENNAI_PORT",
-      "label": "PASSES_THROUGH",
-      "properties": {
-        "timestamp": "2025-04-02T08:00:00",
-        "status": "Arrived",
-        "relationship_type": "shipment_to_location"
-      }
-    },
-    {
-      "id": "EDGE_025",
-      "source": "SHIPMENT_SHP1001",
-      "target": "WAREHOUSE_WH-A",
-      "label": "DELIVERED_TO",
-      "properties": {
-        "timestamp": "2025-04-03T14:00:00",
-        "status": "Delivered",
-        "relationship_type": "shipment_to_warehouse"
-      }
-    },
-    {
-      "id": "EDGE_026",
-      "source": "AUDIT_S001",
-      "target": "SUPPLIER_S001",
-      "label": "AUDITS",
-      "properties": {
-        "relationship_type": "audit_to_supplier"
-      }
-    },
-    {
-      "id": "EDGE_027",
-      "source": "AUDIT_S002",
-      "target": "SUPPLIER_S002",
-      "label": "AUDITS",
-      "properties": {
-        "relationship_type": "audit_to_supplier"
-      }
+      "source": "feedback_2",
+      "target": "product_p1004",
+      "type": "about",
+      "properties": {}
     }
   ]
 }
