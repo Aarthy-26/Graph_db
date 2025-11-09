@@ -2,87 +2,112 @@
   "nodes": [
     {
       "id": "S001",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
-        "supplier_id": "S001",
         "name": "ABC Supplies Pvt Ltd",
-        "contact": "raju@abc.com",
-        "rating": 4.2
+        "rating": "4.2"
       }
     },
     {
       "id": "S002",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
-        "supplier_id": "S002",
         "name": "Global Tech Traders",
-        "contact": "sales@globaltech.cn",
-        "rating": 3.9
+        "rating": "3.9"
       }
     },
     {
       "id": "S003",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
-        "supplier_id": "S003",
         "name": "Delta Components",
-        "contact": "info@delta.de",
-        "rating": 4.7
+        "rating": "4.7"
       }
     },
     {
       "id": "S004",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
-        "supplier_id": "S004",
         "name": "Rapid Parts Co",
-        "contact": "support@rapidparts.com",
-        "rating": 4.0
+        "rating": "4.0"
       }
     },
     {
       "id": "S005",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
-        "supplier_id": "S005",
         "name": "Oceanic Imports",
-        "contact": "contact@oceanic.my",
-        "rating": 3.8
+        "rating": "3.8"
       }
     },
     {
       "id": "India",
-      "label": "Country",
+      "label": "country",
       "properties": {
-        "name": "India"
+        "type": "location"
       }
     },
     {
       "id": "China",
-      "label": "Country",
+      "label": "country",
       "properties": {
-        "name": "China"
+        "type": "location"
       }
     },
     {
       "id": "Germany",
-      "label": "Country",
+      "label": "country",
       "properties": {
-        "name": "Germany"
+        "type": "location"
       }
     },
     {
       "id": "USA",
-      "label": "Country",
+      "label": "country",
       "properties": {
-        "name": "USA"
+        "type": "location"
       }
     },
     {
       "id": "Malaysia",
-      "label": "Country",
+      "label": "country",
       "properties": {
-        "name": "Malaysia"
+        "type": "location"
+      }
+    },
+    {
+      "id": "raju@abc.com",
+      "label": "contact",
+      "properties": {
+        "type": "email"
+      }
+    },
+    {
+      "id": "sales@globaltech.cn",
+      "label": "contact",
+      "properties": {
+        "type": "email"
+      }
+    },
+    {
+      "id": "info@delta.de",
+      "label": "contact",
+      "properties": {
+        "type": "email"
+      }
+    },
+    {
+      "id": "support@rapidparts.com",
+      "label": "contact",
+      "properties": {
+        "type": "email"
+      }
+    },
+    {
+      "id": "contact@oceanic.my",
+      "label": "contact",
+      "properties": {
+        "type": "email"
       }
     }
   ],
@@ -90,42 +115,62 @@
     {
       "source": "S001",
       "target": "India",
-      "type": "LOCATED_IN",
-      "properties": {
-        "relationship": "supplier_country"
-      }
+      "type": "located_in",
+      "properties": {}
     },
     {
       "source": "S002",
       "target": "China",
-      "type": "LOCATED_IN",
-      "properties": {
-        "relationship": "supplier_country"
-      }
+      "type": "located_in",
+      "properties": {}
     },
     {
       "source": "S003",
       "target": "Germany",
-      "type": "LOCATED_IN",
-      "properties": {
-        "relationship": "supplier_country"
-      }
+      "type": "located_in",
+      "properties": {}
     },
     {
       "source": "S004",
       "target": "USA",
-      "type": "LOCATED_IN",
-      "properties": {
-        "relationship": "supplier_country"
-      }
+      "type": "located_in",
+      "properties": {}
     },
     {
       "source": "S005",
       "target": "Malaysia",
-      "type": "LOCATED_IN",
-      "properties": {
-        "relationship": "supplier_country"
-      }
+      "type": "located_in",
+      "properties": {}
+    },
+    {
+      "source": "S001",
+      "target": "raju@abc.com",
+      "type": "has_contact",
+      "properties": {}
+    },
+    {
+      "source": "S002",
+      "target": "sales@globaltech.cn",
+      "type": "has_contact",
+      "properties": {}
+    },
+    {
+      "source": "S003",
+      "target": "info@delta.de",
+      "type": "has_contact",
+      "properties": {}
+    },
+    {
+      "source": "S004",
+      "target": "support@rapidparts.com",
+      "type": "has_contact",
+      "properties": {}
+    },
+    {
+      "source": "S005",
+      "target": "contact@oceanic.my",
+      "type": "has_contact",
+      "properties": {}
     }
   ]
 }
