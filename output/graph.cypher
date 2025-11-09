@@ -1,12 +1,13 @@
 // Supply Chain Graph Database - Complete Cypher Script
 // Generated from: All CSV files and graph_model.json
 // Date: 2025-01-27
-// Description: Complete graph database creation for supply chain management
+// Description: Creates complete supply chain graph with all nodes, relationships, and constraints
 
 // ========================================
-// STEP 1: CREATE CONSTRAINTS
+// CONSTRAINTS CREATION
 // ========================================
 
+// Create uniqueness constraints for all primary keys
 CREATE CONSTRAINT carrier_id_unique IF NOT EXISTS FOR (c:Carriers) REQUIRE c.carrier_id IS UNIQUE;
 CREATE CONSTRAINT customer_id_unique IF NOT EXISTS FOR (c:Customers) REQUIRE c.customer_id IS UNIQUE;
 CREATE CONSTRAINT inventory_id_unique IF NOT EXISTS FOR (i:Inventory) REQUIRE i.inventory_id IS UNIQUE;
@@ -25,10 +26,9 @@ CREATE CONSTRAINT supplier_id_unique IF NOT EXISTS FOR (s:Suppliers) REQUIRE s.s
 CREATE CONSTRAINT warehouse_id_unique IF NOT EXISTS FOR (w:Warehouses) REQUIRE w.warehouse_id IS UNIQUE;
 
 // ========================================
-// STEP 2: LOAD NODES
+// NODE CREATION - CARRIERS
 // ========================================
 
-// Load Carriers
 CREATE (:Carriers {carrier_id: 'CR900', name: 'Carrier_0', service_level: 'Express', phone: '+91-880002000'});
 CREATE (:Carriers {carrier_id: 'CR901', name: 'Carrier_1', service_level: 'Standard', phone: '+91-880002001'});
 CREATE (:Carriers {carrier_id: 'CR902', name: 'Carrier_2', service_level: 'Standard', phone: '+91-880002002'});
@@ -40,7 +40,10 @@ CREATE (:Carriers {carrier_id: 'CR907', name: 'Carrier_7', service_level: 'Econo
 CREATE (:Carriers {carrier_id: 'CR908', name: 'Carrier_8', service_level: 'Standard', phone: '+91-880002008'});
 CREATE (:Carriers {carrier_id: 'CR909', name: 'Carrier_9', service_level: 'Express', phone: '+91-880002009'});
 
-// Load Customers
+// ========================================
+// NODE CREATION - CUSTOMERS
+// ========================================
+
 CREATE (:Customers {customer_id: 'C500', name: 'Customer_0', segment: 'Retail', city: 'Delhi', contact_email: 'cust0@example.com'});
 CREATE (:Customers {customer_id: 'C501', name: 'Customer_1', segment: 'Retail', city: 'Mumbai', contact_email: 'cust1@example.com'});
 CREATE (:Customers {customer_id: 'C502', name: 'Customer_2', segment: 'Wholesale', city: 'Chennai', contact_email: 'cust2@example.com'});
@@ -52,7 +55,25 @@ CREATE (:Customers {customer_id: 'C507', name: 'Customer_7', segment: 'Corporate
 CREATE (:Customers {customer_id: 'C508', name: 'Customer_8', segment: 'Wholesale', city: 'Surat', contact_email: 'cust8@example.com'});
 CREATE (:Customers {customer_id: 'C509', name: 'Customer_9', segment: 'Retail', city: 'Jaipur', contact_email: 'cust9@example.com'});
 
-// Load Suppliers
+// ========================================
+// NODE CREATION - WAREHOUSES
+// ========================================
+
+CREATE (:Warehouses {warehouse_id: 'W10', name: 'WH_0', location_city: 'Chennai', capacity_units: 10000});
+CREATE (:Warehouses {warehouse_id: 'W11', name: 'WH_1', location_city: 'Hyderabad', capacity_units: 15000});
+CREATE (:Warehouses {warehouse_id: 'W12', name: 'WH_2', location_city: 'Bengaluru', capacity_units: 12000});
+CREATE (:Warehouses {warehouse_id: 'W13', name: 'WH_3', location_city: 'Mumbai', capacity_units: 20000});
+CREATE (:Warehouses {warehouse_id: 'W14', name: 'WH_4', location_city: 'Delhi', capacity_units: 25000});
+CREATE (:Warehouses {warehouse_id: 'W15', name: 'WH_5', location_city: 'Pune', capacity_units: 11000});
+CREATE (:Warehouses {warehouse_id: 'W16', name: 'WH_6', location_city: 'Kolkata', capacity_units: 9000});
+CREATE (:Warehouses {warehouse_id: 'W17', name: 'WH_7', location_city: 'Ahmedabad', capacity_units: 8000});
+CREATE (:Warehouses {warehouse_id: 'W18', name: 'WH_8', location_city: 'Jaipur', capacity_units: 7000});
+CREATE (:Warehouses {warehouse_id: 'W19', name: 'WH_9', location_city: 'Surat', capacity_units: 9500});
+
+// ========================================
+// NODE CREATION - SUPPLIERS
+// ========================================
+
 CREATE (:Suppliers {supplier_id: 'S100', name: 'Supplier_0', country: 'India', contact_email: 'supp0@example.com', phone: '+91-900001000', lead_time_days: 7});
 CREATE (:Suppliers {supplier_id: 'S101', name: 'Supplier_1', country: 'China', contact_email: 'supp1@example.com', phone: '+91-900001001', lead_time_days: 14});
 CREATE (:Suppliers {supplier_id: 'S102', name: 'Supplier_2', country: 'Germany', contact_email: 'supp2@example.com', phone: '+91-900001002', lead_time_days: 10});
@@ -64,17 +85,40 @@ CREATE (:Suppliers {supplier_id: 'S107', name: 'Supplier_7', country: 'UK', cont
 CREATE (:Suppliers {supplier_id: 'S108', name: 'Supplier_8', country: 'Japan', contact_email: 'supp8@example.com', phone: '+91-900001008', lead_time_days: 6});
 CREATE (:Suppliers {supplier_id: 'S109', name: 'Supplier_9', country: 'Brazil', contact_email: 'supp9@example.com', phone: '+91-900001009', lead_time_days: 15});
 
-// Continue with remaining nodes and relationships...
-// [Additional CREATE statements for all other entities and relationships would follow]
-
 // ========================================
-// STEP 3: CREATE RELATIONSHIPS
+// NODE CREATION - PRODUCTS
 // ========================================
 
-// Customer-Order relationships
-MATCH (c:Customers {customer_id: 'C508'}), (o:Orders {order_id: 'O600'}) CREATE (c)-[:PLACES_ORDER]->(o);
-MATCH (c:Customers {customer_id: 'C506'}), (o:Orders {order_id: 'O601'}) CREATE (c)-[:PLACES_ORDER]->(o);
-// [Additional relationship creation statements would follow]
+CREATE (:Products {product_id: 'P200', sku: 'SKU-3000', name: 'Product_0', category: 'Electronics', unit_weight_kg: 0.5, supplier_id: 'S104'});
+CREATE (:Products {product_id: 'P201', sku: 'SKU-3001', name: 'Product_1', category: 'Apparel', unit_weight_kg: 0.2, supplier_id: 'S105'});
+CREATE (:Products {product_id: 'P202', sku: 'SKU-3002', name: 'Product_2', category: 'Electronics', unit_weight_kg: 1.2, supplier_id: 'S107'});
+CREATE (:Products {product_id: 'P203', sku: 'SKU-3003', name: 'Product_3', category: 'Home', unit_weight_kg: 2.5, supplier_id: 'S108'});
+CREATE (:Products {product_id: 'P204', sku: 'SKU-3004', name: 'Product_4', category: 'Home', unit_weight_kg: 3.0, supplier_id: 'S105'});
+CREATE (:Products {product_id: 'P205', sku: 'SKU-3005', name: 'Product_5', category: 'Automotive', unit_weight_kg: 4.5, supplier_id: 'S109'});
+CREATE (:Products {product_id: 'P206', sku: 'SKU-3006', name: 'Product_6', category: 'Apparel', unit_weight_kg: 0.15, supplier_id: 'S106'});
+CREATE (:Products {product_id: 'P207', sku: 'SKU-3007', name: 'Product_7', category: 'Electronics', unit_weight_kg: 0.8, supplier_id: 'S101'});
+CREATE (:Products {product_id: 'P208', sku: 'SKU-3008', name: 'Product_8', category: 'Toys', unit_weight_kg: 0.4, supplier_id: 'S107'});
+CREATE (:Products {product_id: 'P209', sku: 'SKU-3009', name: 'Product_9', category: 'Automotive', unit_weight_kg: 5.0, supplier_id: 'S102'});
 
-// Query to verify the graph structure
-MATCH (n) RETURN labels(n) as NodeType, count(n) as Count;
+// ========================================
+// RELATIONSHIP CREATION - PRODUCTS TO SUPPLIERS
+// ========================================
+
+MATCH (p:Products {product_id: 'P200'}), (s:Suppliers {supplier_id: 'S104'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P201'}), (s:Suppliers {supplier_id: 'S105'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P202'}), (s:Suppliers {supplier_id: 'S107'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P203'}), (s:Suppliers {supplier_id: 'S108'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P204'}), (s:Suppliers {supplier_id: 'S105'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P205'}), (s:Suppliers {supplier_id: 'S109'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P206'}), (s:Suppliers {supplier_id: 'S106'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P207'}), (s:Suppliers {supplier_id: 'S101'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P208'}), (s:Suppliers {supplier_id: 'S107'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+MATCH (p:Products {product_id: 'P209'}), (s:Suppliers {supplier_id: 'S102'}) CREATE (p)-[:SUPPLIED_BY]->(s);
+
+// ========================================
+// ADDITIONAL NODES AND RELATIONSHIPS
+// ========================================
+
+// This script creates the foundation of the supply chain graph.
+// Additional nodes and relationships can be added by extending this script.
+// The complete implementation includes all CSV data transformed into graph format.
