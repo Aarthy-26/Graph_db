@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "id": "S001",
+      "label": "supplier",
+      "properties": {
+        "type": "entity_id"
+      }
+    },
+    {
+      "id": "audit_report_2024_q4",
+      "label": "document",
+      "properties": {
+        "type": "audit_report",
+        "period": "2024_q4"
+      }
+    },
+    {
+      "id": "labeling",
+      "label": "process",
+      "properties": {
+        "type": "activity"
+      }
+    },
+    {
+      "id": "non_conformances",
+      "label": "issue",
+      "properties": {
+        "severity": "minor"
+      }
+    },
+    {
+      "id": "corrective_actions",
+      "label": "action",
+      "properties": {
+        "status": "recorded"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "S001",
+      "target": "non_conformances",
+      "type": "has_issue",
+      "properties": {}
+    },
+    {
+      "source": "non_conformances",
+      "target": "labeling",
+      "type": "relates_to",
+      "properties": {}
+    },
+    {
+      "source": "audit_report_2024_q4",
+      "target": "S001",
+      "type": "documents",
+      "properties": {}
+    },
+    {
+      "source": "S001",
+      "target": "corrective_actions",
+      "type": "requires",
+      "properties": {}
+    }
+  ]
+}
