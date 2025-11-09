@@ -1,63 +1,57 @@
 {
   "nodes": [
     {
-      "id": "audit_2024_q4",
+      "id": "audit_s001",
       "label": "Audit",
       "properties": {
-        "period": "2024_Q4",
-        "type": "audit_report",
-        "summary": "minor non-conformances in labeling"
+        "audit_id": "S001",
+        "type": "quarterly_audit",
+        "year": "2024",
+        "quarter": "Q4"
       }
     },
     {
-      "id": "S001",
+      "id": "supplier_s001",
       "label": "Supplier",
       "properties": {
-        "supplier_code": "S001"
+        "supplier_id": "S001",
+        "audit_status": "minor_non_conformances"
       }
     },
     {
       "id": "non_conformance_labeling",
-      "label": "Issue",
+      "label": "Non_Conformance",
       "properties": {
-        "type": "non-conformance",
-        "category": "labeling",
+        "type": "labeling",
         "severity": "minor"
       }
     },
     {
       "id": "corrective_actions",
-      "label": "Action",
+      "label": "Corrective_Action",
       "properties": {
-        "type": "corrective_actions",
         "status": "recorded"
       }
     }
   ],
   "edges": [
     {
-      "source": "audit_2024_q4",
-      "target": "S001",
-      "type": "AUDITS",
-      "properties": {
-        "relationship": "audit_subject"
-      }
+      "source": "audit_s001",
+      "target": "supplier_s001",
+      "type": "conducted_on",
+      "properties": {}
     },
     {
-      "source": "audit_2024_q4",
+      "source": "audit_s001",
       "target": "non_conformance_labeling",
-      "type": "IDENTIFIES",
-      "properties": {
-        "relationship": "finding"
-      }
+      "type": "identified",
+      "properties": {}
     },
     {
       "source": "non_conformance_labeling",
       "target": "corrective_actions",
-      "type": "REQUIRES",
-      "properties": {
-        "relationship": "remediation"
-      }
+      "type": "requires",
+      "properties": {}
     }
   ]
 }
