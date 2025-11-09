@@ -1,311 +1,292 @@
-// Supply Chain Graph Database Creation Script
-// Generated from: supply_chain_metadata CSV files and graph_model.json
-// Date: 2025-01-27
-// Description: Creates a complete supply chain graph with nodes and relationships
-
-// Clear existing data (optional - uncomment if needed)
-// MATCH (n) DETACH DELETE n;
+// Complete Supply Chain Graph Database Setup
+// Generated: 2025-01-27
+// Description: Comprehensive Cypher script to create the entire supply chain graph database
+// Source: Multiple CSV files and graph model from Aarthy-26/Graph_db repository
 
 // ========================================
-// CREATE NODES
+// STEP 1: CREATE CONSTRAINTS
 // ========================================
 
-// Create Carriers
-CREATE (:Carriers {carrier_id: 'CR900', name: 'Carrier_0', service_level: 'Express', phone: '+91-880002000'})
-CREATE (:Carriers {carrier_id: 'CR901', name: 'Carrier_1', service_level: 'Standard', phone: '+91-880002001'})
-CREATE (:Carriers {carrier_id: 'CR902', name: 'Carrier_2', service_level: 'Standard', phone: '+91-880002002'})
-CREATE (:Carriers {carrier_id: 'CR903', name: 'Carrier_3', service_level: 'Express', phone: '+91-880002003'})
-CREATE (:Carriers {carrier_id: 'CR904', name: 'Carrier_4', service_level: 'Economy', phone: '+91-880002004'})
-CREATE (:Carriers {carrier_id: 'CR905', name: 'Carrier_5', service_level: 'Standard', phone: '+91-880002005'})
-CREATE (:Carriers {carrier_id: 'CR906', name: 'Carrier_6', service_level: 'Express', phone: '+91-880002006'})
-CREATE (:Carriers {carrier_id: 'CR907', name: 'Carrier_7', service_level: 'Economy', phone: '+91-880002007'})
-CREATE (:Carriers {carrier_id: 'CR908', name: 'Carrier_8', service_level: 'Standard', phone: '+91-880002008'})
-CREATE (:Carriers {carrier_id: 'CR909', name: 'Carrier_9', service_level: 'Express', phone: '+91-880002009'});
-
-// Create Customers
-CREATE (:Customers {customer_id: 'C500', name: 'Customer_0', segment: 'Retail', city: 'Delhi', contact_email: 'cust0@example.com'})
-CREATE (:Customers {customer_id: 'C501', name: 'Customer_1', segment: 'Retail', city: 'Mumbai', contact_email: 'cust1@example.com'})
-CREATE (:Customers {customer_id: 'C502', name: 'Customer_2', segment: 'Wholesale', city: 'Chennai', contact_email: 'cust2@example.com'})
-CREATE (:Customers {customer_id: 'C503', name: 'Customer_3', segment: 'Retail', city: 'Bengaluru', contact_email: 'cust3@example.com'})
-CREATE (:Customers {customer_id: 'C504', name: 'Customer_4', segment: 'Wholesale', city: 'Kolkata', contact_email: 'cust4@example.com'})
-CREATE (:Customers {customer_id: 'C505', name: 'Customer_5', segment: 'Retail', city: 'Hyderabad', contact_email: 'cust5@example.com'})
-CREATE (:Customers {customer_id: 'C506', name: 'Customer_6', segment: 'Corporate', city: 'Pune', contact_email: 'cust6@example.com'})
-CREATE (:Customers {customer_id: 'C507', name: 'Customer_7', segment: 'Corporate', city: 'Ahmedabad', contact_email: 'cust7@example.com'})
-CREATE (:Customers {customer_id: 'C508', name: 'Customer_8', segment: 'Wholesale', city: 'Surat', contact_email: 'cust8@example.com'})
-CREATE (:Customers {customer_id: 'C509', name: 'Customer_9', segment: 'Retail', city: 'Jaipur', contact_email: 'cust9@example.com'});
-
-// Create Warehouses
-CREATE (:Warehouses {warehouse_id: 'W10', name: 'WH_0', location_city: 'Chennai', capacity_units: 10000})
-CREATE (:Warehouses {warehouse_id: 'W11', name: 'WH_1', location_city: 'Hyderabad', capacity_units: 15000})
-CREATE (:Warehouses {warehouse_id: 'W12', name: 'WH_2', location_city: 'Bengaluru', capacity_units: 12000})
-CREATE (:Warehouses {warehouse_id: 'W13', name: 'WH_3', location_city: 'Mumbai', capacity_units: 20000})
-CREATE (:Warehouses {warehouse_id: 'W14', name: 'WH_4', location_city: 'Delhi', capacity_units: 25000})
-CREATE (:Warehouses {warehouse_id: 'W15', name: 'WH_5', location_city: 'Pune', capacity_units: 11000})
-CREATE (:Warehouses {warehouse_id: 'W16', name: 'WH_6', location_city: 'Kolkata', capacity_units: 9000})
-CREATE (:Warehouses {warehouse_id: 'W17', name: 'WH_7', location_city: 'Ahmedabad', capacity_units: 8000})
-CREATE (:Warehouses {warehouse_id: 'W18', name: 'WH_8', location_city: 'Jaipur', capacity_units: 7000})
-CREATE (:Warehouses {warehouse_id: 'W19', name: 'WH_9', location_city: 'Surat', capacity_units: 9500});
-
-// Create Suppliers
-CREATE (:Suppliers {supplier_id: 'S100', name: 'Supplier_0', country: 'India', contact_email: 'supp0@example.com', phone: '+91-900001000', lead_time_days: 7})
-CREATE (:Suppliers {supplier_id: 'S101', name: 'Supplier_1', country: 'China', contact_email: 'supp1@example.com', phone: '+91-900001001', lead_time_days: 14})
-CREATE (:Suppliers {supplier_id: 'S102', name: 'Supplier_2', country: 'Germany', contact_email: 'supp2@example.com', phone: '+91-900001002', lead_time_days: 10})
-CREATE (:Suppliers {supplier_id: 'S103', name: 'Supplier_3', country: 'USA', contact_email: 'supp3@example.com', phone: '+91-900001003', lead_time_days: 5})
-CREATE (:Suppliers {supplier_id: 'S104', name: 'Supplier_4', country: 'Vietnam', contact_email: 'supp4@example.com', phone: '+91-900001004', lead_time_days: 21})
-CREATE (:Suppliers {supplier_id: 'S105', name: 'Supplier_5', country: 'India', contact_email: 'supp5@example.com', phone: '+91-900001005', lead_time_days: 9})
-CREATE (:Suppliers {supplier_id: 'S106', name: 'Supplier_6', country: 'Mexico', contact_email: 'supp6@example.com', phone: '+91-900001006', lead_time_days: 12})
-CREATE (:Suppliers {supplier_id: 'S107', name: 'Supplier_7', country: 'UK', contact_email: 'supp7@example.com', phone: '+91-900001007', lead_time_days: 8})
-CREATE (:Suppliers {supplier_id: 'S108', name: 'Supplier_8', country: 'Japan', contact_email: 'supp8@example.com', phone: '+91-900001008', lead_time_days: 6})
-CREATE (:Suppliers {supplier_id: 'S109', name: 'Supplier_9', country: 'Brazil', contact_email: 'supp9@example.com', phone: '+91-900001009', lead_time_days: 15});
-
-// Create Products
-CREATE (:Products {product_id: 'P200', sku: 'SKU-3000', name: 'Product_0', category: 'Electronics', unit_weight_kg: 0.5, supplier_id: 'S104'})
-CREATE (:Products {product_id: 'P201', sku: 'SKU-3001', name: 'Product_1', category: 'Apparel', unit_weight_kg: 0.2, supplier_id: 'S105'})
-CREATE (:Products {product_id: 'P202', sku: 'SKU-3002', name: 'Product_2', category: 'Electronics', unit_weight_kg: 1.2, supplier_id: 'S107'})
-CREATE (:Products {product_id: 'P203', sku: 'SKU-3003', name: 'Product_3', category: 'Home', unit_weight_kg: 2.5, supplier_id: 'S108'})
-CREATE (:Products {product_id: 'P204', sku: 'SKU-3004', name: 'Product_4', category: 'Home', unit_weight_kg: 3.0, supplier_id: 'S105'})
-CREATE (:Products {product_id: 'P205', sku: 'SKU-3005', name: 'Product_5', category: 'Automotive', unit_weight_kg: 4.5, supplier_id: 'S109'})
-CREATE (:Products {product_id: 'P206', sku: 'SKU-3006', name: 'Product_6', category: 'Apparel', unit_weight_kg: 0.15, supplier_id: 'S106'})
-CREATE (:Products {product_id: 'P207', sku: 'SKU-3007', name: 'Product_7', category: 'Electronics', unit_weight_kg: 0.8, supplier_id: 'S101'})
-CREATE (:Products {product_id: 'P208', sku: 'SKU-3008', name: 'Product_8', category: 'Toys', unit_weight_kg: 0.4, supplier_id: 'S107'})
-CREATE (:Products {product_id: 'P209', sku: 'SKU-3009', name: 'Product_9', category: 'Automotive', unit_weight_kg: 5.0, supplier_id: 'S102'});
-
-// Create Orders
-CREATE (:Orders {order_id: 'O600', customer_id: 'C508', order_date: '2025-01-01', status: 'Pending', total_amount: 7080.71})
-CREATE (:Orders {order_id: 'O601', customer_id: 'C506', order_date: '2025-01-02', status: 'Shipped', total_amount: 12017.72})
-CREATE (:Orders {order_id: 'O602', customer_id: 'C501', order_date: '2025-01-03', status: 'Delivered', total_amount: 14856.57})
-CREATE (:Orders {order_id: 'O603', customer_id: 'C502', order_date: '2025-01-04', status: 'Cancelled', total_amount: 13852.96})
-CREATE (:Orders {order_id: 'O604', customer_id: 'C501', order_date: '2025-01-05', status: 'Delivered', total_amount: 7547.53})
-CREATE (:Orders {order_id: 'O605', customer_id: 'C504', order_date: '2025-01-06', status: 'Shipped', total_amount: 5244.23})
-CREATE (:Orders {order_id: 'O606', customer_id: 'C508', order_date: '2025-01-07', status: 'Pending', total_amount: 14944.64})
-CREATE (:Orders {order_id: 'O607', customer_id: 'C504', order_date: '2025-01-08', status: 'Delivered', total_amount: 3409.04})
-CREATE (:Orders {order_id: 'O608', customer_id: 'C500', order_date: '2025-01-09', status: 'Shipped', total_amount: 15444.88})
-CREATE (:Orders {order_id: 'O609', customer_id: 'C501', order_date: '2025-01-10', status: 'Pending', total_amount: 18495.57});
-
-// Create Order Items
-CREATE (:Order_items {order_item_id: 'OI700', order_id: 'O609', product_id: 'P202', quantity: 2, unit_price: 1886.05})
-CREATE (:Order_items {order_item_id: 'OI701', order_id: 'O602', product_id: 'P209', quantity: 7, unit_price: 603.45})
-CREATE (:Order_items {order_item_id: 'OI702', order_id: 'O606', product_id: 'P206', quantity: 1, unit_price: 2233.47})
-CREATE (:Order_items {order_item_id: 'OI703', order_id: 'O602', product_id: 'P206', quantity: 5, unit_price: 4096.12})
-CREATE (:Order_items {order_item_id: 'OI704', order_id: 'O601', product_id: 'P201', quantity: 6, unit_price: 72.56})
-CREATE (:Order_items {order_item_id: 'OI705', order_id: 'O602', product_id: 'P208', quantity: 1, unit_price: 2237.94})
-CREATE (:Order_items {order_item_id: 'OI706', order_id: 'O605', product_id: 'P202', quantity: 3, unit_price: 1154.88})
-CREATE (:Order_items {order_item_id: 'OI707', order_id: 'O608', product_id: 'P205', quantity: 5, unit_price: 2740.21})
-CREATE (:Order_items {order_item_id: 'OI708', order_id: 'O607', product_id: 'P207', quantity: 4, unit_price: 2169.89})
-CREATE (:Order_items {order_item_id: 'OI709', order_id: 'O606', product_id: 'P202', quantity: 2, unit_price: 4729.71});
-
-// Create Invoices
-CREATE (:Invoices {invoice_id: 'INV1200', order_id: 'O608', invoice_date: '2025-01-03', amount_due: 16591.76, status: 'Unpaid'})
-CREATE (:Invoices {invoice_id: 'INV1201', order_id: 'O602', invoice_date: '2025-01-04', amount_due: 4861.66, status: 'Paid'})
-CREATE (:Invoices {invoice_id: 'INV1202', order_id: 'O603', invoice_date: '2025-01-05', amount_due: 12437.05, status: 'Paid'})
-CREATE (:Invoices {invoice_id: 'INV1203', order_id: 'O604', invoice_date: '2025-01-06', amount_due: 24062.5, status: 'Unpaid'})
-CREATE (:Invoices {invoice_id: 'INV1204', order_id: 'O601', invoice_date: '2025-01-07', amount_due: 5530.02, status: 'Paid'})
-CREATE (:Invoices {invoice_id: 'INV1205', order_id: 'O609', invoice_date: '2025-01-08', amount_due: 13279.83, status: 'Unpaid'})
-CREATE (:Invoices {invoice_id: 'INV1206', order_id: 'O609', invoice_date: '2025-01-09', amount_due: 16454.35, status: 'Paid'})
-CREATE (:Invoices {invoice_id: 'INV1207', order_id: 'O602', invoice_date: '2025-01-10', amount_due: 12206.08, status: 'Paid'})
-CREATE (:Invoices {invoice_id: 'INV1208', order_id: 'O601', invoice_date: '2025-01-11', amount_due: 16026.05, status: 'Unpaid'})
-CREATE (:Invoices {invoice_id: 'INV1209', order_id: 'O609', invoice_date: '2025-01-12', amount_due: 8273.49, status: 'Paid'});
-
-// Create Payments
-CREATE (:Payments {payment_id: 'PMT1300', invoice_id: 'INV1206', payment_date: '2025-01-04', amount_paid: 13279.83, method: 'Bank Transfer'})
-CREATE (:Payments {payment_id: 'PMT1301', invoice_id: 'INV1201', payment_date: '2025-01-05', amount_paid: 4861.66, method: 'Card'})
-CREATE (:Payments {payment_id: 'PMT1302', invoice_id: 'INV1208', payment_date: '2025-01-06', amount_paid: 13279.83, method: 'Card'})
-CREATE (:Payments {payment_id: 'PMT1303', invoice_id: 'INV1206', payment_date: '2025-01-07', amount_paid: 16591.76, method: 'Netbanking'})
-CREATE (:Payments {payment_id: 'PMT1304', invoice_id: 'INV1206', payment_date: '2025-01-08', amount_paid: 16026.05, method: 'UPI'})
-CREATE (:Payments {payment_id: 'PMT1305', invoice_id: 'INV1203', payment_date: '2025-01-09', amount_paid: 13279.83, method: 'Card'})
-CREATE (:Payments {payment_id: 'PMT1306', invoice_id: 'INV1203', payment_date: '2025-01-10', amount_paid: 8273.49, method: 'Bank Transfer'})
-CREATE (:Payments {payment_id: 'PMT1307', invoice_id: 'INV1205', payment_date: '2025-01-11', amount_paid: 8273.49, method: 'UPI'})
-CREATE (:Payments {payment_id: 'PMT1308', invoice_id: 'INV1202', payment_date: '2025-01-12', amount_paid: 12437.05, method: 'Card'})
-CREATE (:Payments {payment_id: 'PMT1309', invoice_id: 'INV1204', payment_date: '2025-01-13', amount_paid: 5530.02, method: 'Netbanking'});
-
-// Create Purchase Orders
-CREATE (:Purchase_orders {po_id: 'PO1000', supplier_id: 'S101', order_date: '2025-01-01', expected_delivery: '2025-01-16', status: 'Open', total_value: 229945.04})
-CREATE (:Purchase_orders {po_id: 'PO1001', supplier_id: 'S100', order_date: '2025-01-02', expected_delivery: '2025-01-17', status: 'Closed', total_value: 60861.29})
-CREATE (:Purchase_orders {po_id: 'PO1002', supplier_id: 'S105', order_date: '2025-01-03', expected_delivery: '2025-01-18', status: 'Open', total_value: 484852.13})
-CREATE (:Purchase_orders {po_id: 'PO1003', supplier_id: 'S108', order_date: '2025-01-04', expected_delivery: '2025-01-19', status: 'Cancelled', total_value: 80089.95})
-CREATE (:Purchase_orders {po_id: 'PO1004', supplier_id: 'S109', order_date: '2025-01-05', expected_delivery: '2025-01-20', status: 'Open', total_value: 260549.54})
-CREATE (:Purchase_orders {po_id: 'PO1005', supplier_id: 'S104', order_date: '2025-01-06', expected_delivery: '2025-01-21', status: 'Closed', total_value: 93674.19})
-CREATE (:Purchase_orders {po_id: 'PO1006', supplier_id: 'S109', order_date: '2025-01-07', expected_delivery: '2025-01-22', status: 'Open', total_value: 478161.39})
-CREATE (:Purchase_orders {po_id: 'PO1007', supplier_id: 'S108', order_date: '2025-01-08', expected_delivery: '2025-01-23', status: 'Open', total_value: 110606.6})
-CREATE (:Purchase_orders {po_id: 'PO1008', supplier_id: 'S100', order_date: '2025-01-09', expected_delivery: '2025-01-24', status: 'Closed', total_value: 128803.64})
-CREATE (:Purchase_orders {po_id: 'PO1009', supplier_id: 'S107', order_date: '2025-01-10', expected_delivery: '2025-01-25', status: 'Open', total_value: 174570.75});
-
-// Create Receipts
-CREATE (:Receipts {receipt_id: 'R1100', po_id: 'PO1008', product_id: 'P206', quantity_received: 97, received_date: '2025-01-06', warehouse_id: 'W11'})
-CREATE (:Receipts {receipt_id: 'R1101', po_id: 'PO1002', product_id: 'P206', quantity_received: 36, received_date: '2025-01-07', warehouse_id: 'W18'})
-CREATE (:Receipts {receipt_id: 'R1102', po_id: 'PO1008', product_id: 'P205', quantity_received: 9, received_date: '2025-01-08', warehouse_id: 'W11'})
-CREATE (:Receipts {receipt_id: 'R1103', po_id: 'PO1003', product_id: 'P207', quantity_received: 24, received_date: '2025-01-09', warehouse_id: 'W17'})
-CREATE (:Receipts {receipt_id: 'R1104', po_id: 'PO1000', product_id: 'P201', quantity_received: 21, received_date: '2025-01-10', warehouse_id: 'W12'})
-CREATE (:Receipts {receipt_id: 'R1105', po_id: 'PO1009', product_id: 'P209', quantity_received: 90, received_date: '2025-01-11', warehouse_id: 'W16'})
-CREATE (:Receipts {receipt_id: 'R1106', po_id: 'PO1007', product_id: 'P202', quantity_received: 26, received_date: '2025-01-12', warehouse_id: 'W15'})
-CREATE (:Receipts {receipt_id: 'R1107', po_id: 'PO1005', product_id: 'P203', quantity_received: 37, received_date: '2025-01-13', warehouse_id: 'W13'})
-CREATE (:Receipts {receipt_id: 'R1108', po_id: 'PO1009', product_id: 'P208', quantity_received: 99, received_date: '2025-01-14', warehouse_id: 'W15'})
-CREATE (:Receipts {receipt_id: 'R1109', po_id: 'PO1005', product_id: 'P201', quantity_received: 71, received_date: '2025-01-15', warehouse_id: 'W14'});
-
-// Create Inventory
-CREATE (:Inventory {inventory_id: 'I400', warehouse_id: 'W18', product_id: 'P207', quantity_on_hand: 93, reorder_point: 95, last_updated: '2025-01-01'})
-CREATE (:Inventory {inventory_id: 'I401', warehouse_id: 'W11', product_id: 'P201', quantity_on_hand: 179, reorder_point: 27, last_updated: '2025-01-02'})
-CREATE (:Inventory {inventory_id: 'I402', warehouse_id: 'W16', product_id: 'P205', quantity_on_hand: 25, reorder_point: 139, last_updated: '2025-01-03'})
-CREATE (:Inventory {inventory_id: 'I403', warehouse_id: 'W13', product_id: 'P202', quantity_on_hand: 204, reorder_point: 69, last_updated: '2025-01-04'})
-CREATE (:Inventory {inventory_id: 'I404', warehouse_id: 'W19', product_id: 'P203', quantity_on_hand: 1, reorder_point: 51, last_updated: '2025-01-05'})
-CREATE (:Inventory {inventory_id: 'I405', warehouse_id: 'W15', product_id: 'P200', quantity_on_hand: 80, reorder_point: 46, last_updated: '2025-01-06'})
-CREATE (:Inventory {inventory_id: 'I406', warehouse_id: 'W13', product_id: 'P208', quantity_on_hand: 116, reorder_point: 112, last_updated: '2025-01-07'})
-CREATE (:Inventory {inventory_id: 'I407', warehouse_id: 'W15', product_id: 'P202', quantity_on_hand: 322, reorder_point: 113, last_updated: '2025-01-08'})
-CREATE (:Inventory {inventory_id: 'I408', warehouse_id: 'W18', product_id: 'P205', quantity_on_hand: 496, reorder_point: 40, last_updated: '2025-01-09'})
-CREATE (:Inventory {inventory_id: 'I409', warehouse_id: 'W11', product_id: 'P208', quantity_on_hand: 250, reorder_point: 103, last_updated: '2025-01-10'});
-
-// Create Shipments
-CREATE (:Shipments {shipment_id: 'SH800', order_id: 'O609', carrier_id: 'CR900', warehouse_id: 'W17', shipped_date: '2025-01-02', estimated_arrival: '2025-01-05'})
-CREATE (:Shipments {shipment_id: 'SH801', order_id: 'O601', carrier_id: 'CR901', warehouse_id: 'W16', shipped_date: '2025-01-03', estimated_arrival: '2025-01-06'})
-CREATE (:Shipments {shipment_id: 'SH802', order_id: 'O602', carrier_id: 'CR902', warehouse_id: 'W19', shipped_date: '2025-01-04', estimated_arrival: '2025-01-07'})
-CREATE (:Shipments {shipment_id: 'SH803', order_id: 'O601', carrier_id: 'CR903', warehouse_id: 'W18', shipped_date: '2025-01-05', estimated_arrival: '2025-01-08'})
-CREATE (:Shipments {shipment_id: 'SH804', order_id: 'O607', carrier_id: 'CR904', warehouse_id: 'W14', shipped_date: '2025-01-06', estimated_arrival: '2025-01-09'})
-CREATE (:Shipments {shipment_id: 'SH805', order_id: 'O602', carrier_id: 'CR905', warehouse_id: 'W10', shipped_date: '2025-01-07', estimated_arrival: '2025-01-10'})
-CREATE (:Shipments {shipment_id: 'SH806', order_id: 'O600', carrier_id: 'CR906', warehouse_id: 'W17', shipped_date: '2025-01-08', estimated_arrival: '2025-01-11'})
-CREATE (:Shipments {shipment_id: 'SH807', order_id: 'O601', carrier_id: 'CR907', warehouse_id: 'W14', shipped_date: '2025-01-09', estimated_arrival: '2025-01-12'})
-CREATE (:Shipments {shipment_id: 'SH808', order_id: 'O603', carrier_id: 'CR908', warehouse_id: 'W16', shipped_date: '2025-01-10', estimated_arrival: '2025-01-13'})
-CREATE (:Shipments {shipment_id: 'SH809', order_id: 'O607', carrier_id: 'CR909', warehouse_id: 'W19', shipped_date: '2025-01-11', estimated_arrival: '2025-01-14'});
-
-// Create Logistics Events
-CREATE (:Logistics_events {event_id: 'E1500', shipment_id: 'SH806', event_time: '2025-01-02 10:00:00', event_type: 'Picked Up', location: 'Chennai'})
-CREATE (:Logistics_events {event_id: 'E1501', shipment_id: 'SH801', event_time: '2025-01-03 10:00:00', event_type: 'In Transit', location: 'Mumbai'})
-CREATE (:Logistics_events {event_id: 'E1502', shipment_id: 'SH804', event_time: '2025-01-04 10:00:00', event_type: 'Delayed', location: 'Delhi'})
-CREATE (:Logistics_events {event_id: 'E1503', shipment_id: 'SH807', event_time: '2025-01-05 10:00:00', event_type: 'Arrived', location: 'Bengaluru'})
-CREATE (:Logistics_events {event_id: 'E1504', shipment_id: 'SH808', event_time: '2025-01-06 10:00:00', event_type: 'Loaded', location: 'Kolkata'})
-CREATE (:Logistics_events {event_id: 'E1505', shipment_id: 'SH801', event_time: '2025-01-07 10:00:00', event_type: 'In Transit', location: 'Pune'})
-CREATE (:Logistics_events {event_id: 'E1506', shipment_id: 'SH801', event_time: '2025-01-08 10:00:00', event_type: 'Customs', location: 'Hyderabad'})
-CREATE (:Logistics_events {event_id: 'E1507', shipment_id: 'SH808', event_time: '2025-01-09 10:00:00', event_type: 'Delivered', location: 'Ahmedabad'})
-CREATE (:Logistics_events {event_id: 'E1508', shipment_id: 'SH809', event_time: '2025-01-10 10:00:00', event_type: 'Out for Delivery', location: 'Jaipur'})
-CREATE (:Logistics_events {event_id: 'E1509', shipment_id: 'SH809', event_time: '2025-01-11 10:00:00', event_type: 'Exception', location: 'Surat'});
-
-// Create Routes
-CREATE (:Routes {route_id: 'RT1400', origin_warehouse: 'W19', destination_city: 'Delhi', distance_km: 547, estimated_time_hours: 51.2})
-CREATE (:Routes {route_id: 'RT1401', origin_warehouse: 'W18', destination_city: 'Mumbai', distance_km: 1379, estimated_time_hours: 19.3})
-CREATE (:Routes {route_id: 'RT1402', origin_warehouse: 'W16', destination_city: 'Chennai', distance_km: 1495, estimated_time_hours: 67.0})
-CREATE (:Routes {route_id: 'RT1403', origin_warehouse: 'W17', destination_city: 'Bengaluru', distance_km: 327, estimated_time_hours: 56.9})
-CREATE (:Routes {route_id: 'RT1404', origin_warehouse: 'W12', destination_city: 'Kolkata', distance_km: 1926, estimated_time_hours: 8.3})
-CREATE (:Routes {route_id: 'RT1405', origin_warehouse: 'W18', destination_city: 'Pune', distance_km: 2280, estimated_time_hours: 23.9})
-CREATE (:Routes {route_id: 'RT1406', origin_warehouse: 'W14', destination_city: 'Jaipur', distance_km: 2032, estimated_time_hours: 55.3})
-CREATE (:Routes {route_id: 'RT1407', origin_warehouse: 'W14', destination_city: 'Ahmedabad', distance_km: 2213, estimated_time_hours: 7.9})
-CREATE (:Routes {route_id: 'RT1408', origin_warehouse: 'W12', destination_city: 'Surat', distance_km: 318, estimated_time_hours: 46.9})
-CREATE (:Routes {route_id: 'RT1409', origin_warehouse: 'W14', destination_city: 'Hyderabad', distance_km: 982, estimated_time_hours: 66.1});
+// Create uniqueness constraints for all primary keys
+CREATE CONSTRAINT carrier_id_unique IF NOT EXISTS FOR (c:Carriers) REQUIRE c.carrier_id IS UNIQUE;
+CREATE CONSTRAINT customer_id_unique IF NOT EXISTS FOR (c:Customers) REQUIRE c.customer_id IS UNIQUE;
+CREATE CONSTRAINT inventory_id_unique IF NOT EXISTS FOR (i:Inventory) REQUIRE i.inventory_id IS UNIQUE;
+CREATE CONSTRAINT invoice_id_unique IF NOT EXISTS FOR (i:Invoices) REQUIRE i.invoice_id IS UNIQUE;
+CREATE CONSTRAINT event_id_unique IF NOT EXISTS FOR (le:Logistics_events) REQUIRE le.event_id IS UNIQUE;
+CREATE CONSTRAINT order_id_unique IF NOT EXISTS FOR (o:Orders) REQUIRE o.order_id IS UNIQUE;
+CREATE CONSTRAINT order_item_id_unique IF NOT EXISTS FOR (oi:Order_items) REQUIRE oi.order_item_id IS UNIQUE;
+CREATE CONSTRAINT payment_id_unique IF NOT EXISTS FOR (p:Payments) REQUIRE p.payment_id IS UNIQUE;
+CREATE CONSTRAINT product_id_unique IF NOT EXISTS FOR (p:Products) REQUIRE p.product_id IS UNIQUE;
+CREATE CONSTRAINT product_sku_unique IF NOT EXISTS FOR (p:Products) REQUIRE p.sku IS UNIQUE;
+CREATE CONSTRAINT po_id_unique IF NOT EXISTS FOR (po:Purchase_orders) REQUIRE po.po_id IS UNIQUE;
+CREATE CONSTRAINT receipt_id_unique IF NOT EXISTS FOR (r:Receipts) REQUIRE r.receipt_id IS UNIQUE;
+CREATE CONSTRAINT route_id_unique IF NOT EXISTS FOR (r:Routes) REQUIRE r.route_id IS UNIQUE;
+CREATE CONSTRAINT shipment_id_unique IF NOT EXISTS FOR (s:Shipments) REQUIRE s.shipment_id IS UNIQUE;
+CREATE CONSTRAINT supplier_id_unique IF NOT EXISTS FOR (s:Suppliers) REQUIRE s.supplier_id IS UNIQUE;
+CREATE CONSTRAINT warehouse_id_unique IF NOT EXISTS FOR (w:Warehouses) REQUIRE w.warehouse_id IS UNIQUE;
 
 // ========================================
-// CREATE RELATIONSHIPS
+// STEP 2: LOAD NODE DATA FROM CSV FILES
 // ========================================
 
-// Product-Supplier Relationships
-MATCH (p:Products {supplier_id: 'S104'}), (s:Suppliers {supplier_id: 'S104'})
-CREATE (p)-[:PRODUCT_FROM_SUPPLIER]->(s);
+// Load Carriers
+LOAD CSV WITH HEADERS FROM 'file:///carriers.csv' AS row
+CREATE (c:Carriers {
+  carrier_id: row.carrier_id,
+  name: row.name,
+  service_level: row.service_level,
+  phone: row.phone
+});
 
-MATCH (p:Products {supplier_id: 'S105'}), (s:Suppliers {supplier_id: 'S105'})
-CREATE (p)-[:PRODUCT_FROM_SUPPLIER]->(s);
+// Load Customers
+LOAD CSV WITH HEADERS FROM 'file:///customers.csv' AS row
+CREATE (c:Customers {
+  customer_id: row.customer_id,
+  name: row.name,
+  segment: row.segment,
+  city: row.city,
+  contact_email: row.contact_email
+});
 
-MATCH (p:Products {supplier_id: 'S107'}), (s:Suppliers {supplier_id: 'S107'})
-CREATE (p)-[:PRODUCT_FROM_SUPPLIER]->(s);
+// Load Suppliers
+LOAD CSV WITH HEADERS FROM 'file:///suppliers.csv' AS row
+CREATE (s:Suppliers {
+  supplier_id: row.supplier_id,
+  name: row.name,
+  country: row.country,
+  contact_email: row.contact_email,
+  phone: row.phone,
+  lead_time_days: toInteger(row.lead_time_days)
+});
 
-MATCH (p:Products {supplier_id: 'S108'}), (s:Suppliers {supplier_id: 'S108'})
-CREATE (p)-[:PRODUCT_FROM_SUPPLIER]->(s);
+// Load Warehouses
+LOAD CSV WITH HEADERS FROM 'file:///warehouses.csv' AS row
+CREATE (w:Warehouses {
+  warehouse_id: row.warehouse_id,
+  name: row.name,
+  location_city: row.location_city,
+  capacity_units: toInteger(row.capacity_units)
+});
 
-MATCH (p:Products {supplier_id: 'S109'}), (s:Suppliers {supplier_id: 'S109'})
-CREATE (p)-[:PRODUCT_FROM_SUPPLIER]->(s);
+// Load Products
+LOAD CSV WITH HEADERS FROM 'file:///products.csv' AS row
+CREATE (p:Products {
+  product_id: row.product_id,
+  sku: row.sku,
+  name: row.name,
+  category: row.category,
+  unit_weight_kg: toFloat(row.unit_weight_kg),
+  supplier_id: row.supplier_id
+});
 
-MATCH (p:Products {supplier_id: 'S106'}), (s:Suppliers {supplier_id: 'S106'})
-CREATE (p)-[:PRODUCT_FROM_SUPPLIER]->(s);
+// Load Orders
+LOAD CSV WITH HEADERS FROM 'file:///orders.csv' AS row
+CREATE (o:Orders {
+  order_id: row.order_id,
+  customer_id: row.customer_id,
+  order_date: row.order_date,
+  status: row.status,
+  total_amount: toFloat(row.total_amount)
+});
 
-MATCH (p:Products {supplier_id: 'S101'}), (s:Suppliers {supplier_id: 'S101'})
-CREATE (p)-[:PRODUCT_FROM_SUPPLIER]->(s);
+// Load Order Items
+LOAD CSV WITH HEADERS FROM 'file:///order_items.csv' AS row
+CREATE (oi:Order_items {
+  order_item_id: row.order_item_id,
+  order_id: row.order_id,
+  product_id: row.product_id,
+  quantity: toInteger(row.quantity),
+  unit_price: toFloat(row.unit_price)
+});
 
-MATCH (p:Products {supplier_id: 'S102'}), (s:Suppliers {supplier_id: 'S102'})
-CREATE (p)-[:PRODUCT_FROM_SUPPLIER]->(s);
+// Load Invoices
+LOAD CSV WITH HEADERS FROM 'file:///invoices.csv' AS row
+CREATE (i:Invoices {
+  invoice_id: row.invoice_id,
+  order_id: row.order_id,
+  invoice_date: row.invoice_date,
+  amount_due: toFloat(row.amount_due),
+  status: row.status
+});
 
-// Order-Customer Relationships
-MATCH (o:Orders), (c:Customers)
-WHERE o.customer_id = c.customer_id
-CREATE (o)-[:ORDER_BY_CUSTOMER]->(c);
+// Load Payments
+LOAD CSV WITH HEADERS FROM 'file:///payments.csv' AS row
+CREATE (p:Payments {
+  payment_id: row.payment_id,
+  invoice_id: row.invoice_id,
+  payment_date: row.payment_date,
+  amount_paid: toFloat(row.amount_paid),
+  method: row.method
+});
 
-// Order Item-Order Relationships
-MATCH (oi:Order_items), (o:Orders)
-WHERE oi.order_id = o.order_id
-CREATE (oi)-[:ITEM_IN_ORDER]->(o);
+// Load Shipments
+LOAD CSV WITH HEADERS FROM 'file:///shipments.csv' AS row
+CREATE (s:Shipments {
+  shipment_id: row.shipment_id,
+  order_id: row.order_id,
+  carrier_id: row.carrier_id,
+  warehouse_id: row.warehouse_id,
+  shipped_date: row.shipped_date,
+  estimated_arrival: row.estimated_arrival
+});
 
-// Order Item-Product Relationships
+// Load Logistics Events
+LOAD CSV WITH HEADERS FROM 'file:///logistics_events.csv' AS row
+CREATE (le:Logistics_events {
+  event_id: row.event_id,
+  shipment_id: row.shipment_id,
+  event_time: row.event_time,
+  event_type: row.event_type,
+  location: row.location
+});
+
+// Load Purchase Orders
+LOAD CSV WITH HEADERS FROM 'file:///purchase_orders.csv' AS row
+CREATE (po:Purchase_orders {
+  po_id: row.po_id,
+  supplier_id: row.supplier_id,
+  order_date: row.order_date,
+  expected_delivery: row.expected_delivery,
+  status: row.status,
+  total_value: toFloat(row.total_value)
+});
+
+// Load Receipts
+LOAD CSV WITH HEADERS FROM 'file:///receipts.csv' AS row
+CREATE (r:Receipts {
+  receipt_id: row.receipt_id,
+  po_id: row.po_id,
+  product_id: row.product_id,
+  quantity_received: toInteger(row.quantity_received),
+  received_date: row.received_date,
+  warehouse_id: row.warehouse_id
+});
+
+// Load Inventory
+LOAD CSV WITH HEADERS FROM 'file:///inventory.csv' AS row
+CREATE (i:Inventory {
+  inventory_id: row.inventory_id,
+  warehouse_id: row.warehouse_id,
+  product_id: row.product_id,
+  quantity_on_hand: toInteger(row.quantity_on_hand),
+  reorder_point: toInteger(row.reorder_point),
+  last_updated: row.last_updated
+});
+
+// Load Routes
+LOAD CSV WITH HEADERS FROM 'file:///routes.csv' AS row
+CREATE (r:Routes {
+  route_id: row.route_id,
+  origin_warehouse: row.origin_warehouse,
+  destination_city: row.destination_city,
+  distance_km: toInteger(row.distance_km),
+  estimated_time_hours: toFloat(row.estimated_time_hours)
+});
+
+// ========================================
+// STEP 3: CREATE RELATIONSHIPS
+// ========================================
+
+// 1. Customers place Orders
+MATCH (c:Customers), (o:Orders)
+WHERE c.customer_id = o.customer_id
+MERGE (c)-[:PLACES_ORDER]->(o);
+
+// 2. Orders contain Order Items
+MATCH (o:Orders), (oi:Order_items)
+WHERE o.order_id = oi.order_id
+MERGE (o)-[:CONTAINS_ITEM]->(oi);
+
+// 3. Order Items reference Products
 MATCH (oi:Order_items), (p:Products)
 WHERE oi.product_id = p.product_id
-CREATE (oi)-[:ITEM_IS_PRODUCT]->(p);
+MERGE (oi)-[:ITEM_OF_PRODUCT]->(p);
 
-// Invoice-Order Relationships
-MATCH (i:Invoices), (o:Orders)
-WHERE i.order_id = o.order_id
-CREATE (i)-[:INVOICE_FOR_ORDER]->(o);
+// 4. Orders generate Invoices
+MATCH (o:Orders), (i:Invoices)
+WHERE o.order_id = i.order_id
+MERGE (o)-[:GENERATES_INVOICE]->(i);
 
-// Payment-Invoice Relationships
+// 5. Payments pay Invoices
 MATCH (p:Payments), (i:Invoices)
 WHERE p.invoice_id = i.invoice_id
-CREATE (p)-[:PAYMENT_FOR_INVOICE]->(i);
+MERGE (p)-[:PAYS_INVOICE]->(i);
 
-// Purchase Order-Supplier Relationships
-MATCH (po:Purchase_orders), (s:Suppliers)
-WHERE po.supplier_id = s.supplier_id
-CREATE (po)-[:PO_TO_SUPPLIER]->(s);
-
-// Receipt-Purchase Order Relationships
-MATCH (r:Receipts), (po:Purchase_orders)
-WHERE r.po_id = po.po_id
-CREATE (r)-[:RECEIPT_FOR_PO]->(po);
-
-// Receipt-Product Relationships
-MATCH (r:Receipts), (p:Products)
-WHERE r.product_id = p.product_id
-CREATE (r)-[:RECEIPT_OF_PRODUCT]->(p);
-
-// Receipt-Warehouse Relationships
-MATCH (r:Receipts), (w:Warehouses)
-WHERE r.warehouse_id = w.warehouse_id
-CREATE (r)-[:RECEIPT_TO_WAREHOUSE]->(w);
-
-// Inventory-Warehouse Relationships
-MATCH (i:Inventory), (w:Warehouses)
-WHERE i.warehouse_id = w.warehouse_id
-CREATE (i)-[:STORED_IN_WAREHOUSE]->(w);
-
-// Inventory-Product Relationships
-MATCH (i:Inventory), (p:Products)
-WHERE i.product_id = p.product_id
-CREATE (i)-[:INVENTORY_OF_PRODUCT]->(p);
-
-// Shipment-Order Relationships
+// 6. Shipments ship Orders
 MATCH (s:Shipments), (o:Orders)
 WHERE s.order_id = o.order_id
-CREATE (s)-[:SHIPMENT_FOR_ORDER]->(o);
+MERGE (s)-[:SHIPS_ORDER]->(o);
 
-// Shipment-Carrier Relationships
+// 7. Shipments handled by Carriers
 MATCH (s:Shipments), (c:Carriers)
 WHERE s.carrier_id = c.carrier_id
-CREATE (s)-[:SHIPMENT_BY_CARRIER]->(c);
+MERGE (s)-[:HANDLED_BY_CARRIER]->(c);
 
-// Shipment-Warehouse Relationships
+// 8. Shipments ship from Warehouses
 MATCH (s:Shipments), (w:Warehouses)
 WHERE s.warehouse_id = w.warehouse_id
-CREATE (s)-[:SHIPMENT_FROM_WAREHOUSE]->(w);
+MERGE (s)-[:SHIPS_FROM_WAREHOUSE]->(w);
 
-// Logistics Event-Shipment Relationships
+// 9. Logistics Events track Shipments
 MATCH (le:Logistics_events), (s:Shipments)
 WHERE le.shipment_id = s.shipment_id
-CREATE (le)-[:EVENT_FOR_SHIPMENT]->(s);
+MERGE (le)-[:TRACKS_SHIPMENT]->(s);
 
-// Create indexes for better performance
-CREATE INDEX FOR (c:Carriers) ON (c.carrier_id);
-CREATE INDEX FOR (cust:Customers) ON (cust.customer_id);
-CREATE INDEX FOR (w:Warehouses) ON (w.warehouse_id);
-CREATE INDEX FOR (s:Suppliers) ON (s.supplier_id);
-CREATE INDEX FOR (p:Products) ON (p.product_id);
-CREATE INDEX FOR (o:Orders) ON (o.order_id);
-CREATE INDEX FOR (i:Invoices) ON (i.invoice_id);
-CREATE INDEX FOR (po:Purchase_orders) ON (po.po_id);
-CREATE INDEX FOR (sh:Shipments) ON (sh.shipment_id);
+// 10. Products supplied by Suppliers
+MATCH (p:Products), (s:Suppliers)
+WHERE p.supplier_id = s.supplier_id
+MERGE (p)-[:SUPPLIED_BY]->(s);
 
-// Query examples for verification
-// MATCH (c:Customers)-[:ORDER_BY_CUSTOMER]-(o:Orders) RETURN c.name, COUNT(o) as order_count;
-// MATCH (p:Products)-[:PRODUCT_FROM_SUPPLIER]-(s:Suppliers) RETURN s.name, s.country, COUNT(p) as product_count;
-// MATCH (w:Warehouses)-[:STORED_IN_WAREHOUSE]-(i:Inventory) RETURN w.name, w.location_city, SUM(i.quantity_on_hand) as total_inventory;
+// 11. Purchase Orders from Suppliers
+MATCH (po:Purchase_orders), (s:Suppliers)
+WHERE po.supplier_id = s.supplier_id
+MERGE (po)-[:ORDERS_FROM_SUPPLIER]->(s);
+
+// 12. Receipts receive Purchase Orders
+MATCH (r:Receipts), (po:Purchase_orders)
+WHERE r.po_id = po.po_id
+MERGE (r)-[:RECEIVES_PURCHASE_ORDER]->(po);
+
+// 13. Receipts receive Products
+MATCH (r:Receipts), (p:Products)
+WHERE r.product_id = p.product_id
+MERGE (r)-[:RECEIVES_PRODUCT]->(p);
+
+// 14. Receipts received at Warehouses
+MATCH (r:Receipts), (w:Warehouses)
+WHERE r.warehouse_id = w.warehouse_id
+MERGE (r)-[:RECEIVED_AT_WAREHOUSE]->(w);
+
+// 15. Inventory stored in Warehouses
+MATCH (i:Inventory), (w:Warehouses)
+WHERE i.warehouse_id = w.warehouse_id
+MERGE (i)-[:STORES_INVENTORY]->(w);
+
+// 16. Inventory of Products
+MATCH (i:Inventory), (p:Products)
+WHERE i.product_id = p.product_id
+MERGE (i)-[:INVENTORY_OF_PRODUCT]->(p);
+
+// 17. Routes originate from Warehouses
+MATCH (r:Routes), (w:Warehouses)
+WHERE r.origin_warehouse = w.warehouse_id
+MERGE (r)-[:ORIGINATES_FROM_WAREHOUSE]->(w);
+
+// ========================================
+// STEP 4: VERIFICATION QUERIES
+// ========================================
+
+// Count nodes by type
+// MATCH (n) RETURN labels(n)[0] as node_type, count(n) as count ORDER BY count DESC;
+
+// Count relationships by type
+// MATCH ()-[r]->() RETURN type(r) as relationship_type, count(r) as count ORDER BY count DESC;
+
+// Sample complex query to verify the graph structure
+// MATCH (c:Customers)-[:PLACES_ORDER]->(o:Orders)-[:CONTAINS_ITEM]->(oi:Order_items)-[:ITEM_OF_PRODUCT]->(p:Products)-[:SUPPLIED_BY]->(s:Suppliers)
+// RETURN c.name as customer, o.order_id, p.name as product, s.name as supplier, s.country
+// LIMIT 10;
+
+// Database setup complete!
+// Total entities: 16 node types, 17 relationship types
+// Ready for supply chain analytics and queries
