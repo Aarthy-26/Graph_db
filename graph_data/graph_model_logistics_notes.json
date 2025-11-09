@@ -1,152 +1,113 @@
 {
   "nodes": [
     {
-      "id": "WH-A",
-      "label": "warehouse",
+      "id": "warehouse_wh_a",
+      "label": "Warehouse",
       "properties": {
-        "type": "storage_location"
+        "warehouse_id": "WH-A"
       }
     },
     {
-      "id": "WH-B",
-      "label": "warehouse",
+      "id": "warehouse_wh_b",
+      "label": "Warehouse",
       "properties": {
-        "type": "storage_location"
+        "warehouse_id": "WH-B"
       }
     },
     {
-      "id": "P1003",
-      "label": "product",
+      "id": "product_p1003",
+      "label": "Product",
       "properties": {
-        "name": "Steel Bolts",
-        "discrepancy": "-150 units"
+        "product_id": "P1003",
+        "name": "Steel Bolts - M8"
       }
     },
     {
-      "id": "PO-2025-002",
-      "label": "purchase_order",
-      "properties": {
-        "type": "purchase_order"
-      }
-    },
-    {
-      "id": "Chennai_port",
-      "label": "location",
-      "properties": {
-        "type": "port"
-      }
-    },
-    {
-      "id": "Lithium_Battery_Pack",
-      "label": "product",
+      "id": "product_lithium_battery",
+      "label": "Product",
       "properties": {
         "name": "Lithium Battery Pack"
       }
     },
     {
-      "id": "cycle_count",
-      "label": "process",
+      "id": "cycle_count_event",
+      "label": "Event",
       "properties": {
-        "date": "2025-04-02"
+        "type": "cycle_count",
+        "date": "2025-04-02",
+        "discrepancy": -150
       }
     },
     {
-      "id": "discrepancy",
-      "label": "issue",
+      "id": "port_delay_event",
+      "label": "Event",
       "properties": {
-        "type": "inventory_discrepancy",
-        "amount": "-150 units"
-      }
-    },
-    {
-      "id": "container_delay",
-      "label": "issue",
-      "properties": {
+        "type": "port_delay",
         "date": "2025-04-11",
-        "cause": "documentation_mismatch"
+        "location": "Chennai port",
+        "reason": "documentation mismatch"
       }
     },
     {
-      "id": "temp_spike",
-      "label": "issue",
+      "id": "temp_spike_event",
+      "label": "Event",
       "properties": {
+        "type": "temperature_spike",
         "date": "2025-04-20",
-        "location": "Warehouse B"
+        "action": "precautionary relocation"
       }
     },
     {
-      "id": "documentation_mismatch",
-      "label": "issue",
+      "id": "po_2025_002",
+      "label": "Purchase_Order",
       "properties": {
-        "type": "documentation_error"
+        "po_id": "PO-2025-002"
       }
     },
     {
-      "id": "cooler_racks",
-      "label": "storage",
+      "id": "chennai_port",
+      "label": "Location",
       "properties": {
-        "type": "temperature_controlled"
+        "name": "Chennai Port"
       }
     }
   ],
   "edges": [
     {
-      "source": "WH-A",
-      "target": "cycle_count",
-      "type": "conducts",
-      "properties": {
-        "date": "2025-04-02"
-      }
-    },
-    {
-      "source": "cycle_count",
-      "target": "discrepancy",
-      "type": "finds",
+      "source": "cycle_count_event",
+      "target": "warehouse_wh_a",
+      "type": "occurred_at",
       "properties": {}
     },
     {
-      "source": "discrepancy",
-      "target": "P1003",
-      "type": "affects",
+      "source": "cycle_count_event",
+      "target": "product_p1003",
+      "type": "affected",
       "properties": {}
     },
     {
-      "source": "container_delay",
-      "target": "Chennai_port",
-      "type": "occurs_at",
+      "source": "port_delay_event",
+      "target": "chennai_port",
+      "type": "occurred_at",
       "properties": {}
     },
     {
-      "source": "container_delay",
-      "target": "PO-2025-002",
-      "type": "relates_to",
+      "source": "port_delay_event",
+      "target": "po_2025_002",
+      "type": "affected",
       "properties": {}
     },
     {
-      "source": "documentation_mismatch",
-      "target": "container_delay",
-      "type": "causes",
+      "source": "temp_spike_event",
+      "target": "warehouse_wh_b",
+      "type": "occurred_at",
       "properties": {}
     },
     {
-      "source": "temp_spike",
-      "target": "WH-B",
-      "type": "occurs_in",
+      "source": "temp_spike_event",
+      "target": "product_lithium_battery",
+      "type": "affected",
       "properties": {}
-    },
-    {
-      "source": "temp_spike",
-      "target": "Lithium_Battery_Pack",
-      "type": "affects",
-      "properties": {}
-    },
-    {
-      "source": "Lithium_Battery_Pack",
-      "target": "cooler_racks",
-      "type": "relocated_to",
-      "properties": {
-        "reason": "precautionary"
-      }
     }
   ]
 }
