@@ -1,0 +1,184 @@
+{
+  "nodes": [
+    {
+      "id": "inventory_sync_process",
+      "label": "Process",
+      "properties": {
+        "name": "inventory_sync",
+        "type": "routine_process"
+      }
+    },
+    {
+      "id": "log_event_1",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-01T19:26:06.065306Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_2",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-09T02:26:06.065324Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_3",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-05T06:26:06.065328Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_4",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-01T14:26:06.065331Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_5",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-03T15:26:06.065335Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_6",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-03T12:26:06.065338Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_7",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-01T21:26:06.065342Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_8",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-03T22:26:06.065347Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_9",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-02T20:26:06.065354Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    },
+    {
+      "id": "log_event_10",
+      "label": "LogEvent",
+      "properties": {
+        "timestamp": "2025-11-04T07:26:06.065358Z",
+        "level": "INFO",
+        "message": "Routine inventory sync completed"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "log_event_1",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_2",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_3",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_4",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_5",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_6",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_7",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_8",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_9",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    },
+    {
+      "source": "log_event_10",
+      "target": "inventory_sync_process",
+      "type": "LOGS",
+      "properties": {
+        "relationship": "process_completion"
+      }
+    }
+  ]
+}
