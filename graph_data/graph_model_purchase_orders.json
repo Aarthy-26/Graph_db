@@ -1,165 +1,132 @@
 {
   "nodes": [
     {
-      "id": "PO-2025-001",
-      "label": "purchase_order",
+      "id": "po_2025_001",
+      "label": "Purchase_Order",
       "properties": {
-        "date": "2025-04-01"
+        "po_id": "PO-2025-001",
+        "date": "2025-04-01",
+        "status": "delivered"
       }
     },
     {
-      "id": "PO-2025-002",
-      "label": "purchase_order",
+      "id": "po_2025_002",
+      "label": "Purchase_Order",
       "properties": {
-        "date": "2025-04-10"
+        "po_id": "PO-2025-002",
+        "date": "2025-04-10",
+        "status": "in_transit"
       }
     },
     {
-      "id": "PO-2025-003",
-      "label": "purchase_order",
+      "id": "po_2025_003",
+      "label": "Purchase_Order",
       "properties": {
-        "date": "2025-03-28"
+        "po_id": "PO-2025-003",
+        "date": "2025-03-28",
+        "status": "pending"
       }
     },
     {
-      "id": "S001",
-      "label": "supplier",
+      "id": "supplier_s001",
+      "label": "Supplier",
       "properties": {
         "supplier_id": "S001"
       }
     },
     {
-      "id": "S002",
-      "label": "supplier",
+      "id": "supplier_s002",
+      "label": "Supplier",
       "properties": {
         "supplier_id": "S002"
       }
     },
     {
-      "id": "S005",
-      "label": "supplier",
+      "id": "supplier_s005",
+      "label": "Supplier",
       "properties": {
         "supplier_id": "S005"
       }
     },
     {
-      "id": "P1001",
-      "label": "product",
+      "id": "item_p1001",
+      "label": "Item",
       "properties": {
         "item_id": "P1001"
       }
     },
     {
-      "id": "P1002",
-      "label": "product",
+      "id": "item_p1002",
+      "label": "Item",
       "properties": {
         "item_id": "P1002"
       }
     },
     {
-      "id": "P1003",
-      "label": "product",
+      "id": "item_p1003",
+      "label": "Item",
       "properties": {
         "item_id": "P1003"
       }
     },
     {
-      "id": "P1004",
-      "label": "product",
+      "id": "item_p1004",
+      "label": "Item",
       "properties": {
         "item_id": "P1004"
-      }
-    },
-    {
-      "id": "delivered",
-      "label": "status",
-      "properties": {
-        "type": "order_status"
-      }
-    },
-    {
-      "id": "in_transit",
-      "label": "status",
-      "properties": {
-        "type": "order_status"
-      }
-    },
-    {
-      "id": "pending",
-      "label": "status",
-      "properties": {
-        "type": "order_status"
       }
     }
   ],
   "edges": [
     {
-      "source": "PO-2025-001",
-      "target": "S001",
-      "type": "issued_to",
+      "source": "po_2025_001",
+      "target": "supplier_s001",
+      "type": "ordered_from",
       "properties": {}
     },
     {
-      "source": "PO-2025-002",
-      "target": "S002",
-      "type": "issued_to",
-      "properties": {}
-    },
-    {
-      "source": "PO-2025-003",
-      "target": "S005",
-      "type": "issued_to",
-      "properties": {}
-    },
-    {
-      "source": "PO-2025-001",
-      "target": "P1001",
+      "source": "po_2025_001",
+      "target": "item_p1001",
       "type": "contains",
       "properties": {
-        "qty": "50"
+        "quantity": 50
       }
     },
     {
-      "source": "PO-2025-001",
-      "target": "P1003",
+      "source": "po_2025_001",
+      "target": "item_p1003",
       "type": "contains",
       "properties": {
-        "qty": "2000"
+        "quantity": 2000
       }
     },
     {
-      "source": "PO-2025-002",
-      "target": "P1002",
+      "source": "po_2025_002",
+      "target": "supplier_s002",
+      "type": "ordered_from",
+      "properties": {}
+    },
+    {
+      "source": "po_2025_002",
+      "target": "item_p1002",
       "type": "contains",
       "properties": {
-        "qty": "300"
+        "quantity": 300
       }
     },
     {
-      "source": "PO-2025-003",
-      "target": "P1004",
+      "source": "po_2025_003",
+      "target": "supplier_s005",
+      "type": "ordered_from",
+      "properties": {}
+    },
+    {
+      "source": "po_2025_003",
+      "target": "item_p1004",
       "type": "contains",
       "properties": {
-        "qty": "500"
+        "quantity": 500
       }
-    },
-    {
-      "source": "PO-2025-001",
-      "target": "delivered",
-      "type": "has_status",
-      "properties": {}
-    },
-    {
-      "source": "PO-2025-002",
-      "target": "in_transit",
-      "type": "has_status",
-      "properties": {}
-    },
-    {
-      "source": "PO-2025-003",
-      "target": "pending",
-      "type": "has_status",
-      "properties": {}
     }
   ]
 }
