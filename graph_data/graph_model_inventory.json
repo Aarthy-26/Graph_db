@@ -1,138 +1,142 @@
 {
   "nodes": [
     {
-      "id": "P1001",
-      "label": "product",
+      "id": "item_p1001",
+      "label": "Item",
       "properties": {
+        "item_id": "P1001",
         "name": "18V Cordless Drill",
-        "qty": "120",
-        "reorder_level": "30"
+        "qty": 120,
+        "reorder_level": 30
       }
     },
     {
-      "id": "P1002",
-      "label": "product",
+      "id": "item_p1002",
+      "label": "Item",
       "properties": {
+        "item_id": "P1002",
         "name": "Lithium Battery Pack",
-        "qty": "450",
-        "reorder_level": "100"
+        "qty": 450,
+        "reorder_level": 100
       }
     },
     {
-      "id": "P1003",
-      "label": "product",
+      "id": "item_p1003",
+      "label": "Item",
       "properties": {
+        "item_id": "P1003",
         "name": "Steel Bolts - M8",
-        "qty": "5000",
-        "reorder_level": "2000"
+        "qty": 5000,
+        "reorder_level": 2000
       }
     },
     {
-      "id": "P1004",
-      "label": "product",
+      "id": "item_p1004",
+      "label": "Item",
       "properties": {
+        "item_id": "P1004",
         "name": "Packaging Box - Large",
-        "qty": "800",
-        "reorder_level": "150"
+        "qty": 800,
+        "reorder_level": 150
       }
     },
     {
-      "id": "WH-A",
-      "label": "warehouse",
+      "id": "category_tools",
+      "label": "Category",
       "properties": {
-        "type": "storage_location"
+        "name": "Tools"
       }
     },
     {
-      "id": "WH-B",
-      "label": "warehouse",
+      "id": "category_electronics",
+      "label": "Category",
       "properties": {
-        "type": "storage_location"
+        "name": "Electronics"
       }
     },
     {
-      "id": "WH-C",
-      "label": "warehouse",
+      "id": "category_hardware",
+      "label": "Category",
       "properties": {
-        "type": "storage_location"
+        "name": "Hardware"
       }
     },
     {
-      "id": "Tools",
-      "label": "category",
+      "id": "category_packaging",
+      "label": "Category",
       "properties": {
-        "type": "product_category"
+        "name": "Packaging"
       }
     },
     {
-      "id": "Electronics",
-      "label": "category",
+      "id": "warehouse_wh_a",
+      "label": "Warehouse",
       "properties": {
-        "type": "product_category"
+        "warehouse_id": "WH-A"
       }
     },
     {
-      "id": "Hardware",
-      "label": "category",
+      "id": "warehouse_wh_b",
+      "label": "Warehouse",
       "properties": {
-        "type": "product_category"
+        "warehouse_id": "WH-B"
       }
     },
     {
-      "id": "Packaging",
-      "label": "category",
+      "id": "warehouse_wh_c",
+      "label": "Warehouse",
       "properties": {
-        "type": "product_category"
+        "warehouse_id": "WH-C"
       }
     }
   ],
   "edges": [
     {
-      "source": "P1001",
-      "target": "WH-A",
+      "source": "item_p1001",
+      "target": "category_tools",
+      "type": "belongs_to",
+      "properties": {}
+    },
+    {
+      "source": "item_p1001",
+      "target": "warehouse_wh_a",
       "type": "stored_in",
       "properties": {}
     },
     {
-      "source": "P1002",
-      "target": "WH-B",
+      "source": "item_p1002",
+      "target": "category_electronics",
+      "type": "belongs_to",
+      "properties": {}
+    },
+    {
+      "source": "item_p1002",
+      "target": "warehouse_wh_b",
       "type": "stored_in",
       "properties": {}
     },
     {
-      "source": "P1003",
-      "target": "WH-A",
+      "source": "item_p1003",
+      "target": "category_hardware",
+      "type": "belongs_to",
+      "properties": {}
+    },
+    {
+      "source": "item_p1003",
+      "target": "warehouse_wh_a",
       "type": "stored_in",
       "properties": {}
     },
     {
-      "source": "P1004",
-      "target": "WH-C",
+      "source": "item_p1004",
+      "target": "category_packaging",
+      "type": "belongs_to",
+      "properties": {}
+    },
+    {
+      "source": "item_p1004",
+      "target": "warehouse_wh_c",
       "type": "stored_in",
-      "properties": {}
-    },
-    {
-      "source": "P1001",
-      "target": "Tools",
-      "type": "belongs_to_category",
-      "properties": {}
-    },
-    {
-      "source": "P1002",
-      "target": "Electronics",
-      "type": "belongs_to_category",
-      "properties": {}
-    },
-    {
-      "source": "P1003",
-      "target": "Hardware",
-      "type": "belongs_to_category",
-      "properties": {}
-    },
-    {
-      "source": "P1004",
-      "target": "Packaging",
-      "type": "belongs_to_category",
       "properties": {}
     }
   ]
