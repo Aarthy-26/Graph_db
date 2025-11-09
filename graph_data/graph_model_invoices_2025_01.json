@@ -2,50 +2,60 @@
   "nodes": [
     {
       "id": "INV-1001",
-      "label": "Invoice",
+      "label": "invoice",
       "properties": {
-        "invoice_id": "INV-1001",
-        "amount": 12500.5,
-        "due_date": "2025-04-30",
-        "status": "paid"
+        "amount": "12500.5",
+        "due_date": "2025-04-30"
       }
     },
     {
       "id": "INV-1002",
-      "label": "Invoice",
+      "label": "invoice",
       "properties": {
-        "invoice_id": "INV-1002",
-        "amount": 4500.0,
-        "due_date": "2025-05-15",
-        "status": "unpaid"
+        "amount": "4500.0",
+        "due_date": "2025-05-15"
       }
     },
     {
       "id": "PO-2025-001",
-      "label": "PurchaseOrder",
+      "label": "purchase_order",
       "properties": {
-        "po_id": "PO-2025-001"
+        "type": "purchase_order"
       }
     },
     {
       "id": "PO-2025-003",
-      "label": "PurchaseOrder",
+      "label": "purchase_order",
       "properties": {
-        "po_id": "PO-2025-003"
+        "type": "purchase_order"
       }
     },
     {
       "id": "ABC_Supplies_Pvt_Ltd",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
         "name": "ABC Supplies Pvt Ltd"
       }
     },
     {
       "id": "Oceanic_Imports",
-      "label": "Supplier",
+      "label": "supplier",
       "properties": {
         "name": "Oceanic Imports"
+      }
+    },
+    {
+      "id": "paid",
+      "label": "status",
+      "properties": {
+        "type": "payment_status"
+      }
+    },
+    {
+      "id": "unpaid",
+      "label": "status",
+      "properties": {
+        "type": "payment_status"
       }
     }
   ],
@@ -53,34 +63,38 @@
     {
       "source": "INV-1001",
       "target": "PO-2025-001",
-      "type": "REFERENCES",
-      "properties": {
-        "relationship": "invoice_to_po"
-      }
-    },
-    {
-      "source": "INV-1001",
-      "target": "ABC_Supplies_Pvt_Ltd",
-      "type": "FROM",
-      "properties": {
-        "relationship": "supplier_invoice"
-      }
+      "type": "references",
+      "properties": {}
     },
     {
       "source": "INV-1002",
       "target": "PO-2025-003",
-      "type": "REFERENCES",
-      "properties": {
-        "relationship": "invoice_to_po"
-      }
+      "type": "references",
+      "properties": {}
+    },
+    {
+      "source": "INV-1001",
+      "target": "ABC_Supplies_Pvt_Ltd",
+      "type": "issued_by",
+      "properties": {}
     },
     {
       "source": "INV-1002",
       "target": "Oceanic_Imports",
-      "type": "FROM",
-      "properties": {
-        "relationship": "supplier_invoice"
-      }
+      "type": "issued_by",
+      "properties": {}
+    },
+    {
+      "source": "INV-1001",
+      "target": "paid",
+      "type": "has_status",
+      "properties": {}
+    },
+    {
+      "source": "INV-1002",
+      "target": "unpaid",
+      "type": "has_status",
+      "properties": {}
     }
   ]
 }
