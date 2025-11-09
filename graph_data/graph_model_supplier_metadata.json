@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "S001",
+      "label": "Supplier",
+      "properties": {
+        "supplier_id": "S001",
+        "lead_time_days": 7,
+        "preferred_terms": "Net30"
+      }
+    },
+    {
+      "id": "S002",
+      "label": "Supplier",
+      "properties": {
+        "supplier_id": "S002",
+        "lead_time_days": 21,
+        "preferred_terms": "Prepaid"
+      }
+    },
+    {
+      "id": "audit_S001_2024_11_20",
+      "label": "Audit",
+      "properties": {
+        "date": "2024-11-20",
+        "type": "supplier_audit"
+      }
+    },
+    {
+      "id": "audit_S002_2023_09_15",
+      "label": "Audit",
+      "properties": {
+        "date": "2023-09-15",
+        "type": "supplier_audit"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "S001",
+      "target": "audit_S001_2024_11_20",
+      "type": "AUDITED_ON",
+      "properties": {
+        "relationship": "last_audit"
+      }
+    },
+    {
+      "source": "S002",
+      "target": "audit_S002_2023_09_15",
+      "type": "AUDITED_ON",
+      "properties": {
+        "relationship": "last_audit"
+      }
+    }
+  ]
+}
