@@ -1,0 +1,131 @@
+{
+  "nodes": [
+    {
+      "id": "S001",
+      "label": "Supplier",
+      "properties": {
+        "supplier_id": "S001",
+        "name": "ABC Supplies Pvt Ltd",
+        "contact": "raju@abc.com",
+        "rating": 4.2
+      }
+    },
+    {
+      "id": "S002",
+      "label": "Supplier",
+      "properties": {
+        "supplier_id": "S002",
+        "name": "Global Tech Traders",
+        "contact": "sales@globaltech.cn",
+        "rating": 3.9
+      }
+    },
+    {
+      "id": "S003",
+      "label": "Supplier",
+      "properties": {
+        "supplier_id": "S003",
+        "name": "Delta Components",
+        "contact": "info@delta.de",
+        "rating": 4.7
+      }
+    },
+    {
+      "id": "S004",
+      "label": "Supplier",
+      "properties": {
+        "supplier_id": "S004",
+        "name": "Rapid Parts Co",
+        "contact": "support@rapidparts.com",
+        "rating": 4.0
+      }
+    },
+    {
+      "id": "S005",
+      "label": "Supplier",
+      "properties": {
+        "supplier_id": "S005",
+        "name": "Oceanic Imports",
+        "contact": "contact@oceanic.my",
+        "rating": 3.8
+      }
+    },
+    {
+      "id": "India",
+      "label": "Country",
+      "properties": {
+        "name": "India"
+      }
+    },
+    {
+      "id": "China",
+      "label": "Country",
+      "properties": {
+        "name": "China"
+      }
+    },
+    {
+      "id": "Germany",
+      "label": "Country",
+      "properties": {
+        "name": "Germany"
+      }
+    },
+    {
+      "id": "USA",
+      "label": "Country",
+      "properties": {
+        "name": "USA"
+      }
+    },
+    {
+      "id": "Malaysia",
+      "label": "Country",
+      "properties": {
+        "name": "Malaysia"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "S001",
+      "target": "India",
+      "type": "LOCATED_IN",
+      "properties": {
+        "relationship": "supplier_country"
+      }
+    },
+    {
+      "source": "S002",
+      "target": "China",
+      "type": "LOCATED_IN",
+      "properties": {
+        "relationship": "supplier_country"
+      }
+    },
+    {
+      "source": "S003",
+      "target": "Germany",
+      "type": "LOCATED_IN",
+      "properties": {
+        "relationship": "supplier_country"
+      }
+    },
+    {
+      "source": "S004",
+      "target": "USA",
+      "type": "LOCATED_IN",
+      "properties": {
+        "relationship": "supplier_country"
+      }
+    },
+    {
+      "source": "S005",
+      "target": "Malaysia",
+      "type": "LOCATED_IN",
+      "properties": {
+        "relationship": "supplier_country"
+      }
+    }
+  ]
+}
