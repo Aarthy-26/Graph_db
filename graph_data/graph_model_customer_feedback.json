@@ -2,85 +2,98 @@
   "nodes": [
     {
       "id": "CUST100",
-      "label": "Customer",
+      "label": "customer",
       "properties": {
-        "customer_id": "CUST100"
+        "type": "customer_id"
       }
     },
     {
-      "id": "CUST101",
-      "label": "Customer",
+      "id": "CUST101", 
+      "label": "customer",
       "properties": {
-        "customer_id": "CUST101"
+        "type": "customer_id"
       }
     },
     {
       "id": "P1001",
-      "label": "Product",
+      "label": "product",
       "properties": {
-        "product_id": "P1001",
-        "name": "Drill"
+        "type": "drill",
+        "rating": "4"
       }
     },
     {
       "id": "P1004",
-      "label": "Product",
+      "label": "product", 
       "properties": {
-        "product_id": "P1004",
-        "name": "Boxes"
+        "type": "boxes",
+        "rating": "5"
       }
     },
     {
-      "id": "feedback_1",
-      "label": "Feedback",
+      "id": "battery_life",
+      "label": "feature",
       "properties": {
-        "date": "2025-04-05",
-        "rating": 4,
-        "comment": "Drill works well but battery life shorter than expected."
+        "issue": "shorter_than_expected"
       }
     },
     {
-      "id": "feedback_2",
-      "label": "Feedback",
+      "id": "delivery_quality",
+      "label": "service",
       "properties": {
-        "date": "2025-04-12",
-        "rating": 5,
-        "comment": "Boxes arrived sturdy and on time."
+        "status": "sturdy_and_on_time"
+      }
+    },
+    {
+      "id": "customer_feedback_log",
+      "label": "document",
+      "properties": {
+        "type": "feedback_log"
       }
     }
   ],
   "edges": [
     {
       "source": "CUST100",
-      "target": "feedback_1",
-      "type": "PROVIDES",
+      "target": "P1001", 
+      "type": "provides_feedback",
       "properties": {
-        "relationship": "customer_feedback"
-      }
-    },
-    {
-      "source": "feedback_1",
-      "target": "P1001",
-      "type": "ABOUT",
-      "properties": {
-        "relationship": "product_review"
+        "date": "2025-04-05",
+        "rating": "4"
       }
     },
     {
       "source": "CUST101",
-      "target": "feedback_2",
-      "type": "PROVIDES",
+      "target": "P1004",
+      "type": "provides_feedback", 
       "properties": {
-        "relationship": "customer_feedback"
+        "date": "2025-04-12",
+        "rating": "5"
       }
     },
     {
-      "source": "feedback_2",
-      "target": "P1004",
-      "type": "ABOUT",
-      "properties": {
-        "relationship": "product_review"
-      }
+      "source": "P1001",
+      "target": "battery_life",
+      "type": "has_issue",
+      "properties": {}
+    },
+    {
+      "source": "P1004", 
+      "target": "delivery_quality",
+      "type": "has_quality",
+      "properties": {}
+    },
+    {
+      "source": "customer_feedback_log",
+      "target": "CUST100",
+      "type": "contains",
+      "properties": {}
+    },
+    {
+      "source": "customer_feedback_log",
+      "target": "CUST101", 
+      "type": "contains",
+      "properties": {}
     }
   ]
 }
