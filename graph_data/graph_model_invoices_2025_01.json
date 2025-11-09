@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "INV-1001",
+      "label": "Invoice",
+      "properties": {
+        "invoice_id": "INV-1001",
+        "amount": 12500.5,
+        "due_date": "2025-04-30",
+        "status": "paid"
+      }
+    },
+    {
+      "id": "INV-1002",
+      "label": "Invoice",
+      "properties": {
+        "invoice_id": "INV-1002",
+        "amount": 4500.0,
+        "due_date": "2025-05-15",
+        "status": "unpaid"
+      }
+    },
+    {
+      "id": "PO-2025-001",
+      "label": "PurchaseOrder",
+      "properties": {
+        "po_id": "PO-2025-001"
+      }
+    },
+    {
+      "id": "PO-2025-003",
+      "label": "PurchaseOrder",
+      "properties": {
+        "po_id": "PO-2025-003"
+      }
+    },
+    {
+      "id": "ABC_Supplies_Pvt_Ltd",
+      "label": "Supplier",
+      "properties": {
+        "name": "ABC Supplies Pvt Ltd"
+      }
+    },
+    {
+      "id": "Oceanic_Imports",
+      "label": "Supplier",
+      "properties": {
+        "name": "Oceanic Imports"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "INV-1001",
+      "target": "PO-2025-001",
+      "type": "REFERENCES",
+      "properties": {
+        "relationship": "invoice_to_po"
+      }
+    },
+    {
+      "source": "INV-1001",
+      "target": "ABC_Supplies_Pvt_Ltd",
+      "type": "FROM",
+      "properties": {
+        "relationship": "supplier_invoice"
+      }
+    },
+    {
+      "source": "INV-1002",
+      "target": "PO-2025-003",
+      "type": "REFERENCES",
+      "properties": {
+        "relationship": "invoice_to_po"
+      }
+    },
+    {
+      "source": "INV-1002",
+      "target": "Oceanic_Imports",
+      "type": "FROM",
+      "properties": {
+        "relationship": "supplier_invoice"
+      }
+    }
+  ]
+}
