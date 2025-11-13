@@ -1,12 +1,12 @@
 {
   "input_folder": "supply_chain_metadata",
-  "generated_at": "2024-12-19T10:30:00Z",
+  "generated_at": "2025-01-27T10:00:00Z",
   "file_count": 15,
   "files": [
     {
       "file_name": "carriers.csv",
       "file_type": "csv",
-      "file_size_bytes": 346,
+      "file_size_bytes": 320,
       "num_records": 10,
       "num_columns": 4,
       "columns": [
@@ -22,7 +22,7 @@
     {
       "file_name": "customers.csv",
       "file_type": "csv",
-      "file_size_bytes": 434,
+      "file_size_bytes": 410,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -39,7 +39,7 @@
     {
       "file_name": "inventory.csv",
       "file_type": "csv",
-      "file_size_bytes": 434,
+      "file_size_bytes": 380,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -57,7 +57,7 @@
     {
       "file_name": "invoices.csv",
       "file_type": "csv",
-      "file_size_bytes": 386,
+      "file_size_bytes": 340,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -74,7 +74,7 @@
     {
       "file_name": "logistics_events.csv",
       "file_type": "csv",
-      "file_size_bytes": 498,
+      "file_size_bytes": 420,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -91,7 +91,7 @@
     {
       "file_name": "order_items.csv",
       "file_type": "csv",
-      "file_size_bytes": 390,
+      "file_size_bytes": 320,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -108,7 +108,7 @@
     {
       "file_name": "orders.csv",
       "file_type": "csv",
-      "file_size_bytes": 378,
+      "file_size_bytes": 330,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -125,7 +125,7 @@
     {
       "file_name": "payments.csv",
       "file_type": "csv",
-      "file_size_bytes": 430,
+      "file_size_bytes": 350,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -142,7 +142,7 @@
     {
       "file_name": "products.csv",
       "file_type": "csv",
-      "file_size_bytes": 446,
+      "file_size_bytes": 360,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -160,7 +160,7 @@
     {
       "file_name": "purchase_orders.csv",
       "file_type": "csv",
-      "file_size_bytes": 486,
+      "file_size_bytes": 390,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -178,7 +178,7 @@
     {
       "file_name": "receipts.csv",
       "file_type": "csv",
-      "file_size_bytes": 462,
+      "file_size_bytes": 370,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -196,7 +196,7 @@
     {
       "file_name": "routes.csv",
       "file_type": "csv",
-      "file_size_bytes": 450,
+      "file_size_bytes": 350,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -213,7 +213,7 @@
     {
       "file_name": "shipments.csv",
       "file_type": "csv",
-      "file_size_bytes": 462,
+      "file_size_bytes": 340,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -231,7 +231,7 @@
     {
       "file_name": "suppliers.csv",
       "file_type": "csv",
-      "file_size_bytes": 522,
+      "file_size_bytes": 380,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -249,7 +249,7 @@
     {
       "file_name": "warehouses.csv",
       "file_type": "csv",
-      "file_size_bytes": 298,
+      "file_size_bytes": 280,
       "num_records": 10,
       "num_columns": 4,
       "columns": [
