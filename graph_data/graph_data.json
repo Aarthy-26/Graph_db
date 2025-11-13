@@ -1,12 +1,10 @@
 {
   "metadata": {
-    "description": "Graph Data Model extracted from supply chain metadata",
-    "source_repository": "Aarthy-26/Graph_db",
-    "generated_at": "2025-01-27T10:30:00Z",
-    "total_nodes": 150,
-    "total_edges": 140,
-    "node_types": 15,
-    "edge_types": 17
+    "generated_at": "2024-12-19T12:00:00Z",
+    "source_file": "metadata/metadata.json",
+    "description": "Graph data model extracted from supply chain metadata",
+    "total_nodes": 45,
+    "total_edges": 42
   },
   "nodes": [
     {
@@ -71,9 +69,9 @@
       "type": "Customer",
       "properties": {
         "name": "Customer_6",
-        "segment": "Enterprise",
-        "city": "Bangalore",
-        "contact_email": "cust6@example.com"
+        "segment": "Unknown",
+        "city": "Unknown",
+        "contact_email": "Unknown"
       }
     },
     {
@@ -81,9 +79,9 @@
       "type": "Customer",
       "properties": {
         "name": "Customer_8",
-        "segment": "Retail",
-        "city": "Pune",
-        "contact_email": "cust8@example.com"
+        "segment": "Unknown",
+        "city": "Unknown",
+        "contact_email": "Unknown"
       }
     },
     {
@@ -122,8 +120,8 @@
       "properties": {
         "sku": "SKU-3005",
         "name": "Product_5",
-        "category": "Home & Garden",
-        "unit_weight_kg": 2.1
+        "category": "Unknown",
+        "unit_weight_kg": 0.0
       }
     },
     {
@@ -132,8 +130,8 @@
       "properties": {
         "sku": "SKU-3006",
         "name": "Product_6",
-        "category": "Electronics",
-        "unit_weight_kg": 0.8
+        "category": "Unknown",
+        "unit_weight_kg": 0.0
       }
     },
     {
@@ -142,8 +140,8 @@
       "properties": {
         "sku": "SKU-3007",
         "name": "Product_7",
-        "category": "Sports",
-        "unit_weight_kg": 1.5
+        "category": "Unknown",
+        "unit_weight_kg": 0.0
       }
     },
     {
@@ -152,8 +150,71 @@
       "properties": {
         "sku": "SKU-3009",
         "name": "Product_9",
-        "category": "Books",
-        "unit_weight_kg": 0.3
+        "category": "Unknown",
+        "unit_weight_kg": 0.0
+      }
+    },
+    {
+      "id": "W10",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_0",
+        "location_city": "Chennai",
+        "capacity_units": 10000
+      }
+    },
+    {
+      "id": "W11",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_1",
+        "location_city": "Hyderabad",
+        "capacity_units": 15000
+      }
+    },
+    {
+      "id": "W12",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_2",
+        "location_city": "Bengaluru",
+        "capacity_units": 12000
+      }
+    },
+    {
+      "id": "W16",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_6",
+        "location_city": "Unknown",
+        "capacity_units": 0
+      }
+    },
+    {
+      "id": "W17",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_7",
+        "location_city": "Unknown",
+        "capacity_units": 0
+      }
+    },
+    {
+      "id": "W18",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_8",
+        "location_city": "Unknown",
+        "capacity_units": 0
+      }
+    },
+    {
+      "id": "W19",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_9",
+        "location_city": "Unknown",
+        "capacity_units": 0
       }
     },
     {
@@ -194,10 +255,10 @@
       "type": "Supplier",
       "properties": {
         "name": "Supplier_4",
-        "country": "USA",
-        "contact_email": "supp4@example.com",
-        "phone": "+91-900001004",
-        "lead_time_days": 21
+        "country": "Unknown",
+        "contact_email": "Unknown",
+        "phone": "Unknown",
+        "lead_time_days": 0
       }
     },
     {
@@ -205,10 +266,10 @@
       "type": "Supplier",
       "properties": {
         "name": "Supplier_5",
-        "country": "Japan",
-        "contact_email": "supp5@example.com",
-        "phone": "+91-900001005",
-        "lead_time_days": 12
+        "country": "Unknown",
+        "contact_email": "Unknown",
+        "phone": "Unknown",
+        "lead_time_days": 0
       }
     },
     {
@@ -216,73 +277,10 @@
       "type": "Supplier",
       "properties": {
         "name": "Supplier_7",
-        "country": "South Korea",
-        "contact_email": "supp7@example.com",
-        "phone": "+91-900001007",
-        "lead_time_days": 9
-      }
-    },
-    {
-      "id": "W10",
-      "type": "Warehouse",
-      "properties": {
-        "name": "WH_0",
-        "location_city": "Chennai",
-        "capacity_units": 10000
-      }
-    },
-    {
-      "id": "W11",
-      "type": "Warehouse",
-      "properties": {
-        "name": "WH_1",
-        "location_city": "Hyderabad",
-        "capacity_units": 15000
-      }
-    },
-    {
-      "id": "W12",
-      "type": "Warehouse",
-      "properties": {
-        "name": "WH_2",
-        "location_city": "Bengaluru",
-        "capacity_units": 12000
-      }
-    },
-    {
-      "id": "W16",
-      "type": "Warehouse",
-      "properties": {
-        "name": "WH_6",
-        "location_city": "Kolkata",
-        "capacity_units": 18000
-      }
-    },
-    {
-      "id": "W17",
-      "type": "Warehouse",
-      "properties": {
-        "name": "WH_7",
-        "location_city": "Ahmedabad",
-        "capacity_units": 14000
-      }
-    },
-    {
-      "id": "W18",
-      "type": "Warehouse",
-      "properties": {
-        "name": "WH_8",
-        "location_city": "Surat",
-        "capacity_units": 16000
-      }
-    },
-    {
-      "id": "W19",
-      "type": "Warehouse",
-      "properties": {
-        "name": "WH_9",
-        "location_city": "Jaipur",
-        "capacity_units": 13000
+        "country": "Unknown",
+        "contact_email": "Unknown",
+        "phone": "Unknown",
+        "lead_time_days": 0
       }
     },
     {
@@ -316,36 +314,60 @@
       "id": "O603",
       "type": "Order",
       "properties": {
-        "order_date": "2025-01-04",
-        "status": "Processing",
-        "total_amount": 12437.05
+        "order_date": "Unknown",
+        "status": "Unknown",
+        "total_amount": 0.0
       }
     },
     {
       "id": "O606",
       "type": "Order",
       "properties": {
-        "order_date": "2025-01-07",
-        "status": "Confirmed",
-        "total_amount": 2233.47
+        "order_date": "Unknown",
+        "status": "Unknown",
+        "total_amount": 0.0
       }
     },
     {
       "id": "O608",
       "type": "Order",
       "properties": {
-        "order_date": "2025-01-09",
-        "status": "Pending",
-        "total_amount": 16591.76
+        "order_date": "Unknown",
+        "status": "Unknown",
+        "total_amount": 0.0
       }
     },
     {
       "id": "O609",
       "type": "Order",
       "properties": {
-        "order_date": "2025-01-10",
-        "status": "Shipped",
-        "total_amount": 3772.10
+        "order_date": "Unknown",
+        "status": "Unknown",
+        "total_amount": 0.0
+      }
+    },
+    {
+      "id": "OI700",
+      "type": "OrderItem",
+      "properties": {
+        "quantity": 2,
+        "unit_price": 1886.05
+      }
+    },
+    {
+      "id": "OI701",
+      "type": "OrderItem",
+      "properties": {
+        "quantity": 7,
+        "unit_price": 603.45
+      }
+    },
+    {
+      "id": "OI702",
+      "type": "OrderItem",
+      "properties": {
+        "quantity": 1,
+        "unit_price": 2233.47
       }
     },
     {
@@ -379,45 +401,18 @@
       "id": "INV1206",
       "type": "Invoice",
       "properties": {
-        "invoice_date": "2025-01-09",
-        "amount_due": 13279.83,
-        "status": "Paid"
+        "invoice_date": "Unknown",
+        "amount_due": 0.0,
+        "status": "Unknown"
       }
     },
     {
       "id": "INV1208",
       "type": "Invoice",
       "properties": {
-        "invoice_date": "2025-01-11",
-        "amount_due": 13279.83,
-        "status": "Paid"
-      }
-    },
-    {
-      "id": "PMT1300",
-      "type": "Payment",
-      "properties": {
-        "payment_date": "2025-01-04",
-        "amount_paid": 13279.83,
-        "method": "Bank Transfer"
-      }
-    },
-    {
-      "id": "PMT1301",
-      "type": "Payment",
-      "properties": {
-        "payment_date": "2025-01-05",
-        "amount_paid": 4861.66,
-        "method": "Card"
-      }
-    },
-    {
-      "id": "PMT1302",
-      "type": "Payment",
-      "properties": {
-        "payment_date": "2025-01-06",
-        "amount_paid": 13279.83,
-        "method": "Card"
+        "invoice_date": "Unknown",
+        "amount_due": 0.0,
+        "status": "Unknown"
       }
     },
     {
@@ -443,26 +438,187 @@
         "shipped_date": "2025-01-04",
         "estimated_arrival": "2025-01-07"
       }
+    }
+  ],
+  "edges": [
+    {
+      "source": "C508",
+      "target": "O600",
+      "type": "PLACES",
+      "properties": {}
     },
     {
-      "id": "SH804",
-      "type": "Shipment",
+      "source": "C506",
+      "target": "O601",
+      "type": "PLACES",
+      "properties": {}
+    },
+    {
+      "source": "C501",
+      "target": "O602",
+      "type": "PLACES",
+      "properties": {}
+    },
+    {
+      "source": "O609",
+      "target": "OI700",
+      "type": "CONTAINS",
+      "properties": {}
+    },
+    {
+      "source": "O602",
+      "target": "OI701",
+      "type": "CONTAINS",
+      "properties": {}
+    },
+    {
+      "source": "O606",
+      "target": "OI702",
+      "type": "CONTAINS",
+      "properties": {}
+    },
+    {
+      "source": "OI700",
+      "target": "P202",
+      "type": "REFERENCES",
+      "properties": {}
+    },
+    {
+      "source": "OI701",
+      "target": "P209",
+      "type": "REFERENCES",
+      "properties": {}
+    },
+    {
+      "source": "OI702",
+      "target": "P206",
+      "type": "REFERENCES",
+      "properties": {}
+    },
+    {
+      "source": "P200",
+      "target": "S104",
+      "type": "SUPPLIED_BY",
+      "properties": {}
+    },
+    {
+      "source": "P201",
+      "target": "S105",
+      "type": "SUPPLIED_BY",
+      "properties": {}
+    },
+    {
+      "source": "P202",
+      "target": "S107",
+      "type": "SUPPLIED_BY",
+      "properties": {}
+    },
+    {
+      "source": "O608",
+      "target": "INV1200",
+      "type": "GENERATES",
+      "properties": {}
+    },
+    {
+      "source": "O602",
+      "target": "INV1201",
+      "type": "GENERATES",
+      "properties": {}
+    },
+    {
+      "source": "O603",
+      "target": "INV1202",
+      "type": "GENERATES",
+      "properties": {}
+    },
+    {
+      "source": "O609",
+      "target": "SH800",
+      "type": "SHIPPED_AS",
+      "properties": {}
+    },
+    {
+      "source": "O601",
+      "target": "SH801",
+      "type": "SHIPPED_AS",
+      "properties": {}
+    },
+    {
+      "source": "O602",
+      "target": "SH802",
+      "type": "SHIPPED_AS",
+      "properties": {}
+    },
+    {
+      "source": "SH800",
+      "target": "CR900",
+      "type": "CARRIED_BY",
+      "properties": {}
+    },
+    {
+      "source": "SH801",
+      "target": "CR901",
+      "type": "CARRIED_BY",
+      "properties": {}
+    },
+    {
+      "source": "SH802",
+      "target": "CR902",
+      "type": "CARRIED_BY",
+      "properties": {}
+    },
+    {
+      "source": "SH800",
+      "target": "W17",
+      "type": "ORIGINATES_FROM",
+      "properties": {}
+    },
+    {
+      "source": "SH801",
+      "target": "W16",
+      "type": "ORIGINATES_FROM",
+      "properties": {}
+    },
+    {
+      "source": "SH802",
+      "target": "W19",
+      "type": "ORIGINATES_FROM",
+      "properties": {}
+    },
+    {
+      "source": "P207",
+      "target": "W18",
+      "type": "STORED_IN",
       "properties": {
-        "shipped_date": "2025-01-06",
-        "estimated_arrival": "2025-01-09"
+        "inventory_id": "I400",
+        "quantity_on_hand": 93,
+        "reorder_point": 95
       }
     },
     {
-      "id": "SH806",
-      "type": "Shipment",
+      "source": "P201",
+      "target": "W11",
+      "type": "STORED_IN",
       "properties": {
-        "shipped_date": "2025-01-08",
-        "estimated_arrival": "2025-01-11"
+        "inventory_id": "I401",
+        "quantity_on_hand": 179,
+        "reorder_point": 27
       }
     },
     {
-      "id": "PO1000",
-      "type": "PurchaseOrder",
+      "source": "P205",
+      "target": "W16",
+      "type": "STORED_IN",
+      "properties": {
+        "inventory_id": "I402",
+        "quantity_on_hand": 25,
+        "reorder_point": 139
+      }
+    },
+    {
+      "source": "S101",
+      "target": "PO1000",
+      "type": "RECEIVES",
       "properties": {
         "order_date": "2025-01-01",
         "expected_delivery": "2025-01-16",
@@ -471,8 +627,9 @@
       }
     },
     {
-      "id": "PO1001",
-      "type": "PurchaseOrder",
+      "source": "S100",
+      "target": "PO1001",
+      "type": "RECEIVES",
       "properties": {
         "order_date": "2025-01-02",
         "expected_delivery": "2025-01-17",
@@ -481,8 +638,9 @@
       }
     },
     {
-      "id": "PO1002",
-      "type": "PurchaseOrder",
+      "source": "S105",
+      "target": "PO1002",
+      "type": "RECEIVES",
       "properties": {
         "order_date": "2025-01-03",
         "expected_delivery": "2025-01-18",
@@ -491,93 +649,57 @@
       }
     },
     {
-      "id": "PO1008",
-      "type": "PurchaseOrder",
+      "source": "PO1008",
+      "target": "R1100",
+      "type": "RESULTS_IN",
       "properties": {
-        "order_date": "2025-01-09",
-        "expected_delivery": "2025-01-24",
-        "status": "Open",
-        "total_value": 156789.45
-      }
-    },
-    {
-      "id": "I400",
-      "type": "Inventory",
-      "properties": {
-        "quantity_on_hand": 93,
-        "reorder_point": 95,
-        "last_updated": "2025-01-01"
-      }
-    },
-    {
-      "id": "I401",
-      "type": "Inventory",
-      "properties": {
-        "quantity_on_hand": 179,
-        "reorder_point": 27,
-        "last_updated": "2025-01-02"
-      }
-    },
-    {
-      "id": "I402",
-      "type": "Inventory",
-      "properties": {
-        "quantity_on_hand": 25,
-        "reorder_point": 139,
-        "last_updated": "2025-01-03"
-      }
-    },
-    {
-      "id": "OI700",
-      "type": "OrderItem",
-      "properties": {
-        "quantity": 2,
-        "unit_price": 1886.05
-      }
-    },
-    {
-      "id": "OI701",
-      "type": "OrderItem",
-      "properties": {
-        "quantity": 7,
-        "unit_price": 603.45
-      }
-    },
-    {
-      "id": "OI702",
-      "type": "OrderItem",
-      "properties": {
-        "quantity": 1,
-        "unit_price": 2233.47
-      }
-    },
-    {
-      "id": "R1100",
-      "type": "Receipt",
-      "properties": {
+        "product_id": "P206",
         "quantity_received": 97,
         "received_date": "2025-01-06"
       }
     },
     {
-      "id": "R1101",
-      "type": "Receipt",
+      "source": "PO1002",
+      "target": "R1101",
+      "type": "RESULTS_IN",
       "properties": {
+        "product_id": "P206",
         "quantity_received": 36,
         "received_date": "2025-01-07"
       }
     },
     {
-      "id": "R1102",
-      "type": "Receipt",
+      "source": "PO1008",
+      "target": "R1102",
+      "type": "RESULTS_IN",
       "properties": {
+        "product_id": "P205",
         "quantity_received": 9,
         "received_date": "2025-01-08"
       }
     },
     {
-      "id": "RT1400",
-      "type": "Route",
+      "source": "R1100",
+      "target": "W11",
+      "type": "DELIVERED_TO",
+      "properties": {}
+    },
+    {
+      "source": "R1101",
+      "target": "W18",
+      "type": "DELIVERED_TO",
+      "properties": {}
+    },
+    {
+      "source": "R1102",
+      "target": "W11",
+      "type": "DELIVERED_TO",
+      "properties": {}
+    },
+    {
+      "source": "W19",
+      "target": "RT1400",
+      "type": "CONNECTED_BY",
       "properties": {
         "destination_city": "Delhi",
         "distance_km": 547,
@@ -585,8 +707,9 @@
       }
     },
     {
-      "id": "RT1401",
-      "type": "Route",
+      "source": "W18",
+      "target": "RT1401",
+      "type": "CONNECTED_BY",
       "properties": {
         "destination_city": "Mumbai",
         "distance_km": 1379,
@@ -594,8 +717,9 @@
       }
     },
     {
-      "id": "RT1402",
-      "type": "Route",
+      "source": "W16",
+      "target": "RT1402",
+      "type": "CONNECTED_BY",
       "properties": {
         "destination_city": "Chennai",
         "distance_km": 1495,
@@ -603,440 +727,33 @@
       }
     },
     {
-      "id": "E1500",
-      "type": "LogisticsEvent",
-      "properties": {
-        "event_time": "2025-01-02 10:00:00",
-        "event_type": "Picked Up",
-        "location": "Chennai"
-      }
-    },
-    {
-      "id": "E1501",
-      "type": "LogisticsEvent",
-      "properties": {
-        "event_time": "2025-01-03 10:00:00",
-        "event_type": "In Transit",
-        "location": "Mumbai"
-      }
-    },
-    {
-      "id": "E1502",
-      "type": "LogisticsEvent",
-      "properties": {
-        "event_time": "2025-01-04 10:00:00",
-        "event_type": "Delayed",
-        "location": "Delhi"
-      }
-    }
-  ],
-  "edges": [
-    {
-      "source": "C508",
-      "target": "O600",
-      "type": "places",
-      "properties": {
-        "relationship": "customer_order"
-      }
-    },
-    {
-      "source": "C506",
-      "target": "O601",
-      "type": "places",
-      "properties": {
-        "relationship": "customer_order"
-      }
-    },
-    {
-      "source": "C501",
-      "target": "O602",
-      "type": "places",
-      "properties": {
-        "relationship": "customer_order"
-      }
-    },
-    {
-      "source": "O609",
-      "target": "OI700",
-      "type": "contains",
-      "properties": {
-        "relationship": "order_item"
-      }
-    },
-    {
-      "source": "O602",
-      "target": "OI701",
-      "type": "contains",
-      "properties": {
-        "relationship": "order_item"
-      }
-    },
-    {
-      "source": "O606",
-      "target": "OI702",
-      "type": "contains",
-      "properties": {
-        "relationship": "order_item"
-      }
-    },
-    {
-      "source": "OI700",
-      "target": "P202",
-      "type": "references",
-      "properties": {
-        "relationship": "product_reference"
-      }
-    },
-    {
-      "source": "OI701",
-      "target": "P209",
-      "type": "references",
-      "properties": {
-        "relationship": "product_reference"
-      }
-    },
-    {
-      "source": "OI702",
-      "target": "P206",
-      "type": "references",
-      "properties": {
-        "relationship": "product_reference"
-      }
-    },
-    {
-      "source": "P200",
-      "target": "S104",
-      "type": "supplied_by",
-      "properties": {
-        "relationship": "product_supplier"
-      }
-    },
-    {
-      "source": "P201",
-      "target": "S105",
-      "type": "supplied_by",
-      "properties": {
-        "relationship": "product_supplier"
-      }
-    },
-    {
-      "source": "P202",
-      "target": "S107",
-      "type": "supplied_by",
-      "properties": {
-        "relationship": "product_supplier"
-      }
-    },
-    {
-      "source": "O608",
-      "target": "INV1200",
-      "type": "generates",
-      "properties": {
-        "relationship": "order_invoice"
-      }
-    },
-    {
-      "source": "O602",
-      "target": "INV1201",
-      "type": "generates",
-      "properties": {
-        "relationship": "order_invoice"
-      }
-    },
-    {
-      "source": "O603",
-      "target": "INV1202",
-      "type": "generates",
-      "properties": {
-        "relationship": "order_invoice"
-      }
-    },
-    {
       "source": "INV1206",
       "target": "PMT1300",
-      "type": "paid_by",
+      "type": "PAID_BY",
       "properties": {
-        "relationship": "invoice_payment"
+        "payment_date": "2025-01-04",
+        "amount_paid": 13279.83,
+        "method": "Bank Transfer"
       }
     },
     {
       "source": "INV1201",
       "target": "PMT1301",
-      "type": "paid_by",
+      "type": "PAID_BY",
       "properties": {
-        "relationship": "invoice_payment"
+        "payment_date": "2025-01-05",
+        "amount_paid": 4861.66,
+        "method": "Card"
       }
     },
     {
       "source": "INV1208",
       "target": "PMT1302",
-      "type": "paid_by",
+      "type": "PAID_BY",
       "properties": {
-        "relationship": "invoice_payment"
-      }
-    },
-    {
-      "source": "O609",
-      "target": "SH800",
-      "type": "shipped_via",
-      "properties": {
-        "relationship": "order_shipment"
-      }
-    },
-    {
-      "source": "O601",
-      "target": "SH801",
-      "type": "shipped_via",
-      "properties": {
-        "relationship": "order_shipment"
-      }
-    },
-    {
-      "source": "O602",
-      "target": "SH802",
-      "type": "shipped_via",
-      "properties": {
-        "relationship": "order_shipment"
-      }
-    },
-    {
-      "source": "SH800",
-      "target": "CR900",
-      "type": "transported_by",
-      "properties": {
-        "relationship": "shipment_carrier"
-      }
-    },
-    {
-      "source": "SH801",
-      "target": "CR901",
-      "type": "transported_by",
-      "properties": {
-        "relationship": "shipment_carrier"
-      }
-    },
-    {
-      "source": "SH802",
-      "target": "CR902",
-      "type": "transported_by",
-      "properties": {
-        "relationship": "shipment_carrier"
-      }
-    },
-    {
-      "source": "SH800",
-      "target": "W17",
-      "type": "originates_from",
-      "properties": {
-        "relationship": "shipment_warehouse"
-      }
-    },
-    {
-      "source": "SH801",
-      "target": "W16",
-      "type": "originates_from",
-      "properties": {
-        "relationship": "shipment_warehouse"
-      }
-    },
-    {
-      "source": "SH802",
-      "target": "W19",
-      "type": "originates_from",
-      "properties": {
-        "relationship": "shipment_warehouse"
-      }
-    },
-    {
-      "source": "SH806",
-      "target": "E1500",
-      "type": "tracked_by",
-      "properties": {
-        "relationship": "shipment_event"
-      }
-    },
-    {
-      "source": "SH801",
-      "target": "E1501",
-      "type": "tracked_by",
-      "properties": {
-        "relationship": "shipment_event"
-      }
-    },
-    {
-      "source": "SH804",
-      "target": "E1502",
-      "type": "tracked_by",
-      "properties": {
-        "relationship": "shipment_event"
-      }
-    },
-    {
-      "source": "S101",
-      "target": "PO1000",
-      "type": "receives",
-      "properties": {
-        "relationship": "supplier_purchase_order"
-      }
-    },
-    {
-      "source": "S100",
-      "target": "PO1001",
-      "type": "receives",
-      "properties": {
-        "relationship": "supplier_purchase_order"
-      }
-    },
-    {
-      "source": "S105",
-      "target": "PO1002",
-      "type": "receives",
-      "properties": {
-        "relationship": "supplier_purchase_order"
-      }
-    },
-    {
-      "source": "PO1008",
-      "target": "R1100",
-      "type": "fulfilled_by",
-      "properties": {
-        "relationship": "purchase_order_receipt"
-      }
-    },
-    {
-      "source": "PO1002",
-      "target": "R1101",
-      "type": "fulfilled_by",
-      "properties": {
-        "relationship": "purchase_order_receipt"
-      }
-    },
-    {
-      "source": "PO1008",
-      "target": "R1102",
-      "type": "fulfilled_by",
-      "properties": {
-        "relationship": "purchase_order_receipt"
-      }
-    },
-    {
-      "source": "R1100",
-      "target": "P206",
-      "type": "receives",
-      "properties": {
-        "relationship": "receipt_product"
-      }
-    },
-    {
-      "source": "R1101",
-      "target": "P206",
-      "type": "receives",
-      "properties": {
-        "relationship": "receipt_product"
-      }
-    },
-    {
-      "source": "R1102",
-      "target": "P205",
-      "type": "receives",
-      "properties": {
-        "relationship": "receipt_product"
-      }
-    },
-    {
-      "source": "R1100",
-      "target": "W11",
-      "type": "delivered_to",
-      "properties": {
-        "relationship": "receipt_warehouse"
-      }
-    },
-    {
-      "source": "R1101",
-      "target": "W18",
-      "type": "delivered_to",
-      "properties": {
-        "relationship": "receipt_warehouse"
-      }
-    },
-    {
-      "source": "R1102",
-      "target": "W11",
-      "type": "delivered_to",
-      "properties": {
-        "relationship": "receipt_warehouse"
-      }
-    },
-    {
-      "source": "P207",
-      "target": "I400",
-      "type": "stored_as",
-      "properties": {
-        "relationship": "product_inventory"
-      }
-    },
-    {
-      "source": "P201",
-      "target": "I401",
-      "type": "stored_as",
-      "properties": {
-        "relationship": "product_inventory"
-      }
-    },
-    {
-      "source": "P205",
-      "target": "I402",
-      "type": "stored_as",
-      "properties": {
-        "relationship": "product_inventory"
-      }
-    },
-    {
-      "source": "I400",
-      "target": "W18",
-      "type": "located_at",
-      "properties": {
-        "relationship": "inventory_warehouse"
-      }
-    },
-    {
-      "source": "I401",
-      "target": "W11",
-      "type": "located_at",
-      "properties": {
-        "relationship": "inventory_warehouse"
-      }
-    },
-    {
-      "source": "I402",
-      "target": "W16",
-      "type": "located_at",
-      "properties": {
-        "relationship": "inventory_warehouse"
-      }
-    },
-    {
-      "source": "RT1400",
-      "target": "W19",
-      "type": "starts_from",
-      "properties": {
-        "relationship": "route_warehouse"
-      }
-    },
-    {
-      "source": "RT1401",
-      "target": "W18",
-      "type": "starts_from",
-      "properties": {
-        "relationship": "route_warehouse"
-      }
-    },
-    {
-      "source": "RT1402",
-      "target": "W16",
-      "type": "starts_from",
-      "properties": {
-        "relationship": "route_warehouse"
+        "payment_date": "2025-01-06",
+        "amount_paid": 13279.83,
+        "method": "Card"
       }
     }
   ]
