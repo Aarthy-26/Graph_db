@@ -2,394 +2,1041 @@
   "metadata": {
     "description": "Graph Data Model extracted from supply chain metadata",
     "source_repository": "Aarthy-26/Graph_db",
-    "source_file": "metadata/metadata.json",
-    "generated_at": "2024-12-19T12:00:00Z",
-    "total_nodes": 15,
-    "total_edges": 17
+    "generated_at": "2025-01-27T10:30:00Z",
+    "total_nodes": 150,
+    "total_edges": 140,
+    "node_types": 15,
+    "edge_types": 17
   },
   "nodes": [
     {
-      "id": "carriers",
-      "type": "Entity",
+      "id": "CR900",
+      "type": "Carrier",
       "properties": {
-        "file_name": "carriers.csv",
-        "entity_type": "Carrier",
-        "primary_key": "carrier_id",
-        "record_count": 10,
-        "attributes": ["carrier_id", "name", "service_level", "phone"],
-        "sample_ids": ["CR900", "CR901"],
-        "description": "Transportation companies providing shipping services"
+        "name": "Carrier_0",
+        "service_level": "Express",
+        "phone": "+91-880002000"
       }
     },
     {
-      "id": "customers",
-      "type": "Entity",
+      "id": "CR901",
+      "type": "Carrier",
       "properties": {
-        "file_name": "customers.csv",
-        "entity_type": "Customer",
-        "primary_key": "customer_id",
-        "record_count": 10,
-        "attributes": ["customer_id", "name", "segment", "city", "contact_email"],
-        "sample_ids": ["C500", "C501"],
-        "description": "End customers who place orders"
+        "name": "Carrier_1",
+        "service_level": "Standard",
+        "phone": "+91-880002001"
       }
     },
     {
-      "id": "products",
-      "type": "Entity",
+      "id": "CR902",
+      "type": "Carrier",
       "properties": {
-        "file_name": "products.csv",
-        "entity_type": "Product",
-        "primary_key": "product_id",
-        "record_count": 10,
-        "attributes": ["product_id", "sku", "name", "category", "unit_weight_kg", "supplier_id"],
-        "sample_ids": ["P200", "P201"],
-        "description": "Products available in the catalog"
+        "name": "Carrier_2",
+        "service_level": "Standard",
+        "phone": "+91-880002002"
       }
     },
     {
-      "id": "suppliers",
-      "type": "Entity",
+      "id": "C500",
+      "type": "Customer",
       "properties": {
-        "file_name": "suppliers.csv",
-        "entity_type": "Supplier",
-        "primary_key": "supplier_id",
-        "record_count": 10,
-        "attributes": ["supplier_id", "name", "country", "contact_email", "phone", "lead_time_days"],
-        "sample_ids": ["S100", "S101"],
-        "description": "Suppliers providing products to the company"
+        "name": "Customer_0",
+        "segment": "Retail",
+        "city": "Delhi",
+        "contact_email": "cust0@example.com"
       }
     },
     {
-      "id": "warehouses",
-      "type": "Entity",
+      "id": "C501",
+      "type": "Customer",
       "properties": {
-        "file_name": "warehouses.csv",
-        "entity_type": "Warehouse",
-        "primary_key": "warehouse_id",
-        "record_count": 10,
-        "attributes": ["warehouse_id", "name", "location_city", "capacity_units"],
-        "sample_ids": ["W10", "W11"],
-        "description": "Storage facilities for inventory management"
+        "name": "Customer_1",
+        "segment": "Retail",
+        "city": "Mumbai",
+        "contact_email": "cust1@example.com"
       }
     },
     {
-      "id": "orders",
-      "type": "Transaction",
+      "id": "C502",
+      "type": "Customer",
       "properties": {
-        "file_name": "orders.csv",
-        "entity_type": "Order",
-        "primary_key": "order_id",
-        "record_count": 10,
-        "attributes": ["order_id", "customer_id", "order_date", "status", "total_amount"],
-        "sample_ids": ["O600", "O601"],
-        "description": "Customer orders with header information"
+        "name": "Customer_2",
+        "segment": "Wholesale",
+        "city": "Chennai",
+        "contact_email": "cust2@example.com"
       }
     },
     {
-      "id": "order_items",
-      "type": "Transaction",
+      "id": "C506",
+      "type": "Customer",
       "properties": {
-        "file_name": "order_items.csv",
-        "entity_type": "OrderItem",
-        "primary_key": "order_item_id",
-        "record_count": 10,
-        "attributes": ["order_item_id", "order_id", "product_id", "quantity", "unit_price"],
-        "sample_ids": ["OI700", "OI701"],
-        "description": "Line items within customer orders"
+        "name": "Customer_6",
+        "segment": "Enterprise",
+        "city": "Bangalore",
+        "contact_email": "cust6@example.com"
       }
     },
     {
-      "id": "invoices",
-      "type": "Financial",
+      "id": "C508",
+      "type": "Customer",
       "properties": {
-        "file_name": "invoices.csv",
-        "entity_type": "Invoice",
-        "primary_key": "invoice_id",
-        "record_count": 10,
-        "attributes": ["invoice_id", "order_id", "invoice_date", "amount_due", "status"],
-        "sample_ids": ["INV1200", "INV1201"],
-        "description": "Billing documents for customer orders"
+        "name": "Customer_8",
+        "segment": "Retail",
+        "city": "Pune",
+        "contact_email": "cust8@example.com"
       }
     },
     {
-      "id": "payments",
-      "type": "Financial",
+      "id": "P200",
+      "type": "Product",
       "properties": {
-        "file_name": "payments.csv",
-        "entity_type": "Payment",
-        "primary_key": "payment_id",
-        "record_count": 10,
-        "attributes": ["payment_id", "invoice_id", "payment_date", "amount_paid", "method"],
-        "sample_ids": ["PMT1300", "PMT1301"],
-        "description": "Payment transactions for invoices"
+        "sku": "SKU-3000",
+        "name": "Product_0",
+        "category": "Electronics",
+        "unit_weight_kg": 0.5
       }
     },
     {
-      "id": "purchase_orders",
-      "type": "Procurement",
+      "id": "P201",
+      "type": "Product",
       "properties": {
-        "file_name": "purchase_orders.csv",
-        "entity_type": "PurchaseOrder",
-        "primary_key": "po_id",
-        "record_count": 10,
-        "attributes": ["po_id", "supplier_id", "order_date", "expected_delivery", "status", "total_value"],
-        "sample_ids": ["PO1000", "PO1001"],
-        "description": "Purchase orders placed with suppliers"
+        "sku": "SKU-3001",
+        "name": "Product_1",
+        "category": "Apparel",
+        "unit_weight_kg": 0.2
       }
     },
     {
-      "id": "receipts",
-      "type": "Procurement",
+      "id": "P202",
+      "type": "Product",
       "properties": {
-        "file_name": "receipts.csv",
-        "entity_type": "Receipt",
-        "primary_key": "receipt_id",
-        "record_count": 10,
-        "attributes": ["receipt_id", "po_id", "product_id", "quantity_received", "received_date", "warehouse_id"],
-        "sample_ids": ["R1100", "R1101"],
-        "description": "Goods receipts for purchase orders"
+        "sku": "SKU-3002",
+        "name": "Product_2",
+        "category": "Electronics",
+        "unit_weight_kg": 1.2
       }
     },
     {
-      "id": "inventory",
+      "id": "P205",
+      "type": "Product",
+      "properties": {
+        "sku": "SKU-3005",
+        "name": "Product_5",
+        "category": "Home & Garden",
+        "unit_weight_kg": 2.1
+      }
+    },
+    {
+      "id": "P206",
+      "type": "Product",
+      "properties": {
+        "sku": "SKU-3006",
+        "name": "Product_6",
+        "category": "Electronics",
+        "unit_weight_kg": 0.8
+      }
+    },
+    {
+      "id": "P207",
+      "type": "Product",
+      "properties": {
+        "sku": "SKU-3007",
+        "name": "Product_7",
+        "category": "Sports",
+        "unit_weight_kg": 1.5
+      }
+    },
+    {
+      "id": "P209",
+      "type": "Product",
+      "properties": {
+        "sku": "SKU-3009",
+        "name": "Product_9",
+        "category": "Books",
+        "unit_weight_kg": 0.3
+      }
+    },
+    {
+      "id": "S100",
+      "type": "Supplier",
+      "properties": {
+        "name": "Supplier_0",
+        "country": "India",
+        "contact_email": "supp0@example.com",
+        "phone": "+91-900001000",
+        "lead_time_days": 7
+      }
+    },
+    {
+      "id": "S101",
+      "type": "Supplier",
+      "properties": {
+        "name": "Supplier_1",
+        "country": "China",
+        "contact_email": "supp1@example.com",
+        "phone": "+91-900001001",
+        "lead_time_days": 14
+      }
+    },
+    {
+      "id": "S102",
+      "type": "Supplier",
+      "properties": {
+        "name": "Supplier_2",
+        "country": "Germany",
+        "contact_email": "supp2@example.com",
+        "phone": "+91-900001002",
+        "lead_time_days": 10
+      }
+    },
+    {
+      "id": "S104",
+      "type": "Supplier",
+      "properties": {
+        "name": "Supplier_4",
+        "country": "USA",
+        "contact_email": "supp4@example.com",
+        "phone": "+91-900001004",
+        "lead_time_days": 21
+      }
+    },
+    {
+      "id": "S105",
+      "type": "Supplier",
+      "properties": {
+        "name": "Supplier_5",
+        "country": "Japan",
+        "contact_email": "supp5@example.com",
+        "phone": "+91-900001005",
+        "lead_time_days": 12
+      }
+    },
+    {
+      "id": "S107",
+      "type": "Supplier",
+      "properties": {
+        "name": "Supplier_7",
+        "country": "South Korea",
+        "contact_email": "supp7@example.com",
+        "phone": "+91-900001007",
+        "lead_time_days": 9
+      }
+    },
+    {
+      "id": "W10",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_0",
+        "location_city": "Chennai",
+        "capacity_units": 10000
+      }
+    },
+    {
+      "id": "W11",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_1",
+        "location_city": "Hyderabad",
+        "capacity_units": 15000
+      }
+    },
+    {
+      "id": "W12",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_2",
+        "location_city": "Bengaluru",
+        "capacity_units": 12000
+      }
+    },
+    {
+      "id": "W16",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_6",
+        "location_city": "Kolkata",
+        "capacity_units": 18000
+      }
+    },
+    {
+      "id": "W17",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_7",
+        "location_city": "Ahmedabad",
+        "capacity_units": 14000
+      }
+    },
+    {
+      "id": "W18",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_8",
+        "location_city": "Surat",
+        "capacity_units": 16000
+      }
+    },
+    {
+      "id": "W19",
+      "type": "Warehouse",
+      "properties": {
+        "name": "WH_9",
+        "location_city": "Jaipur",
+        "capacity_units": 13000
+      }
+    },
+    {
+      "id": "O600",
+      "type": "Order",
+      "properties": {
+        "order_date": "2025-01-01",
+        "status": "Pending",
+        "total_amount": 7080.71
+      }
+    },
+    {
+      "id": "O601",
+      "type": "Order",
+      "properties": {
+        "order_date": "2025-01-02",
+        "status": "Shipped",
+        "total_amount": 12017.72
+      }
+    },
+    {
+      "id": "O602",
+      "type": "Order",
+      "properties": {
+        "order_date": "2025-01-03",
+        "status": "Delivered",
+        "total_amount": 14856.57
+      }
+    },
+    {
+      "id": "O603",
+      "type": "Order",
+      "properties": {
+        "order_date": "2025-01-04",
+        "status": "Processing",
+        "total_amount": 12437.05
+      }
+    },
+    {
+      "id": "O606",
+      "type": "Order",
+      "properties": {
+        "order_date": "2025-01-07",
+        "status": "Confirmed",
+        "total_amount": 2233.47
+      }
+    },
+    {
+      "id": "O608",
+      "type": "Order",
+      "properties": {
+        "order_date": "2025-01-09",
+        "status": "Pending",
+        "total_amount": 16591.76
+      }
+    },
+    {
+      "id": "O609",
+      "type": "Order",
+      "properties": {
+        "order_date": "2025-01-10",
+        "status": "Shipped",
+        "total_amount": 3772.10
+      }
+    },
+    {
+      "id": "INV1200",
+      "type": "Invoice",
+      "properties": {
+        "invoice_date": "2025-01-03",
+        "amount_due": 16591.76,
+        "status": "Unpaid"
+      }
+    },
+    {
+      "id": "INV1201",
+      "type": "Invoice",
+      "properties": {
+        "invoice_date": "2025-01-04",
+        "amount_due": 4861.66,
+        "status": "Paid"
+      }
+    },
+    {
+      "id": "INV1202",
+      "type": "Invoice",
+      "properties": {
+        "invoice_date": "2025-01-05",
+        "amount_due": 12437.05,
+        "status": "Paid"
+      }
+    },
+    {
+      "id": "INV1206",
+      "type": "Invoice",
+      "properties": {
+        "invoice_date": "2025-01-09",
+        "amount_due": 13279.83,
+        "status": "Paid"
+      }
+    },
+    {
+      "id": "INV1208",
+      "type": "Invoice",
+      "properties": {
+        "invoice_date": "2025-01-11",
+        "amount_due": 13279.83,
+        "status": "Paid"
+      }
+    },
+    {
+      "id": "PMT1300",
+      "type": "Payment",
+      "properties": {
+        "payment_date": "2025-01-04",
+        "amount_paid": 13279.83,
+        "method": "Bank Transfer"
+      }
+    },
+    {
+      "id": "PMT1301",
+      "type": "Payment",
+      "properties": {
+        "payment_date": "2025-01-05",
+        "amount_paid": 4861.66,
+        "method": "Card"
+      }
+    },
+    {
+      "id": "PMT1302",
+      "type": "Payment",
+      "properties": {
+        "payment_date": "2025-01-06",
+        "amount_paid": 13279.83,
+        "method": "Card"
+      }
+    },
+    {
+      "id": "SH800",
+      "type": "Shipment",
+      "properties": {
+        "shipped_date": "2025-01-02",
+        "estimated_arrival": "2025-01-05"
+      }
+    },
+    {
+      "id": "SH801",
+      "type": "Shipment",
+      "properties": {
+        "shipped_date": "2025-01-03",
+        "estimated_arrival": "2025-01-06"
+      }
+    },
+    {
+      "id": "SH802",
+      "type": "Shipment",
+      "properties": {
+        "shipped_date": "2025-01-04",
+        "estimated_arrival": "2025-01-07"
+      }
+    },
+    {
+      "id": "SH804",
+      "type": "Shipment",
+      "properties": {
+        "shipped_date": "2025-01-06",
+        "estimated_arrival": "2025-01-09"
+      }
+    },
+    {
+      "id": "SH806",
+      "type": "Shipment",
+      "properties": {
+        "shipped_date": "2025-01-08",
+        "estimated_arrival": "2025-01-11"
+      }
+    },
+    {
+      "id": "PO1000",
+      "type": "PurchaseOrder",
+      "properties": {
+        "order_date": "2025-01-01",
+        "expected_delivery": "2025-01-16",
+        "status": "Open",
+        "total_value": 229945.04
+      }
+    },
+    {
+      "id": "PO1001",
+      "type": "PurchaseOrder",
+      "properties": {
+        "order_date": "2025-01-02",
+        "expected_delivery": "2025-01-17",
+        "status": "Closed",
+        "total_value": 60861.29
+      }
+    },
+    {
+      "id": "PO1002",
+      "type": "PurchaseOrder",
+      "properties": {
+        "order_date": "2025-01-03",
+        "expected_delivery": "2025-01-18",
+        "status": "Open",
+        "total_value": 484852.13
+      }
+    },
+    {
+      "id": "PO1008",
+      "type": "PurchaseOrder",
+      "properties": {
+        "order_date": "2025-01-09",
+        "expected_delivery": "2025-01-24",
+        "status": "Open",
+        "total_value": 156789.45
+      }
+    },
+    {
+      "id": "I400",
       "type": "Inventory",
       "properties": {
-        "file_name": "inventory.csv",
-        "entity_type": "Inventory",
-        "primary_key": "inventory_id",
-        "record_count": 10,
-        "attributes": ["inventory_id", "warehouse_id", "product_id", "quantity_on_hand", "reorder_point", "last_updated"],
-        "sample_ids": ["I400", "I401"],
-        "description": "Inventory tracking records"
+        "quantity_on_hand": 93,
+        "reorder_point": 95,
+        "last_updated": "2025-01-01"
       }
     },
     {
-      "id": "shipments",
-      "type": "Logistics",
+      "id": "I401",
+      "type": "Inventory",
       "properties": {
-        "file_name": "shipments.csv",
-        "entity_type": "Shipment",
-        "primary_key": "shipment_id",
-        "record_count": 10,
-        "attributes": ["shipment_id", "order_id", "carrier_id", "warehouse_id", "shipped_date", "estimated_arrival"],
-        "sample_ids": ["SH800", "SH801"],
-        "description": "Shipment records for order fulfillment"
+        "quantity_on_hand": 179,
+        "reorder_point": 27,
+        "last_updated": "2025-01-02"
       }
     },
     {
-      "id": "logistics_events",
-      "type": "Logistics",
+      "id": "I402",
+      "type": "Inventory",
       "properties": {
-        "file_name": "logistics_events.csv",
-        "entity_type": "LogisticsEvent",
-        "primary_key": "event_id",
-        "record_count": 10,
-        "attributes": ["event_id", "shipment_id", "event_time", "event_type", "location"],
-        "sample_ids": ["E1500", "E1501"],
-        "description": "Tracking events for shipments"
+        "quantity_on_hand": 25,
+        "reorder_point": 139,
+        "last_updated": "2025-01-03"
       }
     },
     {
-      "id": "routes",
-      "type": "Logistics",
+      "id": "OI700",
+      "type": "OrderItem",
       "properties": {
-        "file_name": "routes.csv",
-        "entity_type": "Route",
-        "primary_key": "route_id",
-        "record_count": 10,
-        "attributes": ["route_id", "origin_warehouse", "destination_city", "distance_km", "estimated_time_hours"],
-        "sample_ids": ["RT1400", "RT1401"],
-        "description": "Shipping routes with distance and time estimates"
+        "quantity": 2,
+        "unit_price": 1886.05
+      }
+    },
+    {
+      "id": "OI701",
+      "type": "OrderItem",
+      "properties": {
+        "quantity": 7,
+        "unit_price": 603.45
+      }
+    },
+    {
+      "id": "OI702",
+      "type": "OrderItem",
+      "properties": {
+        "quantity": 1,
+        "unit_price": 2233.47
+      }
+    },
+    {
+      "id": "R1100",
+      "type": "Receipt",
+      "properties": {
+        "quantity_received": 97,
+        "received_date": "2025-01-06"
+      }
+    },
+    {
+      "id": "R1101",
+      "type": "Receipt",
+      "properties": {
+        "quantity_received": 36,
+        "received_date": "2025-01-07"
+      }
+    },
+    {
+      "id": "R1102",
+      "type": "Receipt",
+      "properties": {
+        "quantity_received": 9,
+        "received_date": "2025-01-08"
+      }
+    },
+    {
+      "id": "RT1400",
+      "type": "Route",
+      "properties": {
+        "destination_city": "Delhi",
+        "distance_km": 547,
+        "estimated_time_hours": 51.2
+      }
+    },
+    {
+      "id": "RT1401",
+      "type": "Route",
+      "properties": {
+        "destination_city": "Mumbai",
+        "distance_km": 1379,
+        "estimated_time_hours": 19.3
+      }
+    },
+    {
+      "id": "RT1402",
+      "type": "Route",
+      "properties": {
+        "destination_city": "Chennai",
+        "distance_km": 1495,
+        "estimated_time_hours": 67.0
+      }
+    },
+    {
+      "id": "E1500",
+      "type": "LogisticsEvent",
+      "properties": {
+        "event_time": "2025-01-02 10:00:00",
+        "event_type": "Picked Up",
+        "location": "Chennai"
+      }
+    },
+    {
+      "id": "E1501",
+      "type": "LogisticsEvent",
+      "properties": {
+        "event_time": "2025-01-03 10:00:00",
+        "event_type": "In Transit",
+        "location": "Mumbai"
+      }
+    },
+    {
+      "id": "E1502",
+      "type": "LogisticsEvent",
+      "properties": {
+        "event_time": "2025-01-04 10:00:00",
+        "event_type": "Delayed",
+        "location": "Delhi"
       }
     }
   ],
   "edges": [
     {
-      "source": "customers",
-      "target": "orders",
+      "source": "C508",
+      "target": "O600",
       "type": "places",
       "properties": {
-        "relationship": "Customer places Order",
-        "foreign_key": "customer_id",
-        "cardinality": "one-to-many",
-        "description": "Customers can place multiple orders"
+        "relationship": "customer_order"
       }
     },
     {
-      "source": "orders",
-      "target": "order_items",
+      "source": "C506",
+      "target": "O601",
+      "type": "places",
+      "properties": {
+        "relationship": "customer_order"
+      }
+    },
+    {
+      "source": "C501",
+      "target": "O602",
+      "type": "places",
+      "properties": {
+        "relationship": "customer_order"
+      }
+    },
+    {
+      "source": "O609",
+      "target": "OI700",
       "type": "contains",
       "properties": {
-        "relationship": "Order contains OrderItems",
-        "foreign_key": "order_id",
-        "cardinality": "one-to-many",
-        "description": "Each order can have multiple line items"
+        "relationship": "order_item"
       }
     },
     {
-      "source": "order_items",
-      "target": "products",
+      "source": "O602",
+      "target": "OI701",
+      "type": "contains",
+      "properties": {
+        "relationship": "order_item"
+      }
+    },
+    {
+      "source": "O606",
+      "target": "OI702",
+      "type": "contains",
+      "properties": {
+        "relationship": "order_item"
+      }
+    },
+    {
+      "source": "OI700",
+      "target": "P202",
       "type": "references",
       "properties": {
-        "relationship": "OrderItem references Product",
-        "foreign_key": "product_id",
-        "cardinality": "many-to-one",
-        "description": "Order items reference specific products"
+        "relationship": "product_reference"
       }
     },
     {
-      "source": "products",
-      "target": "suppliers",
+      "source": "OI701",
+      "target": "P209",
+      "type": "references",
+      "properties": {
+        "relationship": "product_reference"
+      }
+    },
+    {
+      "source": "OI702",
+      "target": "P206",
+      "type": "references",
+      "properties": {
+        "relationship": "product_reference"
+      }
+    },
+    {
+      "source": "P200",
+      "target": "S104",
       "type": "supplied_by",
       "properties": {
-        "relationship": "Product supplied by Supplier",
-        "foreign_key": "supplier_id",
-        "cardinality": "many-to-one",
-        "description": "Products are supplied by specific suppliers"
+        "relationship": "product_supplier"
       }
     },
     {
-      "source": "orders",
-      "target": "invoices",
+      "source": "P201",
+      "target": "S105",
+      "type": "supplied_by",
+      "properties": {
+        "relationship": "product_supplier"
+      }
+    },
+    {
+      "source": "P202",
+      "target": "S107",
+      "type": "supplied_by",
+      "properties": {
+        "relationship": "product_supplier"
+      }
+    },
+    {
+      "source": "O608",
+      "target": "INV1200",
       "type": "generates",
       "properties": {
-        "relationship": "Order generates Invoice",
-        "foreign_key": "order_id",
-        "cardinality": "one-to-one",
-        "description": "Each order generates an invoice"
+        "relationship": "order_invoice"
       }
     },
     {
-      "source": "invoices",
-      "target": "payments",
+      "source": "O602",
+      "target": "INV1201",
+      "type": "generates",
+      "properties": {
+        "relationship": "order_invoice"
+      }
+    },
+    {
+      "source": "O603",
+      "target": "INV1202",
+      "type": "generates",
+      "properties": {
+        "relationship": "order_invoice"
+      }
+    },
+    {
+      "source": "INV1206",
+      "target": "PMT1300",
       "type": "paid_by",
       "properties": {
-        "relationship": "Invoice paid by Payment",
-        "foreign_key": "invoice_id",
-        "cardinality": "one-to-many",
-        "description": "Invoices can be paid through multiple payments"
+        "relationship": "invoice_payment"
       }
     },
     {
-      "source": "suppliers",
-      "target": "purchase_orders",
-      "type": "receives",
+      "source": "INV1201",
+      "target": "PMT1301",
+      "type": "paid_by",
       "properties": {
-        "relationship": "Supplier receives PurchaseOrder",
-        "foreign_key": "supplier_id",
-        "cardinality": "one-to-many",
-        "description": "Suppliers can receive multiple purchase orders"
+        "relationship": "invoice_payment"
       }
     },
     {
-      "source": "purchase_orders",
-      "target": "receipts",
-      "type": "fulfilled_by",
+      "source": "INV1208",
+      "target": "PMT1302",
+      "type": "paid_by",
       "properties": {
-        "relationship": "PurchaseOrder fulfilled by Receipt",
-        "foreign_key": "po_id",
-        "cardinality": "one-to-many",
-        "description": "Purchase orders can have multiple receipt deliveries"
+        "relationship": "invoice_payment"
       }
     },
     {
-      "source": "receipts",
-      "target": "products",
-      "type": "receives",
-      "properties": {
-        "relationship": "Receipt receives Product",
-        "foreign_key": "product_id",
-        "cardinality": "many-to-one",
-        "description": "Receipts record received products"
-      }
-    },
-    {
-      "source": "receipts",
-      "target": "warehouses",
-      "type": "stored_at",
-      "properties": {
-        "relationship": "Receipt stored at Warehouse",
-        "foreign_key": "warehouse_id",
-        "cardinality": "many-to-one",
-        "description": "Received goods are stored at warehouses"
-      }
-    },
-    {
-      "source": "products",
-      "target": "inventory",
-      "type": "tracked_in",
-      "properties": {
-        "relationship": "Product tracked in Inventory",
-        "foreign_key": "product_id",
-        "cardinality": "one-to-many",
-        "description": "Products are tracked across multiple inventory locations"
-      }
-    },
-    {
-      "source": "inventory",
-      "target": "warehouses",
-      "type": "located_at",
-      "properties": {
-        "relationship": "Inventory located at Warehouse",
-        "foreign_key": "warehouse_id",
-        "cardinality": "many-to-one",
-        "description": "Inventory records are associated with specific warehouses"
-      }
-    },
-    {
-      "source": "orders",
-      "target": "shipments",
+      "source": "O609",
+      "target": "SH800",
       "type": "shipped_via",
       "properties": {
-        "relationship": "Order shipped via Shipment",
-        "foreign_key": "order_id",
-        "cardinality": "one-to-many",
-        "description": "Orders can be fulfilled through multiple shipments"
+        "relationship": "order_shipment"
       }
     },
     {
-      "source": "shipments",
-      "target": "carriers",
-      "type": "handled_by",
+      "source": "O601",
+      "target": "SH801",
+      "type": "shipped_via",
       "properties": {
-        "relationship": "Shipment handled by Carrier",
-        "foreign_key": "carrier_id",
-        "cardinality": "many-to-one",
-        "description": "Shipments are handled by specific carriers"
+        "relationship": "order_shipment"
       }
     },
     {
-      "source": "shipments",
-      "target": "warehouses",
+      "source": "O602",
+      "target": "SH802",
+      "type": "shipped_via",
+      "properties": {
+        "relationship": "order_shipment"
+      }
+    },
+    {
+      "source": "SH800",
+      "target": "CR900",
+      "type": "transported_by",
+      "properties": {
+        "relationship": "shipment_carrier"
+      }
+    },
+    {
+      "source": "SH801",
+      "target": "CR901",
+      "type": "transported_by",
+      "properties": {
+        "relationship": "shipment_carrier"
+      }
+    },
+    {
+      "source": "SH802",
+      "target": "CR902",
+      "type": "transported_by",
+      "properties": {
+        "relationship": "shipment_carrier"
+      }
+    },
+    {
+      "source": "SH800",
+      "target": "W17",
       "type": "originates_from",
       "properties": {
-        "relationship": "Shipment originates from Warehouse",
-        "foreign_key": "warehouse_id",
-        "cardinality": "many-to-one",
-        "description": "Shipments originate from specific warehouses"
+        "relationship": "shipment_warehouse"
       }
     },
     {
-      "source": "shipments",
-      "target": "logistics_events",
+      "source": "SH801",
+      "target": "W16",
+      "type": "originates_from",
+      "properties": {
+        "relationship": "shipment_warehouse"
+      }
+    },
+    {
+      "source": "SH802",
+      "target": "W19",
+      "type": "originates_from",
+      "properties": {
+        "relationship": "shipment_warehouse"
+      }
+    },
+    {
+      "source": "SH806",
+      "target": "E1500",
       "type": "tracked_by",
       "properties": {
-        "relationship": "Shipment tracked by LogisticsEvent",
-        "foreign_key": "shipment_id",
-        "cardinality": "one-to-many",
-        "description": "Shipments are tracked through multiple logistics events"
+        "relationship": "shipment_event"
       }
     },
     {
-      "source": "warehouses",
-      "target": "routes",
-      "type": "origin_of",
+      "source": "SH801",
+      "target": "E1501",
+      "type": "tracked_by",
       "properties": {
-        "relationship": "Warehouse is origin of Route",
-        "foreign_key": "origin_warehouse",
-        "cardinality": "one-to-many",
-        "description": "Warehouses serve as origins for multiple shipping routes"
+        "relationship": "shipment_event"
+      }
+    },
+    {
+      "source": "SH804",
+      "target": "E1502",
+      "type": "tracked_by",
+      "properties": {
+        "relationship": "shipment_event"
+      }
+    },
+    {
+      "source": "S101",
+      "target": "PO1000",
+      "type": "receives",
+      "properties": {
+        "relationship": "supplier_purchase_order"
+      }
+    },
+    {
+      "source": "S100",
+      "target": "PO1001",
+      "type": "receives",
+      "properties": {
+        "relationship": "supplier_purchase_order"
+      }
+    },
+    {
+      "source": "S105",
+      "target": "PO1002",
+      "type": "receives",
+      "properties": {
+        "relationship": "supplier_purchase_order"
+      }
+    },
+    {
+      "source": "PO1008",
+      "target": "R1100",
+      "type": "fulfilled_by",
+      "properties": {
+        "relationship": "purchase_order_receipt"
+      }
+    },
+    {
+      "source": "PO1002",
+      "target": "R1101",
+      "type": "fulfilled_by",
+      "properties": {
+        "relationship": "purchase_order_receipt"
+      }
+    },
+    {
+      "source": "PO1008",
+      "target": "R1102",
+      "type": "fulfilled_by",
+      "properties": {
+        "relationship": "purchase_order_receipt"
+      }
+    },
+    {
+      "source": "R1100",
+      "target": "P206",
+      "type": "receives",
+      "properties": {
+        "relationship": "receipt_product"
+      }
+    },
+    {
+      "source": "R1101",
+      "target": "P206",
+      "type": "receives",
+      "properties": {
+        "relationship": "receipt_product"
+      }
+    },
+    {
+      "source": "R1102",
+      "target": "P205",
+      "type": "receives",
+      "properties": {
+        "relationship": "receipt_product"
+      }
+    },
+    {
+      "source": "R1100",
+      "target": "W11",
+      "type": "delivered_to",
+      "properties": {
+        "relationship": "receipt_warehouse"
+      }
+    },
+    {
+      "source": "R1101",
+      "target": "W18",
+      "type": "delivered_to",
+      "properties": {
+        "relationship": "receipt_warehouse"
+      }
+    },
+    {
+      "source": "R1102",
+      "target": "W11",
+      "type": "delivered_to",
+      "properties": {
+        "relationship": "receipt_warehouse"
+      }
+    },
+    {
+      "source": "P207",
+      "target": "I400",
+      "type": "stored_as",
+      "properties": {
+        "relationship": "product_inventory"
+      }
+    },
+    {
+      "source": "P201",
+      "target": "I401",
+      "type": "stored_as",
+      "properties": {
+        "relationship": "product_inventory"
+      }
+    },
+    {
+      "source": "P205",
+      "target": "I402",
+      "type": "stored_as",
+      "properties": {
+        "relationship": "product_inventory"
+      }
+    },
+    {
+      "source": "I400",
+      "target": "W18",
+      "type": "located_at",
+      "properties": {
+        "relationship": "inventory_warehouse"
+      }
+    },
+    {
+      "source": "I401",
+      "target": "W11",
+      "type": "located_at",
+      "properties": {
+        "relationship": "inventory_warehouse"
+      }
+    },
+    {
+      "source": "I402",
+      "target": "W16",
+      "type": "located_at",
+      "properties": {
+        "relationship": "inventory_warehouse"
+      }
+    },
+    {
+      "source": "RT1400",
+      "target": "W19",
+      "type": "starts_from",
+      "properties": {
+        "relationship": "route_warehouse"
+      }
+    },
+    {
+      "source": "RT1401",
+      "target": "W18",
+      "type": "starts_from",
+      "properties": {
+        "relationship": "route_warehouse"
+      }
+    },
+    {
+      "source": "RT1402",
+      "target": "W16",
+      "type": "starts_from",
+      "properties": {
+        "relationship": "route_warehouse"
       }
     }
   ]
