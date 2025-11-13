@@ -1,0 +1,266 @@
+{
+  "input_folder": "supply_chain_metadata",
+  "generated_at": "2024-12-19T10:30:00Z",
+  "file_count": 15,
+  "files": [
+    {
+      "file_name": "carriers.csv",
+      "file_type": "csv",
+      "file_size_bytes": 348,
+      "num_records": 10,
+      "num_columns": 4,
+      "columns": [
+        {"name": "carrier_id", "type": "string"},
+        {"name": "name", "type": "string"},
+        {"name": "service_level", "type": "string"},
+        {"name": "phone", "type": "string"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "CR900,Carrier_0,Express,+91-880002000\nCR901,Carrier_1,Standard,+91-880002001\nCR902,Carrier_2,Standard,+91-880002002",
+      "content_summary": "Contains carrier information with IDs, names, service levels (Express/Standard/Economy), and phone numbers for logistics operations."
+    },
+    {
+      "file_name": "customers.csv",
+      "file_type": "csv",
+      "file_size_bytes": 398,
+      "num_records": 10,
+      "num_columns": 5,
+      "columns": [
+        {"name": "customer_id", "type": "string"},
+        {"name": "name", "type": "string"},
+        {"name": "segment", "type": "string"},
+        {"name": "city", "type": "string"},
+        {"name": "contact_email", "type": "string"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "C500,Customer_0,Retail,Delhi,cust0@example.com\nC501,Customer_1,Retail,Mumbai,cust1@example.com\nC502,Customer_2,Wholesale,Chennai,cust2@example.com",
+      "content_summary": "Contains customer information with IDs, names, business segments (Retail/Wholesale/Corporate), cities, and contact emails."
+    },
+    {
+      "file_name": "inventory.csv",
+      "file_type": "csv",
+      "file_size_bytes": 448,
+      "num_records": 10,
+      "num_columns": 6,
+      "columns": [
+        {"name": "inventory_id", "type": "string"},
+        {"name": "warehouse_id", "type": "string"},
+        {"name": "product_id", "type": "string"},
+        {"name": "quantity_on_hand", "type": "integer"},
+        {"name": "reorder_point", "type": "integer"},
+        {"name": "last_updated", "type": "date"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "I400,W18,P207,93,95,2025-01-01\nI401,W11,P201,179,27,2025-01-02\nI402,W16,P205,25,139,2025-01-03",
+      "content_summary": "Contains inventory tracking data with inventory IDs, warehouse locations, product IDs, current quantities, reorder points, and last update dates."
+    },
+    {
+      "file_name": "invoices.csv",
+      "file_type": "csv",
+      "file_size_bytes": 398,
+      "num_records": 10,
+      "num_columns": 5,
+      "columns": [
+        {"name": "invoice_id", "type": "string"},
+        {"name": "order_id", "type": "string"},
+        {"name": "invoice_date", "type": "date"},
+        {"name": "amount_due", "type": "decimal"},
+        {"name": "status", "type": "string"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "INV1200,O608,2025-01-03,16591.76,Unpaid\nINV1201,O602,2025-01-04,4861.66,Paid\nINV1202,O603,2025-01-05,12437.05,Paid",
+      "content_summary": "Contains invoice information with invoice IDs, associated order IDs, invoice dates, amounts due, and payment status (Paid/Unpaid)."
+    },
+    {
+      "file_name": "logistics_events.csv",
+      "file_type": "csv",
+      "file_size_bytes": 498,
+      "num_records": 10,
+      "num_columns": 5,
+      "columns": [
+        {"name": "event_id", "type": "string"},
+        {"name": "shipment_id", "type": "string"},
+        {"name": "event_time", "type": "datetime"},
+        {"name": "event_type", "type": "string"},
+        {"name": "location", "type": "string"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "E1500,SH806,2025-01-02 10:00:00,Picked Up,Chennai\nE1501,SH801,2025-01-03 10:00:00,In Transit,Mumbai\nE1502,SH804,2025-01-04 10:00:00,Delayed,Delhi",
+      "content_summary": "Contains logistics event tracking with event IDs, shipment IDs, timestamps, event types (Picked Up, In Transit, Delayed, etc.), and locations."
+    },
+    {
+      "file_name": "order_items.csv",
+      "file_type": "csv",
+      "file_size_bytes": 348,
+      "num_records": 10,
+      "num_columns": 5,
+      "columns": [
+        {"name": "order_item_id", "type": "string"},
+        {"name": "order_id", "type": "string"},
+        {"name": "product_id", "type": "string"},
+        {"name": "quantity", "type": "integer"},
+        {"name": "unit_price", "type": "decimal"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "OI700,O609,P202,2,1886.05\nOI701,O602,P209,7,603.45\nOI702,O606,P206,1,2233.47",
+      "content_summary": "Contains order item details with item IDs, order IDs, product IDs, quantities ordered, and unit prices."
+    },
+    {
+      "file_name": "orders.csv",
+      "file_type": "csv",
+      "file_size_bytes": 398,
+      "num_records": 10,
+      "num_columns": 5,
+      "columns": [
+        {"name": "order_id", "type": "string"},
+        {"name": "customer_id", "type": "string"},
+        {"name": "order_date", "type": "date"},
+        {"name": "status", "type": "string"},
+        {"name": "total_amount", "type": "decimal"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "O600,C508,2025-01-01,Pending,7080.71\nO601,C506,2025-01-02,Shipped,12017.72\nO602,C501,2025-01-03,Delivered,14856.57",
+      "content_summary": "Contains order information with order IDs, customer IDs, order dates, status (Pending/Shipped/Delivered/Cancelled), and total amounts."
+    },
+    {
+      "file_name": "payments.csv",
+      "file_type": "csv",
+      "file_size_bytes": 448,
+      "num_records": 10,
+      "num_columns": 5,
+      "columns": [
+        {"name": "payment_id", "type": "string"},
+        {"name": "invoice_id", "type": "string"},
+        {"name": "payment_date", "type": "date"},
+        {"name": "amount_paid", "type": "decimal"},
+        {"name": "method", "type": "string"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "PMT1300,INV1206,2025-01-04,13279.83,Bank Transfer\nPMT1301,INV1201,2025-01-05,4861.66,Card\nPMT1302,INV1208,2025-01-06,13279.83,Card",
+      "content_summary": "Contains payment information with payment IDs, invoice IDs, payment dates, amounts paid, and payment methods (Bank Transfer, Card, Netbanking, UPI)."
+    },
+    {
+      "file_name": "products.csv",
+      "file_type": "csv",
+      "file_size_bytes": 448,
+      "num_records": 10,
+      "num_columns": 6,
+      "columns": [
+        {"name": "product_id", "type": "string"},
+        {"name": "sku", "type": "string"},
+        {"name": "name", "type": "string"},
+        {"name": "category", "type": "string"},
+        {"name": "unit_weight_kg", "type": "decimal"},
+        {"name": "supplier_id", "type": "string"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "P200,SKU-3000,Product_0,Electronics,0.5,S104\nP201,SKU-3001,Product_1,Apparel,0.2,S105\nP202,SKU-3002,Product_2,Electronics,1.2,S107",
+      "content_summary": "Contains product catalog with product IDs, SKUs, names, categories (Electronics, Apparel, Home, Automotive, Toys), weights, and supplier IDs."
+    },
+    {
+      "file_name": "purchase_orders.csv",
+      "file_type": "csv",
+      "file_size_bytes": 498,
+      "num_records": 10,
+      "num_columns": 6,
+      "columns": [
+        {"name": "po_id", "type": "string"},
+        {"name": "supplier_id", "type": "string"},
+        {"name": "order_date", "type": "date"},
+        {"name": "expected_delivery", "type": "date"},
+        {"name": "status", "type": "string"},
+        {"name": "total_value", "type": "decimal"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "PO1000,S101,2025-01-01,2025-01-16,Open,229945.04\nPO1001,S100,2025-01-02,2025-01-17,Closed,60861.29\nPO1002,S105,2025-01-03,2025-01-18,Open,484852.13",
+      "content_summary": "Contains purchase order information with PO IDs, supplier IDs, order dates, expected delivery dates, status (Open/Closed/Cancelled), and total values."
+    },
+    {
+      "file_name": "receipts.csv",
+      "file_type": "csv",
+      "file_size_bytes": 448,
+      "num_records": 10,
+      "num_columns": 6,
+      "columns": [
+        {"name": "receipt_id", "type": "string"},
+        {"name": "po_id", "type": "string"},
+        {"name": "product_id", "type": "string"},
+        {"name": "quantity_received", "type": "integer"},
+        {"name": "received_date", "type": "date"},
+        {"name": "warehouse_id", "type": "string"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "R1100,PO1008,P206,97,2025-01-06,W11\nR1101,PO1002,P206,36,2025-01-07,W18\nR1102,PO1008,P205,9,2025-01-08,W11",
+      "content_summary": "Contains receipt information with receipt IDs, purchase order IDs, product IDs, quantities received, received dates, and warehouse IDs."
+    },
+    {
+      "file_name": "routes.csv",
+      "file_type": "csv",
+      "file_size_bytes": 448,
+      "num_records": 10,
+      "num_columns": 5,
+      "columns": [
+        {"name": "route_id", "type": "string"},
+        {"name": "origin_warehouse", "type": "string"},
+        {"name": "destination_city", "type": "string"},
+        {"name": "distance_km", "type": "integer"},
+        {"name": "estimated_time_hours", "type": "decimal"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "RT1400,W19,Delhi,547,51.2\nRT1401,W18,Mumbai,1379,19.3\nRT1402,W16,Chennai,1495,67.0",
+      "content_summary": "Contains routing information with route IDs, origin warehouses, destination cities, distances in kilometers, and estimated travel times in hours."
+    },
+    {
+      "file_name": "shipments.csv",
+      "file_type": "csv",
+      "file_size_bytes": 448,
+      "num_records": 10,
+      "num_columns": 6,
+      "columns": [
+        {"name": "shipment_id", "type": "string"},
+        {"name": "order_id", "type": "string"},
+        {"name": "carrier_id", "type": "string"},
+        {"name": "warehouse_id", "type": "string"},
+        {"name": "shipped_date", "type": "date"},
+        {"name": "estimated_arrival", "type": "date"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "SH800,O609,CR900,W17,2025-01-02,2025-01-05\nSH801,O601,CR901,W16,2025-01-03,2025-01-06\nSH802,O602,CR902,W19,2025-01-04,2025-01-07",
+      "content_summary": "Contains shipment information with shipment IDs, order IDs, carrier IDs, warehouse IDs, shipped dates, and estimated arrival dates."
+    },
+    {
+      "file_name": "suppliers.csv",
+      "file_type": "csv",
+      "file_size_bytes": 448,
+      "num_records": 10,
+      "num_columns": 6,
+      "columns": [
+        {"name": "supplier_id", "type": "string"},
+        {"name": "name", "type": "string"},
+        {"name": "country", "type": "string"},
+        {"name": "contact_email", "type": "string"},
+        {"name": "phone", "type": "string"},
+        {"name": "lead_time_days", "type": "integer"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "S100,Supplier_0,India,supp0@example.com,+91-900001000,7\nS101,Supplier_1,China,supp1@example.com,+91-900001001,14\nS102,Supplier_2,Germany,supp2@example.com,+91-900001002,10",
+      "content_summary": "Contains supplier information with supplier IDs, names, countries, contact emails, phone numbers, and lead times in days."
+    },
+    {
+      "file_name": "warehouses.csv",
+      "file_type": "csv",
+      "file_size_bytes": 298,
+      "num_records": 10,
+      "num_columns": 4,
+      "columns": [
+        {"name": "warehouse_id", "type": "string"},
+        {"name": "name", "type": "string"},
+        {"name": "location_city", "type": "string"},
+        {"name": "capacity_units", "type": "integer"}
+      ],
+      "encoding": "UTF-8",
+      "sample_data": "W10,WH_0,Chennai,10000\nW11,WH_1,Hyderabad,15000\nW12,WH_2,Bengaluru,12000",
+      "content_summary": "Contains warehouse information with warehouse IDs, names, location cities, and storage capacities in units."
+    }
+  ]
+}
