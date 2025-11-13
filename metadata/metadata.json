@@ -1,12 +1,12 @@
 {
   "input_folder": "supply_chain_metadata",
-  "generated_at": "2025-01-27T10:30:00Z",
+  "generated_at": "2024-12-19T10:30:00Z",
   "file_count": 15,
   "files": [
     {
       "file_name": "carriers.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 318,
+      "file_type": "csv",
+      "file_size_bytes": 343,
       "num_records": 10,
       "num_columns": 4,
       "columns": [
@@ -16,12 +16,13 @@
         {"name": "phone", "type": "string"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "CR900,Carrier_0,Express,+91-880002000\nCR901,Carrier_1,Standard,+91-880002001"
+      "sample_data": "CR900,Carrier_0,Express,+91-880002000\nCR901,Carrier_1,Standard,+91-880002001\nCR902,Carrier_2,Standard,+91-880002002",
+      "last_modified": null
     },
     {
       "file_name": "customers.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 398,
+      "file_type": "csv",
+      "file_size_bytes": 463,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -32,12 +33,13 @@
         {"name": "contact_email", "type": "string"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "C500,Customer_0,Retail,Delhi,cust0@example.com\nC501,Customer_1,Retail,Mumbai,cust1@example.com"
+      "sample_data": "C500,Customer_0,Retail,Delhi,cust0@example.com\nC501,Customer_1,Retail,Mumbai,cust1@example.com\nC502,Customer_2,Wholesale,Chennai,cust2@example.com",
+      "last_modified": null
     },
     {
       "file_name": "inventory.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 398,
+      "file_type": "csv",
+      "file_size_bytes": 475,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -49,12 +51,13 @@
         {"name": "last_updated", "type": "date"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "I400,W18,P207,93,95,2025-01-01\nI401,W11,P201,179,27,2025-01-02"
+      "sample_data": "I400,W18,P207,93,95,2025-01-01\nI401,W11,P201,179,27,2025-01-02\nI402,W16,P205,25,139,2025-01-03",
+      "last_modified": null
     },
     {
       "file_name": "invoices.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 378,
+      "file_type": "csv",
+      "file_size_bytes": 409,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -65,12 +68,13 @@
         {"name": "status", "type": "string"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "INV1200,O608,2025-01-03,16591.76,Unpaid\nINV1201,O602,2025-01-04,4861.66,Paid"
+      "sample_data": "INV1200,O608,2025-01-03,16591.76,Unpaid\nINV1201,O602,2025-01-04,4861.66,Paid\nINV1202,O603,2025-01-05,12437.05,Paid",
+      "last_modified": null
     },
     {
       "file_name": "logistics_events.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 458,
+      "file_type": "csv",
+      "file_size_bytes": 507,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -81,12 +85,13 @@
         {"name": "location", "type": "string"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "E1500,SH806,2025-01-02 10:00:00,Picked Up,Chennai\nE1501,SH801,2025-01-03 10:00:00,In Transit,Mumbai"
+      "sample_data": "E1500,SH806,2025-01-02 10:00:00,Picked Up,Chennai\nE1501,SH801,2025-01-03 10:00:00,In Transit,Mumbai\nE1502,SH804,2025-01-04 10:00:00,Delayed,Delhi",
+      "last_modified": null
     },
     {
       "file_name": "order_items.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 358,
+      "file_type": "csv",
+      "file_size_bytes": 397,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -97,12 +102,13 @@
         {"name": "unit_price", "type": "decimal"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "OI700,O609,P202,2,1886.05\nOI701,O602,P209,7,603.45"
+      "sample_data": "OI700,O609,P202,2,1886.05\nOI701,O602,P209,7,603.45\nOI702,O606,P206,1,2233.47",
+      "last_modified": null
     },
     {
       "file_name": "orders.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 358,
+      "file_type": "csv",
+      "file_size_bytes": 413,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -113,12 +119,13 @@
         {"name": "total_amount", "type": "decimal"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "O600,C508,2025-01-01,Pending,7080.71\nO601,C506,2025-01-02,Shipped,12017.72"
+      "sample_data": "O600,C508,2025-01-01,Pending,7080.71\nO601,C506,2025-01-02,Shipped,12017.72\nO602,C501,2025-01-03,Delivered,14856.57",
+      "last_modified": null
     },
     {
       "file_name": "payments.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 398,
+      "file_type": "csv",
+      "file_size_bytes": 461,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -129,12 +136,13 @@
         {"name": "method", "type": "string"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "PMT1300,INV1206,2025-01-04,13279.83,Bank Transfer\nPMT1301,INV1201,2025-01-05,4861.66,Card"
+      "sample_data": "PMT1300,INV1206,2025-01-04,13279.83,Bank Transfer\nPMT1301,INV1201,2025-01-05,4861.66,Card\nPMT1302,INV1208,2025-01-06,13279.83,Card",
+      "last_modified": null
     },
     {
       "file_name": "products.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 398,
+      "file_type": "csv",
+      "file_size_bytes": 453,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -146,12 +154,13 @@
         {"name": "supplier_id", "type": "string"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "P200,SKU-3000,Product_0,Electronics,0.5,S104\nP201,SKU-3001,Product_1,Apparel,0.2,S105"
+      "sample_data": "P200,SKU-3000,Product_0,Electronics,0.5,S104\nP201,SKU-3001,Product_1,Apparel,0.2,S105\nP202,SKU-3002,Product_2,Electronics,1.2,S107",
+      "last_modified": null
     },
     {
       "file_name": "purchase_orders.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 438,
+      "file_type": "csv",
+      "file_size_bytes": 509,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -163,12 +172,13 @@
         {"name": "total_value", "type": "decimal"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "PO1000,S101,2025-01-01,2025-01-16,Open,229945.04\nPO1001,S100,2025-01-02,2025-01-17,Closed,60861.29"
+      "sample_data": "PO1000,S101,2025-01-01,2025-01-16,Open,229945.04\nPO1001,S100,2025-01-02,2025-01-17,Closed,60861.29\nPO1002,S105,2025-01-03,2025-01-18,Open,484852.13",
+      "last_modified": null
     },
     {
       "file_name": "receipts.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 398,
+      "file_type": "csv",
+      "file_size_bytes": 465,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -180,12 +190,13 @@
         {"name": "warehouse_id", "type": "string"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "R1100,PO1008,P206,97,2025-01-06,W11\nR1101,PO1002,P206,36,2025-01-07,W18"
+      "sample_data": "R1100,PO1008,P206,97,2025-01-06,W11\nR1101,PO1002,P206,36,2025-01-07,W18\nR1102,PO1008,P205,9,2025-01-08,W11",
+      "last_modified": null
     },
     {
       "file_name": "routes.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 398,
+      "file_type": "csv",
+      "file_size_bytes": 457,
       "num_records": 10,
       "num_columns": 5,
       "columns": [
@@ -196,12 +207,13 @@
         {"name": "estimated_time_hours", "type": "decimal"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "RT1400,W19,Delhi,547,51.2\nRT1401,W18,Mumbai,1379,19.3"
+      "sample_data": "RT1400,W19,Delhi,547,51.2\nRT1401,W18,Mumbai,1379,19.3\nRT1402,W16,Chennai,1495,67.0",
+      "last_modified": null
     },
     {
       "file_name": "shipments.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 398,
+      "file_type": "csv",
+      "file_size_bytes": 455,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -213,12 +225,13 @@
         {"name": "estimated_arrival", "type": "date"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "SH800,O609,CR900,W17,2025-01-02,2025-01-05\nSH801,O601,CR901,W16,2025-01-03,2025-01-06"
+      "sample_data": "SH800,O609,CR900,W17,2025-01-02,2025-01-05\nSH801,O601,CR901,W16,2025-01-03,2025-01-06\nSH802,O602,CR902,W19,2025-01-04,2025-01-07",
+      "last_modified": null
     },
     {
       "file_name": "suppliers.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 438,
+      "file_type": "csv",
+      "file_size_bytes": 529,
       "num_records": 10,
       "num_columns": 6,
       "columns": [
@@ -230,12 +243,13 @@
         {"name": "lead_time_days", "type": "integer"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "S100,Supplier_0,India,supp0@example.com,+91-900001000,7\nS101,Supplier_1,China,supp1@example.com,+91-900001001,14"
+      "sample_data": "S100,Supplier_0,India,supp0@example.com,+91-900001000,7\nS101,Supplier_1,China,supp1@example.com,+91-900001001,14\nS102,Supplier_2,Germany,supp2@example.com,+91-900001002,10",
+      "last_modified": null
     },
     {
       "file_name": "warehouses.csv",
-      "file_type": "CSV",
-      "file_size_bytes": 278,
+      "file_type": "csv",
+      "file_size_bytes": 295,
       "num_records": 10,
       "num_columns": 4,
       "columns": [
@@ -245,7 +259,8 @@
         {"name": "capacity_units", "type": "integer"}
       ],
       "encoding": "UTF-8",
-      "sample_data": "W10,WH_0,Chennai,10000\nW11,WH_1,Hyderabad,15000"
+      "sample_data": "W10,WH_0,Chennai,10000\nW11,WH_1,Hyderabad,15000\nW12,WH_2,Bengaluru,12000",
+      "last_modified": null
     }
   ]
 }
